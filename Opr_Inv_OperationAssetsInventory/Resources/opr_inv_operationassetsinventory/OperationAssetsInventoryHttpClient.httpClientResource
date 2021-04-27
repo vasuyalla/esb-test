@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:id="http://www.tibco.com/ws/2013/11/identity" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:sca_ext="http://www.tibco.com/ns/sca/201311" xmlns:subject="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/identity/subject" xmi:id="_R8oq8adhEeuLLswsXqfqtA" name="opr_inv_operationassetsinventory.OperationAssetsInventoryHttpClient" type="http:HttpClientConfiguration">
+  <identitySet xmi:id="_ypPEAKdhEeuLLswsXqfqtA" appliesTo="namedResource" name="HttpClientIdentitySet" provides="confidentiality">
+    <sca_ext:intentMap xmi:id="_ypPEAadhEeuLLswsXqfqtA" provides="sca_ext:confidentiality">
+      <sca_ext:qualifier xmi:id="_ypPEAqdhEeuLLswsXqfqtA" name="transport">
+        <id:IdentityReference xmi:id="_ypQ5MKdhEeuLLswsXqfqtA" URI="opr_inv_operationassetsinventory.AppianIdentityProvider" type="subject:SubjectConfiguration"/>
+      </sca_ext:qualifier>
+    </sca_ext:intentMap>
+  </identitySet>
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_R9iC0KdhEeuLLswsXqfqtA" httpClientVersion="commons" useDefaultSSL="true" cmdExecutionIsolationStrategy="THREAD" cmdExecutionIsolationTimeout="1000" cmdExecutionTimeoutEnabled="true" cmdExecutionIsolationInterruptOnTimeout="true" cmdExecutionIsolationSemaphoreMaxConcRequests="8" cmdCircuitBreakerRequestVolumeThreshold="20" cmdCircuitBreakerSleepWindow="5000" cmdCircuitBreakerErrorThresholdPercentage="50" cmdMetricsRollingStatsTime="10000" cmdMetricsRollingStatsNumBuckets="10" cmdMetricsHealthSnapshotInterval="500" cmdRequestLogEnabled="true" tpCoreSize="10" tpMaxQueueSize="-1" tpQueueSizeRejectionThreshold="5" tpKeepAliveTime="1">
+    <substitutionBindings xmi:id="_glDF0KdhEeuLLswsXqfqtA" template="maxTotalConnections" propName="/Appian/maxTotalConnection"/>
+    <substitutionBindings xmi:id="_koGrkKdhEeuLLswsXqfqtA" template="idleConnectionTimeout" propName="/Appian/idleConnectionTimeout"/>
+    <substitutionBindings xmi:id="_ml7qMKdhEeuLLswsXqfqtA" template="maxTotalConnectionsPerHost" propName="/Appian/maxTotalConPerHost"/>
+    <substitutionBindings xmi:id="_vZcHMKdhEeuLLswsXqfqtA" template="retryCount" propName="retryCount"/>
+    <tcpDetails xmi:id="_R9xTYKdhEeuLLswsXqfqtA">
+      <substitutionBindings xmi:id="_WPQ9wKdhEeuLLswsXqfqtA" template="host" propName="/HTTP/HostName"/>
+      <substitutionBindings xmi:id="_eFDOQKdhEeuLLswsXqfqtA" template="port" propName="/Appian/appianPort"/>
+      <substitutionBindings xmi:id="_rGnnIKdhEeuLLswsXqfqtA" template="soTimeout" propName="/Appian/socketTimeout"/>
+      <substitutionBindings xmi:id="_s7oA8KdhEeuLLswsXqfqtA" template="connectionTimeout" propName="/Appian/connectionTimeout"/>
+    </tcpDetails>
+  </jndi:configuration>
+</jndi:namedResource>

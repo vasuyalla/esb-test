@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:extns="http://tns.tibco.com/bw/json/1612961713198" xmlns:extns1="http://tns.tibco.com/bw/json/1613044527284" xmlns:extns2="http://tns.tibco.com/bw/json/1612961788703" xmlns:extns3="http://tns.tibco.com/bw/json/1612961846675" xmlns:extns4="http://tns.tibco.com/bw/json/1612961901964" xmlns:tns="http://schemas.hhc.com/common/restCommonSchema/v1.0" elementFormDefault="qualified" targetNamespace="http://schemas.hhc.com/common/restCommonSchema/v1.0">
+
+
+  
+    <complexType name="error">
+    	<sequence>
+    		<element minOccurs="0" name="id" type="string"/>
+
+    		<element maxOccurs="1" minOccurs="0" name="status" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="0" name="title" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="details" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="source" type="tns:source"/>
+    	</sequence>
+    </complexType>
+
+
+
+
+    <element name="response" type="tns:response"/>
+    
+    <complexType name="response">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="status" type="tns:status"/>
+    		<element maxOccurs="1" minOccurs="0" name="responsePayload" type="tns:responsePayload"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="source">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="parameter" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="status">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="statusCode" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="statusReason" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="correlation-id" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="responsePayload">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="payload" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <element name="error" type="tns:response"/>
+
+    <element name="request" type="tns:request"/>
+
+    <complexType name="request">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="request" type="string"/>
+    	</sequence>
+    </complexType>
+</schema>

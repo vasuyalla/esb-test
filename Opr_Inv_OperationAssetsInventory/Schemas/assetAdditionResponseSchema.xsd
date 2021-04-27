@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/assetAdditionResponseSchema" xmlns:tns="http://www.example.org/assetAdditionResponseSchema" elementFormDefault="qualified">
+<complexType name="assetAdditionResponseElementType">
+    <sequence>
+      <element maxOccurs="1" minOccurs="0" name="Status">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="statusCode" type="integer" nillable="true"/>
+            <element maxOccurs="1" minOccurs="0" name="statusMessage" type="string" nillable="true"/>            
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="assetAdditionResponseElement" type="tns:assetAdditionResponseElementType"/>
+</schema>

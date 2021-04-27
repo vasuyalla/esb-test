@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/Opr_Inv_OperationAssetsInventory/Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1619506729905"
+    },
+    {
+        "jsonSchemaLocation": "/Opr_Inv_OperationAssetsInventory/Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/assetChangeResponseSchema"
+    }
+]}

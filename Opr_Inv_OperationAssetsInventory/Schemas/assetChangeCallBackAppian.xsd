@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/assetChangeCallBackAppian" xmlns:tns="http://www.example.org/assetChangeCallBackAppian" elementFormDefault="qualified">
+
+<complexType name="assetChangeCallbackAppianRequestElementType">
+    <sequence>
+      <element maxOccurs="1" minOccurs="0" name="requestID" type="string"  nillable="true"/>
+      <element maxOccurs="1" minOccurs="0" name="correlationid" type="string" nillable="true"/>
+      <element maxOccurs="1" minOccurs="0" name="status" type="string" nillable="true"/>
+    </sequence>
+  </complexType>
+<element name="assetChangeCallbackAppianRequestElement" type="tns:assetChangeCallbackAppianRequestElementType"/>
+</schema>

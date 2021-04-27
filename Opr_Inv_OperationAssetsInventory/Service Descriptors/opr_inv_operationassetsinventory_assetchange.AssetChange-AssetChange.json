@@ -1,0 +1,74 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/assetchange" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-assetchange",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a assetChangeResponseElement to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/assetChangeResponseElement"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-assetchange",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Status" : {
+      "type" : "object",
+      "properties" : {
+        "statusCode" : {
+          "type" : "integer"
+        },
+        "statusMessage" : {
+          "type" : "string"
+        }
+      }
+    },
+    "assetChangeResponseElement" : {
+      "type" : "object",
+      "properties" : {
+        "Status" : {
+          "$ref" : "#/definitions/Status"
+        }
+      }
+    }
+  }
+}

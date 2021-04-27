@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_gGbyoKceEeufvIOJ6OAa0g" targetNamespace="http://tns.tibco.com/bw/composite/Opr_Inv_OperationAssetsInventory" name="Opr_Inv_OperationAssetsInventory" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_bQ9cBKcfEeufvIOJ6OAa0g" name="healthcheck-liveliness" promote="ComponentHealthCheck/healthcheck-liveliness">
+    <sca:interface.wsdl xmi:id="_bQ9cCKcfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-liveliness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_XbZqQKcgEeufvIOJ6OAa0g" name="RestService2" path="/healthcheck-liveliness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
+      <operation xmi:id="_XbZqQqcgEeufvIOJ6OAa0g" operationName="get" nickname="getItem" httpMethod="GET" notes="Get an item">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <advancedConfig xmi:id="_XbZqQacgEeufvIOJ6OAa0g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_XbZqQ6cgEeufvIOJ6OAa0g" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_bQ9cC6cfEeufvIOJ6OAa0g" name="healthcheck-readiness" promote="ComponentHealthCheck/healthcheck-readiness">
+    <sca:interface.wsdl xmi:id="_bQ9cD6cfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-readiness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_bQ9cEKcfEeufvIOJ6OAa0g" name="RestService" path="/healthcheck-readiness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
+      <operation xmi:id="_bQ9cEqcfEeufvIOJ6OAa0g" operationName="get" nickname="get-healthcheck-readiness" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_bQ9cFKcfEeufvIOJ6OAa0g"/>
+      <advancedConfig xmi:id="_bQ9cEacfEeufvIOJ6OAa0g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_bQ9cE6cfEeufvIOJ6OAa0g" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_huLaQacjEeufvIOJ6OAa0g" name="assetaddition" promote="ComponentProcess/assetaddition">
+    <sca:interface.wsdl xmi:id="_huVLQqcjEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113502PLT#wsdl.interface(assetaddition)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/AssetAddition.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_huVLQ6cjEeufvIOJ6OAa0g" name="RestService1" path="/assetaddition" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetAddition" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.AssetAddition-AssetAddition.json">
+      <operation xmi:id="_huVLRacjEeufvIOJ6OAa0g" operationName="post" nickname="post-assetaddition" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_huVLRqcjEeufvIOJ6OAa0g" operationName="get" nickname="get-assetaddition" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_huVLSKcjEeufvIOJ6OAa0g"/>
+      <advancedConfig xmi:id="_huVLRKcjEeufvIOJ6OAa0g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_huVLR6cjEeufvIOJ6OAa0g" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_oc8_kqdIEeu357mb3Ky1qw" name="assetchange" promote="ComponentAssetChange/assetchange">
+    <sca:interface.wsdl xmi:id="_odbgsKdIEeu357mb3Ky1qw" interface="http://xmlns.example.com/20210427163635PLT#wsdl.interface(assetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/AssetChange.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_odbgsadIEeu357mb3Ky1qw" name="RestService3" path="/assetchange" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetChange" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json">
+      <operation xmi:id="_odgZMKdIEeu357mb3Ky1qw" operationName="post" nickname="post-assetchange" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_odgZMadIEeu357mb3Ky1qw" operationName="get" nickname="get-assetchange" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_odhnUKdIEeu357mb3Ky1qw"/>
+      <advancedConfig xmi:id="_odbgsqdIEeu357mb3Ky1qw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_odgZMqdIEeu357mb3Ky1qw" bindingName="RestService3"/>
+  </sca:service>
+  <sca:property xmi:id="_gztvYKceEeufvIOJ6OAa0g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gz3gYKceEeufvIOJ6OAa0g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_g0AqUKceEeufvIOJ6OAa0g" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_g0AqUaceEeufvIOJ6OAa0g" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_g0KbUKceEeufvIOJ6OAa0g" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_g0OFsKceEeufvIOJ6OAa0g" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_g0OFsaceEeufvIOJ6OAa0g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lPlg8KciEeufvIOJ6OAa0g" name="retryInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lVq60KciEeufvIOJ6OAa0g" name="retryCount" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lZsfMKciEeufvIOJ6OAa0g" name="AuthXMLPath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_L7veIKciEeufvIOJ6OAa0g" name="/HTTP/HostName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NMt90KciEeufvIOJ6OAa0g" name="/HTTP/Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NOLWYKciEeufvIOJ6OAa0g" name="/HTTP/AcceptorThread" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NPxR0KciEeufvIOJ6OAa0g" name="/HTTP/QueueSize" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NRFgcKciEeufvIOJ6OAa0g" name="/HTTP/MinQTP" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NTJV8KciEeufvIOJ6OAa0g" name="/HTTP/MaxQTP" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_mWJB4Kc5EeupFupa8gJVlg" name="/JMS/JNDIUrl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_nu92AKc5EeupFupa8gJVlg" name="/JMS/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n0rccKc5EeupFupa8gJVlg" name="/JMS/Password" type="property:password" scaext:simpleValue="#!wVq/3JS3f1HE2i0FS8xJZg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n3W9AKc5EeupFupa8gJVlg" name="/JMS/QCF" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n5ZkYKc5EeupFupa8gJVlg" name="/JMS/TCF" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_n8MZsKc5EeupFupa8gJVlg" name="/JMS/assetAdditionTopicName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tfhfYKc5EeupFupa8gJVlg" name="/JMS/assetAdditionQueueName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ti3HQKc5EeupFupa8gJVlg" name="/JMS/maxSessions" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1mBscKc5EeupFupa8gJVlg" name="/JMS/redeliveryInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_DDvUIKdNEeuOaKLt1-2m3A" name="/JMS/assetChangeTopicName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_DN5VsKdNEeuOaKLt1-2m3A" name="/JMS/assetChangeQueueName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_VE-dQKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/DatabaseURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dvZPsKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dxEDoKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/Password" type="property:password" scaext:simpleValue="#!DnLbNs+UDdUbPNMzTr1DrA==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dy52sKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/TimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_d0uboKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/MaxConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_d4pSUKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/LoginTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_84EX4KdTEeuOaKLt1-2m3A" name="/JDBC/JDE/maxRows" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_85psQKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/procSchema" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XRDc0KdfEeuLLswsXqfqtA" name="/Appian/appianHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Y7Gj0KdfEeuLLswsXqfqtA" name="/Appian/appianPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Y9B2cKdfEeuLLswsXqfqtA" name="/Appian/appianEndpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZDkjUKdfEeuLLswsXqfqtA" name="/Appian/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZFaWYKdfEeuLLswsXqfqtA" name="/Appian/password" type="property:password" scaext:simpleValue="#!2NA2rcP4dYsxuX6Ui1qrAg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZHVB8KdfEeuLLswsXqfqtA" name="/Appian/method" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZJGjkKdfEeuLLswsXqfqtA" name="/Appian/idleConnectionTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZK4FMKdfEeuLLswsXqfqtA" name="/Appian/maxTotalConnection" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZMnKkKdfEeuLLswsXqfqtA" name="/Appian/maxTotalConPerHost" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZOYsMKdfEeuLLswsXqfqtA" name="/Appian/socketTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZP_OsKdfEeuLLswsXqfqtA" name="/Appian/connectionTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_gg0okKceEeufvIOJ6OAa0g" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gg0okaceEeufvIOJ6OAa0g" processName="opr_inv_operationassetsinventory_assetaddition.AssetAddition"/>
+    <sca:service xmi:id="_huCQUKcjEeufvIOJ6OAa0g" name="assetaddition">
+      <sca:interface.wsdl xmi:id="_huLaQKcjEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113502PLT#wsdl.interface(assetaddition)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/AssetAddition.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_bQ9cAKcfEeufvIOJ6OAa0g" name="ComponentHealthCheck" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bQ9cAacfEeufvIOJ6OAa0g" processName="http_healthcheck.HealthCheck"/>
+    <sca:service xmi:id="_bQ9cAqcfEeufvIOJ6OAa0g" name="healthcheck-liveliness">
+      <sca:interface.wsdl xmi:id="_bQ9cA6cfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-liveliness)"/>
+    </sca:service>
+    <sca:service xmi:id="_bQ9cCacfEeufvIOJ6OAa0g" name="healthcheck-readiness">
+      <sca:interface.wsdl xmi:id="_bQ9cCqcfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-readiness)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_egk3AKc9EeupFupa8gJVlg" name="ComponentCallAppian_AssetAddition" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_egk3Aac9EeupFupa8gJVlg" processName="opr_inv_operationassetsinventory_assetaddition.AssetAddition_Subscriber"/>
+  </sca:component>
+  <sca:component xmi:id="_ocz1oKdIEeu357mb3Ky1qw" name="ComponentAssetChange" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ocz1oadIEeu357mb3Ky1qw" processName="opr_inv_operationassetsinventory_assetchange.AssetChange"/>
+    <sca:service xmi:id="_oc8_kKdIEeu357mb3Ky1qw" name="assetchange">
+      <sca:interface.wsdl xmi:id="_oc8_kadIEeu357mb3Ky1qw" interface="http://xmlns.example.com/20210427163635PLT#wsdl.interface(assetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/AssetChange.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_rXsqsKdOEeuOaKLt1-2m3A" name="ComponentAssetChange_Subscriber" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_rXsqsadOEeuOaKLt1-2m3A" processName="opr_inv_operationassetsinventory_assetchange.AssetChange_Subscriber"/>
+  </sca:component>
+</sca:composite>

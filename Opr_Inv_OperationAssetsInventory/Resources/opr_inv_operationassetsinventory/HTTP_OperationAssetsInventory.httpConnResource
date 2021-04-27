@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_49aTQaceEeufvIOJ6OAa0g" name="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_49jdMKceEeufvIOJ6OAa0g">
+    <substitutionBindings xmi:id="_49jdMaceEeufvIOJ6OAa0g" template="host" propName="/HTTP/HostName"/>
+    <substitutionBindings xmi:id="_eC2o8KcsEeu5vOIPFSQBMg" template="port" propName="/HTTP/Port"/>
+    <substitutionBindings xmi:id="_fUHcgKcsEeu5vOIPFSQBMg" template="acceptQueueSize" propName="/HTTP/QueueSize"/>
+    <substitutionBindings xmi:id="_haZzkKcsEeu5vOIPFSQBMg" template="acceptors" propName="/HTTP/AcceptorThread"/>
+    <substitutionBindings xmi:id="_jUFSAKcsEeu5vOIPFSQBMg" template="minThreads" propName="/HTTP/MinQTP"/>
+    <substitutionBindings xmi:id="_lb5TEKcsEeu5vOIPFSQBMg" template="maxThreads" propName="/HTTP/MaxQTP"/>
+  </jndi:configuration>
+</jndi:namedResource>
