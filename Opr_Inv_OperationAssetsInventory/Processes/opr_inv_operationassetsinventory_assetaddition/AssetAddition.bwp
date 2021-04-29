@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="opr_inv_operationassetsinventory_assetaddition.AssetAddition"
+    name="opr_inv_operationassetsinventory_assetaddition.x"
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20210427113502"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
@@ -770,7 +770,7 @@
             <wsdl:portType name="assetaddition"
                 tibex:bw.rest.apipath="/assetaddition"
                 tibex:bw.rest.basepath="AssetAddition"
-                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.AssetAddition-AssetAddition.json"
+                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.x-AssetAddition.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="post">
@@ -1887,8 +1887,8 @@
             namespace="http://www.example.org/assetAdditionResponseSchema" prefix="tns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1619506670629"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetAdditionResponseSchema"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1619506670629"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="assetaddition"
             partnerLinkType="ns0:partnerLinkType"

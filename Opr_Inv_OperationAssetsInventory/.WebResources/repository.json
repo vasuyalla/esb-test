@@ -16,6 +16,18 @@
         {
             "location": "Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/opr_inv_operationassetsinventory_assetaddition.Ondemand-Ondemand.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/x-AssetAddition.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/opr_inv_operationassetsinventory_assetaddition.x-AssetAddition.json",
+            "type": "generated"
         }
     ]
 }

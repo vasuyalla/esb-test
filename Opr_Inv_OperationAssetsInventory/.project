@@ -21,6 +21,11 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>com.tibco.bw.ManifestBuilder</name>
 			<arguments>
 			</arguments>
@@ -52,11 +57,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>com.tibco.bw.rest.binding.builder.RestBindingBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>

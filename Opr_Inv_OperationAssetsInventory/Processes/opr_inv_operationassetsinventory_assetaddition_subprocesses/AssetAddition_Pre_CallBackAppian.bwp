@@ -9,6 +9,7 @@
     xmlns:ns0="activity.jsonRender.output+21c4a4b0-759d-44be-8dcf-f5e2c7b7fab8+ActivityOutputType"
     xmlns:ns1="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonRender"
     xmlns:ns10="http://www.example.org/assetAdditionCallBackAppian"
+    xmlns:ns11="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
     xmlns:ns2="http://www.example.org/assetChangeCallBackAppian"
     xmlns:ns3="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns4="http://tns.tibco.com/bw/activity/sendhttprequest/input+7e68cf92-9428-4d3b-ae98-342329fc93ed+RequestActivityInput"
@@ -561,6 +562,18 @@
                     </sequence>
                 </complexType>
             </element>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw">
+            <import namespace="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:DefaultFault"/>
+                </choice>
+            </complexType>
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="rohan_shinde"
@@ -1507,6 +1520,8 @@
         <bpws:variable
             element="ns10:assetAdditionCallbackAppianRequestElement"
             name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns11:ActivityErrorData"
+            name="_error_Throw" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1573,7 +1588,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;RenderRequest-input&quot; match=&quot;/&quot;>&lt;tns5:assetAdditionCallbackAppianRequestElement>&lt;xsl:if test=&quot;$Start/tns5:requestID&quot;>&lt;tns5:requestID>&lt;xsl:copy-of select=&quot;$Start/tns5:requestID/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:requestID&quot;/>&lt;/tns5:requestID>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns5:correlationid&quot;>&lt;tns5:correlationid>&lt;xsl:copy-of select=&quot;$Start/tns5:correlationid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:correlationid&quot;/>&lt;/tns5:correlationid>&lt;/xsl:if>&lt;/tns5:assetAdditionCallbackAppianRequestElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;RenderRequest-input&quot; match=&quot;/&quot;>&lt;tns5:assetAdditionCallbackAppianRequestElement>&lt;xsl:if test=&quot;$Start/tns5:requestId&quot;>&lt;tns5:requestId>&lt;xsl:copy-of select=&quot;$Start/tns5:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:requestId&quot;/>&lt;/tns5:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns5:correlationId&quot;>&lt;tns5:correlationId>&lt;xsl:copy-of select=&quot;$Start/tns5:correlationId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:correlationId&quot;/>&lt;/tns5:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$Start/tns5:assetAddAnswerBack&quot;>&lt;tns5:assetAddAnswerBack>&lt;xsl:if test=&quot;tns5:additionAssetId&quot;>&lt;tns5:additionAssetId>&lt;xsl:copy-of select=&quot;tns5:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns5:additionAssetId&quot;/>&lt;/tns5:additionAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns5:assetNumber&quot;>&lt;tns5:assetNumber>&lt;xsl:copy-of select=&quot;tns5:assetNumber/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns5:assetNumber&quot;/>&lt;/tns5:assetNumber>&lt;/xsl:if>&lt;xsl:if test=&quot;tns5:status&quot;>&lt;tns5:status>&lt;xsl:copy-of select=&quot;tns5:status/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns5:status&quot;/>&lt;/tns5:status>&lt;/xsl:if>&lt;/tns5:assetAddAnswerBack>&lt;/xsl:for-each>&lt;/tns5:assetAdditionCallbackAppianRequestElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1626,8 +1641,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError"
-                tibex:indexToGlobal="false" tibex:xpdlId="d2198bd2-3a88-4277-acf3-2d12cd1cce1d">
+            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="d2198bd2-3a88-4277-acf3-2d12cd1cce1d">
                 <bpws:targets>
                     <bpws:target linkName="LogRenderOPToRepeatOnError"/>
                 </bpws:targets>
@@ -1735,7 +1749,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7e68cf92-9428-4d3b-ae98-342329fc93ed+RequestActivityInput&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;method&quot;/>&#xa;    &lt;xsl:param name=&quot;appianEndpoint&quot;/>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:param name=&quot;RenderRequest&quot;/>&#xa;    &lt;xsl:template name=&quot;CallBackAppian-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:RequestActivityInput>&#xa;            &lt;Method>&#xa;                &lt;xsl:value-of select=&quot;$method&quot;/>&#xa;            &lt;/Method>&#xa;            &lt;RequestURI>&#xa;                &lt;xsl:value-of select=&quot;$appianEndpoint&quot;/>&#xa;            &lt;/RequestURI>&#xa;            &lt;PostData>&#xa;                &lt;xsl:value-of select=&quot;$RenderRequest/jsonString&quot;/>&#xa;            &lt;/PostData>&#xa;            &lt;DynamicHeaders>&#xa;                &lt;Header>&#xa;                    &lt;Name>&#xa;                        &lt;xsl:value-of select=&quot;'correlationId'&quot;/>&#xa;                    &lt;/Name>&#xa;                    &lt;Value>&#xa;                        &lt;xsl:value-of select=&quot;$Start/tns5:correlationid&quot;/>&#xa;                    &lt;/Value>&#xa;                &lt;/Header>&#xa;            &lt;/DynamicHeaders>&#xa;        &lt;/tns2:RequestActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7e68cf92-9428-4d3b-ae98-342329fc93ed+RequestActivityInput&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;method&quot;/>&lt;xsl:param name=&quot;appianEndpoint&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;RenderRequest&quot;/>&lt;xsl:template name=&quot;CallBackAppian-input&quot; match=&quot;/&quot;>&lt;tns2:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;$method&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;$appianEndpoint&quot;/>&lt;/RequestURI>&lt;PostData>&lt;xsl:value-of select=&quot;$RenderRequest/jsonString&quot;/>&lt;/PostData>&lt;DynamicHeaders>&lt;Header>&lt;Name>&lt;xsl:value-of select=&quot;'correlationId'&quot;/>&lt;/Name>&lt;Value>&lt;xsl:value-of select=&quot;$Start/tns5:correlationId&quot;/>&lt;/Value>&lt;/Header>&lt;/DynamicHeaders>&lt;/tns2:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1879,7 +1893,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;LogCallBackAppainStatus-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Data Successfully Send to Appian For The Request ID: &amp;quot;,$Start/tns5:requestID)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns3:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;LogCallBackAppainStatus-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;Data Successfully Send to Appian For The Request ID: &amp;quot;,$Start/tns5:requestId)&quot;/>&lt;/message>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
