@@ -59,315 +59,315 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory//retryCount</name>
-			<value>3</value>
+			<value>#RETRY_COUNT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory//AuthXMLPath</name>
-			<value>D:\Kadambari\MBF Project\Documents\Dev_XmlUsers.xml</value>
+			<value>#AUTH_XML_PATH#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory//retryInterval</name>
-			<value>3000</value>
+			<value>#RETRY_INTERVAL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/Port</name>
-			<value>9098</value>
+			<value>#HTTP_PORT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/QueueSize</name>
-			<value>0</value>
+			<value>#HTTP_ACCEPTQUEUESIZE#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/MaxQTP</name>
-			<value>75</value>
+			<value>#HTTP_MAXQTP#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/MinQTP</name>
-			<value>10</value>
+			<value>#HTTP_MINQTP#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/AcceptorThread</name>
-			<value>1</value>
+			<value>#HTTP_ACCEPTORTHREAD#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/HostName</name>
-			<value>localhost</value>
+			<value>#HTTP_HOST#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/UserName</name>
-			<value>tibco_user</value>
+			<value>#JMS_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/maxSessions</name>
-			<value>1</value>
+			<value>#JMS_MAX_SESSIONS#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/Password</name>
-			<value>#!3E6Kpp5jVZze9xN6Y8vOtmKp/DK9/Cx9aco/QnpMxXsD3xA8+4LfrQlmqlljI2K+</value>
+			<value>#JMS_PASSWORD#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/redeliveryInterval</name>
-			<value>900000</value>
+			<value>#JMS_REDELIVERY_INTERVAL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/JNDIUrl</name>
-			<value>tcp://localhost:7222</value>
+			<value>#JMS_URL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/QCF</name>
-			<value>bu_qcf</value>
+			<value>#JMS_QCF#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/TCF</name>
-			<value>bu_tcf</value>
+			<value>#JMS_TCF#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/assetChangeQueueName</name>
-			<value>opr.inv.operationassetsinventory.assetchange.appian.v1.0.queue</value>
+			<value>#JMS_ASSETCHANGE_QUEUE#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/assetChangeTopicName</name>
-			<value>opr.inv.operationassetsinventory.assetchange.appian.v1.0.topic</value>
+			<value>#JMS_ASSETCHANGE_TOPIC#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/assetAdditionTopicName</name>
-			<value>opr.inv.operationassetsinventory.assetadd.appian.v1.0.topic</value>
+			<value>#JMS_ASSETADD_TOPIC#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/assetAdditionQueueName</name>
-			<value>opr.inv.operationassetsinventory.assetadd.appian.v1.0.queue</value>
+			<value>#JMS_ASSETADD_QUEUE#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/LoginTimeOut</name>
-			<value>10</value>
+			<value>#JDE_LOGIN_TIMEOUT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/MaxConnections</name>
-			<value>10</value>
+			<value>#JDE_MAXCONNECTION#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/maxRows</name>
-			<value>0</value>
+			<value>#JDE_MAXROWS#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/Password</name>
-			<value>#!aMtZ/Jmb1fAOuqbDc21G9DJ5oCSIaTBjzlQkxcVoZWo=</value>
+			<value>#JDE_PASSWD#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/UserName</name>
-			<value>svc_tibco</value>
+			<value>#JDE_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/procSchema</name>
-			<value>INTFACE</value>
+			<value>#JDE_SCHEMA#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/DatabaseURL</name>
-			<value>jdbc:sqlserver://10.32.106.193:1433;DatabaseName=JDE_CRP;</value>
+			<value>#JDE_DATABASEURL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/TimeOut</name>
-			<value>10</value>
+			<value>#JDE_TIMEOUT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
-			<value>Tibco</value>
+			<value>#APPIAN_AUTH_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/appianPort</name>
-			<value>443</value>
+			<value>#APPIAN_PORT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/maxTotalConPerHost</name>
-			<value>20</value>
+			<value>#APPIAN_CONN_PER_HOST#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/password</name>
-			<value>#!EAaHT5jXKi6NojpANCvpLB0J2sl0/g9JFwBHcu1+zQo8hGrOSp2OhsfdZEQU3Uyj</value>
+			<value>#APPIAN_AUTH_PASSWD#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/method</name>
-			<value>POST</value>
+			<value>#APPIAN_METHOD#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/idleConnectionTimeout</name>
-			<value>3000</value>
+			<value>#APPIAN_IDLE_CONN_TIMEOUT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/socketTimeout</name>
-			<value>0</value>
+			<value>#APPIAN_SOCKET_TIMEOUT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/appianEndpoint</name>
-			<value>/suite/webapi/esbcallback</value>
+			<value>#APPIAN_ENDPOINT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/maxTotalConnection</name>
-			<value>200</value>
+			<value>#APPIAN_MAX_TOTAL_CONN#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/connectionTimeout</name>
-			<value>0</value>
+			<value>#APPIAN_CONN_TIMEOUT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/appianHost</name>
-			<value>howardhughesdev.appiancloud.com</value>
+			<value>#APPIAN_HOST#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 	</globalVariables>
 </repository>

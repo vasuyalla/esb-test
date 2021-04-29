@@ -171,7 +171,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/JMS/assetAdditionTopicName</name>
-			<value>opr.inv.operationassetsinventory.appian.v1.0.topic</value>
+			<value>opr.inv.operationassetsinventory.assetadd.appian.v1.0.topic</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -179,7 +179,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/JMS/assetAdditionQueueName</name>
-			<value>opr.inv.operationassetsinventory.appian.v1.0.queue</value>
+			<value>opr.inv.operationassetsinventory.assetadd.appian.v1.0.queue</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
