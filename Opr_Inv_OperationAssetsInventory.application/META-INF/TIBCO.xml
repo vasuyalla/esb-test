@@ -324,6 +324,20 @@
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/StartTime</packaging:name>
+      <packaging:type>xsd:dateTime</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/TimeInterval</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
   </packaging:properties>
   <packaging:modules>
     <packaging:module>

@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="opr_inv_operationassetsinventory_assetaddition.x"
+    name="opr_inv_operationassetsinventory_assetaddition.AssetAddition"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20210427113502"
+    targetNamespace="http://xmlns.example.com/20210430172518"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
-    xmlns:ns="http://www.tibco.com/pe/EngineTypes"
-    xmlns:ns0="http://xmlns.example.com/20210427113502PLT"
+    xmlns:ns="http://xmlns.example.com/20210430172518PLT"
+    xmlns:ns0="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns1="http://www.tibco.com/pe/WriteToLogActivitySchema"
-    xmlns:ns2="activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType"
-    xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
-    xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input"
-    xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jms"
-    xmlns:ns6="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.send"
-    xmlns:ns7="http://tns.tibco.com/bw/json/1619506670629"
-    xmlns:ns8="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"
+    xmlns:ns10="activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType"
+    xmlns:ns11="http://www.tibco.com/namespaces/tnt/plugins/jms+de00909b-cc02-487b-a416-25eceb5f8102+input"
+    xmlns:ns12="http://www.tibco.com/namespaces/tnt/plugins/jms+de00909b-cc02-487b-a416-25eceb5f8102+output"
+    xmlns:ns13="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.requestreply"
+    xmlns:ns2="activity.jsonParser.input+92f58bb4-d34d-4d0a-9b49-0f07a9763656+ActivityInputType"
+    xmlns:ns3="http://tns.tibco.com/bw/json/1619506729905"
+    xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
+    xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input"
+    xmlns:ns6="http://www.tibco.com/namespaces/tnt/plugins/jms"
+    xmlns:ns7="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.send"
+    xmlns:ns8="http://tns.tibco.com/bw/json/1619506670629"
+    xmlns:ns9="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -198,17 +203,6 @@
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType">
-            <complexType name="ActivityInputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="jsonString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
-        </schema>
-        <schema elementFormDefault="unqualified"
             targetNamespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"
             xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions">
             <element name="JSONActivityException" type="tns:JSONActivityException"/>
@@ -261,9 +255,9 @@
         </schema>
         <xsd:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input"
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input"
             version="0.1"
-            xmlns="http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input"
+            xmlns="http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input"
             xmlns:Q1="http://tns.tibco.com/bw/json/1619506670629" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <xsd:import namespace="http://tns.tibco.com/bw/json/1619506670629"/>
             <xsd:complexType name="ActivityOutput">
@@ -692,18 +686,6 @@
             <element name="JMSSendException" type="tns:JMSSendExceptionType"/>
         </schema>
         <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser">
-            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JSONParserException"/>
-                </choice>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
             targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.send"
             xmlns="http://www.w3.org/2001/XMLSchema"
             xmlns:Q1="http://schemas.tibco.com/bw/plugins/jms/5.0/jmsExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jms.send">
@@ -721,40 +703,65 @@
                 </choice>
             </complexType>
         </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType">
+            <complexType name="ActivityInputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonParser">
+            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:JSONParserException"/>
+                </choice>
+            </complexType>
+        </schema>
         <wsdl:definitions
-            targetNamespace="http://xmlns.example.com/20210427113502PLT"
-            xmlns:custom="http://tns.tibco.com/bw/json/1619506670629"
-            xmlns:extns="http://tns.tibco.com/bw/REST"
-            xmlns:extns1="http://www.example.org/assetAdditionResponseSchema"
+            targetNamespace="http://xmlns.example.com/20210430172518PLT"
+            xmlns:extns="http://www.example.org/assetAdditionResponseSchema"
+            xmlns:extns1="http://tns.tibco.com/bw/REST"
+            xmlns:extns2="http://tns.tibco.com/bw/json/1619506670629"
+            xmlns:extns3="http://xmlns.example.com/AssetAddition/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-            xmlns:tns="http://xmlns.example.com/20210427113502PLT"
+            xmlns:tns="http://xmlns.example.com/20210430172518PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <plnk:partnerLinkType name="partnerLinkType">
-                <plnk:role name="use" portType="tns:assetaddition"/>
+                <plnk:role name="use" portType="tns:opr-inv-operationassetinventoryassetaddition"/>
             </plnk:partnerLinkType>
+            <wsdl:import namespace="http://www.example.org/assetAdditionResponseSchema"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/json/1619506670629"/>
-            <wsdl:import namespace="http://www.example.org/assetAdditionResponseSchema"/>
+            <wsdl:import namespace="http://xmlns.example.com/AssetAddition/parameters"/>
             <wsdl:message name="postRequest">
                 <wsdl:part name="item"
                     tibex:hasMultipleNamespaces="false" type="xsd:string"/>
-                <wsdl:part element="extns:httpHeaders"
+                <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="postResponse">
-                <wsdl:part element="extns1:assetAdditionResponseElement"
+                <wsdl:part element="extns:assetAdditionResponseElement"
                     name="item" tibex:hasMultipleNamespaces="false"/>
             </wsdl:message>
             <wsdl:message name="post4XXFaultMessage">
-                <wsdl:part element="extns:client4XXError" name="clientError"/>
+                <wsdl:part element="extns1:client4XXError" name="clientError"/>
             </wsdl:message>
             <wsdl:message name="post5XXFaultMessage">
-                <wsdl:part element="extns:server5XXError" name="serverError"/>
+                <wsdl:part element="extns1:server5XXError" name="serverError"/>
             </wsdl:message>
             <wsdl:message name="getRequest">
-                <wsdl:part element="extns:httpHeaders"
+                <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse">
@@ -762,15 +769,16 @@
                     tibex:hasMultipleNamespaces="false" type="xsd:string"/>
             </wsdl:message>
             <wsdl:message name="get4XXFaultMessage">
-                <wsdl:part element="extns:client4XXError" name="clientError"/>
+                <wsdl:part element="extns1:client4XXError" name="clientError"/>
             </wsdl:message>
             <wsdl:message name="get5XXFaultMessage">
-                <wsdl:part element="extns:server5XXError" name="serverError"/>
+                <wsdl:part element="extns1:server5XXError" name="serverError"/>
             </wsdl:message>
-            <wsdl:portType name="assetaddition"
-                tibex:bw.rest.apipath="/assetaddition"
+            <wsdl:portType
+                name="opr-inv-operationassetinventoryassetaddition"
+                tibex:bw.rest.apipath="/opr/inv/operationassetinventory/assetaddition"
                 tibex:bw.rest.basepath="AssetAddition"
-                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.x-AssetAddition.json"
+                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.AssetAddition-AssetAddition.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="post">
@@ -788,8 +796,8 @@
             </wsdl:portType>
         </wsdl:definitions>
     </tibex:Types>
-    <tibex:ProcessInfo callable="false" createdBy="kadambari_sontakke"
-        createdOn="Tue Apr 27 11:35:02 IST 2021" description=""
+    <tibex:ProcessInfo callable="false" createdBy="rohan_shinde"
+        createdOn="Fri Apr 30 17:25:18 IST 2021" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="2.4.5 V45 2019-07-18" scalable="true"
         singleton="true" stateless="true" type="IT"/>
@@ -799,9 +807,7 @@
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
         xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <children type="2001">
-            <children type="5001">
-                <element href="//0/@process"/>
-            </children>
+            <children type="5001"/>
             <children type="3001">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -810,12 +816,10 @@
             <children type="3002">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
-                <element href="//0/@process"/>
             </children>
             <children type="3003">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
-                <element href="//0/@process"/>
             </children>
             <children type="3004">
                 <children type="4018">
@@ -914,6 +918,7 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <children type="3013">
                                     <children type="4018">
@@ -977,8 +982,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="593"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="523"
+                                    xsi:type="notation:Bounds" y="65"/>
                                     </children>
 
                                     <children type="4002">
@@ -1031,8 +1036,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="16"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="45"
+                                    xsi:type="notation:Bounds" y="65"/>
                                     </children>
 
                                     <children type="4002">
@@ -1085,8 +1090,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
-                                    x="198"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="340"
+                                    xsi:type="notation:Bounds" y="65"/>
                                     </children>
 
                                     <children type="4002">
@@ -1139,8 +1144,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint
-                                    x="396"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="180"
+                                    xsi:type="notation:Bounds" y="65"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1148,6 +1153,8 @@
                                     <styles xsi:type="notation:SortingStyle"/>
 
                                     <styles xsi:type="notation:FilteringStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
                                     </children>
 
                                     <styles
@@ -1164,8 +1171,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="111"
-                                    width="744" xsi:type="notation:Bounds"/>
+                                    height="264"
+                                    width="745" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1184,12 +1191,13 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="111"
-                                    width="747"
+                                    height="263"
+                                    width="748"
                                     x="15" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -1199,11 +1207,12 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="135"
-                                    width="787" xsi:type="notation:Bounds"/>
+                                    height="287"
+                                    width="788" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <children type="3016">
                                     <children type="4002">
@@ -1249,6 +1258,7 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -1257,8 +1267,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="154"
-                                    width="849"
+                                    height="306"
+                                    width="850"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4011">
@@ -1306,6 +1316,7 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     </children>
                                     <children type="3013">
                                     <children type="4018">
@@ -1369,8 +1380,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="611"
-                                    xsi:type="notation:Bounds" y="21"/>
+                                    x="539"
+                                    xsi:type="notation:Bounds" y="27"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1378,6 +1389,8 @@
                                     <styles xsi:type="notation:SortingStyle"/>
 
                                     <styles xsi:type="notation:FilteringStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity"/>
                                     </children>
 
                                     <styles
@@ -1394,8 +1407,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="114"
-                                    width="744" xsi:type="notation:Bounds"/>
+                                    height="125"
+                                    width="745" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1414,12 +1427,14 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
                                     <layoutConstraint
-                                    height="170"
-                                    width="747"
-                                    x="15" xsi:type="notation:Bounds"/>
+                                    height="-45"
+                                    width="-76"
+                                    x="30"
+                                    xsi:type="notation:Bounds" y="20"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -1428,12 +1443,11 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
-                                    <layoutConstraint
-                                    height="254"
-                                    width="787" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     </children>
                                     <children type="3016">
                                     <children type="4002">
@@ -1479,6 +1493,7 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -1487,13 +1502,12 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     <layoutConstraint
-                                    height="179"
-                                    width="849"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="153"/>
+                                    height="140"
+                                    width="485" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     </children>
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
@@ -1501,7 +1515,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="363" width="868" xsi:type="notation:Bounds"/>
+                                    height="493" width="561" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1515,18 +1529,17 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="531"
-                                    width="878" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="503"
+                                    width="879" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
-                                <element href="//0/@process/@activity"/>
                             </children>
                             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="409" width="881" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="503" width="882" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -1546,7 +1559,6 @@
                                     <children type="3030">
                                     <children type="4005">
                                     <children type="3007">
-                                    <eAnnotations source="Pixel"/>
                                     <children type="4002">
                                     <children type="4017">
                                     <styles
@@ -1585,8 +1597,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="23"
-                                    xsi:type="notation:Bounds" y="35"/>
+                                    x="25"
+                                    xsi:type="notation:Bounds" y="51"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1626,8 +1638,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
-                                    x="311"
-                                    xsi:type="notation:Bounds" y="35"/>
+                                    x="215"
+                                    xsi:type="notation:Bounds" y="51"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1641,7 +1653,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    <layoutConstraint
+                                    height="170" width="781" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1669,7 +1682,6 @@
                                     <children type="3032">
                                     <children type="4005">
                                     <children type="3007">
-                                    <eAnnotations source="Pixel"/>
                                     <children type="4002">
                                     <children type="4017">
                                     <styles
@@ -1708,8 +1720,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="33"
-                                    xsi:type="notation:Bounds" y="45"/>
+                                    x="49"
+                                    xsi:type="notation:Bounds" y="52"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1749,8 +1761,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
-                                    x="321"
-                                    xsi:type="notation:Bounds" y="45"/>
+                                    x="239"
+                                    xsi:type="notation:Bounds" y="52"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1764,7 +1776,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    <layoutConstraint
+                                    height="169" width="781" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1783,8 +1796,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="380" width="841"
-                                x="22" xsi:type="notation:Bounds" y="1007"/>
+                            <layoutConstraint height="380" width="842"
+                                x="22" xsi:type="notation:Bounds" y="554"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1794,7 +1807,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="790" width="881" x="1"
+                    <layoutConstraint height="884" width="882" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1803,23 +1816,23 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="842" width="1223" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="936" width="1224" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, -9, -159, 0]$[160, 0, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -2, -187, 17]$[188, -17, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
@@ -1827,18 +1840,18 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, 0, -173, 0]$[174, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -77, 0]$[78, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, 0, -172, 0]$[173, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -162, 0]$[163, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
@@ -1849,7 +1862,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 8, -262, 0]$[263, 0, -24, -8]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.1/@children.1/@children.0/@children.0/@children.0"
@@ -1860,62 +1873,55 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 8, -262, 0]$[263, 0, -24, -8]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns"/>
+            namespace="http://tns.tibco.com/bw/json/1619506729905" prefix="tns4"/>
         <tibex:namespaceItem
-            namespace="activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType" prefix="tns1"/>
+            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns8"/>
         <tibex:namespaceItem
-            namespace="http://xmlns.example.com/20210427113502PLT" prefix="tns2"/>
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://tns.tibco.com/bw/json/1619506670629" prefix="tns"/>
+        <tibex:namespaceItem
+            namespace="http://xmlns.example.com/20210430172518PLT" prefix="tns1"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xpath/bw-custom-functions" prefix="bw"/>
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input" prefix="tns3"/>
-        <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
-        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns8"/>
-        <tibex:namespaceItem
-            namespace="http://tns.tibco.com/bw/json/1619506670629" prefix="tns4"/>
-        <tibex:namespaceItem
-            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+            namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.example.org/assetAdditionResponseSchema" prefix="tns5"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType" prefix="tns6"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jms+de00909b-cc02-487b-a416-25eceb5f8102+input" prefix="tns7"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetAdditionResponseSchema"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1619506670629"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/AssetAddition/parameters"/>
     <bpws:partnerLinks>
-        <bpws:partnerLink myRole="use" name="assetaddition"
-            partnerLinkType="ns0:partnerLinkType"
-            sca-bpel:ignore="false" sca-bpel:service="assetaddition"/>
+        <bpws:partnerLink myRole="use"
+            name="opr-inv-operationassetinventoryassetaddition"
+            partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="opr-inv-operationassetinventoryassetaddition"/>
     </bpws:partnerLinks>
     <bpws:variables>
-        <bpws:variable element="ns:ProcessContext"
+        <bpws:variable element="ns0:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postRequest" name="post" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postResponse"
+        <bpws:variable messageType="ns:postRequest" name="post" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns:postResponse"
             name="postOut-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:getRequest" name="get" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:getResponse" name="getOut-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:ActivityInputClass"
-            name="ParseJSON-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:assetAdditionSchemaElement"
-            name="ParseJSON" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_ParseJSON" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:ActivityInput"
-            name="PublishAppian-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:aEmptyOutputClass"
-            name="PublishAppian" sca-bpel:internal="true"/>
-        <bpws:variable element="ns6:ActivityErrorData"
-            name="_error_PublishAppian" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns:getRequest" name="get" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns:getResponse" name="getOut-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ActivityInput"
+            name="LogRequest-input" sca-bpel:internal="true"/>
         <bpws:variable name="jmsConnection" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/bw/models/sharedresource/jms}JMSConnectionFactory" type="xsd:string">
@@ -1923,25 +1929,32 @@
                 <bpws:literal>opr_inv_operationassetsinventory.JMS_CallAppian_ConnectionResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
+        <bpws:variable element="ns5:ActivityInput"
+            name="PublishAppianReq-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns6:aEmptyOutputClass"
+            name="PublishAppianReq" sca-bpel:internal="true"/>
+        <bpws:variable element="ns7:ActivityErrorData"
+            name="_error_PublishAppianReq" sca-bpel:internal="true"/>
         <bpws:variable name="assetAdditionTopicName"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
             tibex:propertySource="/JMS/assetAdditionTopicName" type="xsd:string"/>
+        <bpws:variable element="ns0:ErrorReport" name="_error" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ActivityInputClass"
+            name="ParseRequest-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:assetAdditionSchemaElement"
+            name="ParseRequest" sca-bpel:internal="true"/>
+        <bpws:variable element="ns4:ActivityErrorData"
+            name="_error_ParseRequest" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
-        <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ActivityInput"
-            name="Copy_1_Log1-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postResponse"
-            name="ReplyFault-input" sca-bpel:internal="true"/>
-        <bpws:variable name="FaultName1" sca-bpel:internal="true" type="xsd:string"/>
-        <bpws:variable element="ns:FaultDetail" name="FaultDetails1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityInput"
             name="ParseException-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postResponse" name="Reply-input" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns:postResponse" name="Reply-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityInput"
             name="ExceptionLog-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns0:postResponse"
-            name="ReplyFault-input1" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns:postResponse"
+            name="ReplyFault-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1953,25 +1966,25 @@
     </bpws:extensions>
     <bpws:scope name="scope">
         <bpws:faultHandlers>
-            <bpws:catch faultElement="ns8:JSONParserException"
-                faultName="ns8:JSONParserException"
-                faultVariable="JSONParserException" tibex:xpdlId="5529ec3a-b958-41c2-b59e-e96445943748">
-                <bpws:scope name="scope5">
-                    <bpws:flow name="flow5">
+            <bpws:catch faultElement="ns9:JSONParserException"
+                faultName="ns9:JSONParserException"
+                faultVariable="JSONParserException" tibex:xpdlId="78c82f8e-f80a-4eba-8a31-f9d2ab71b4c1">
+                <bpws:scope name="scope3">
+                    <bpws:flow name="flow3">
                         <bpws:links>
-                            <bpws:link name="Log1ToReply2" tibex:linkType="SUCCESS"/>
+                            <bpws:link name="LogToReply" tibex:linkType="SUCCESS"/>
                         </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:activityExtension
                                 inputVariable="ParseException-input"
                                 name="ParseException"
-                                tibex:xpdlId="0af8f822-2806-4a3a-a594-0fd5719b66da" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                tibex:xpdlId="5a97a380-8868-4a49-99d6-d4643ef0cf48" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <bpws:sources>
-                                    <bpws:source linkName="Log1ToReply2"/>
+                                    <bpws:source linkName="LogToReply"/>
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JSONParserException&quot;/>&lt;xsl:template name=&quot;ParseException-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;$JSONParserException&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JSONParserException&quot;/>&lt;xsl:template name=&quot;ParseException-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($JSONParserException,true())&quot;/>&lt;/message>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -1992,57 +2005,40 @@
                             </tibex:activityExtension>
                         </bpws:extensionActivity>
                         <bpws:reply name="Reply" operation="post"
-                            partnerLink="assetaddition"
-                            portType="ns0:assetaddition"
-                            tibex:xpdlId="964f7e42-1942-4c2e-881c-e05a29215869" variable="Reply-input">
+                            partnerLink="opr-inv-operationassetinventoryassetaddition"
+                            portType="ns:opr-inv-operationassetinventoryassetaddition"
+                            tibex:xpdlId="1e297608-06d8-495a-8cf5-19903568486b" variable="Reply-input">
+                            <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210430172518PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;&lt;xsl:template name="Reply-input" match="/"&gt;&lt;tns1:postResponse&gt;&lt;item&gt;&lt;tns5:assetAdditionResponseElement&gt;&lt;tns5:Status&gt;&lt;tns5:statusCode&gt;&lt;xsl:value-of select="400"/&gt;&lt;/tns5:statusCode&gt;&lt;tns5:statusMessage&gt;&lt;xsl:value-of select="&amp;quot;Bad Request&amp;quot;"/&gt;&lt;/tns5:statusMessage&gt;&lt;/tns5:Status&gt;&lt;/tns5:assetAdditionResponseElement&gt;&lt;/item&gt;&lt;/tns1:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             <tibex:inputBindings>
                                 <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210427113502PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;400&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Bad Request&amp;quot;&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210430172518PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;Reply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;400&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Bad Request&amp;quot;&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                             </tibex:inputBindings>
-                            <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210427113502PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;
-    &lt;xsl:template name="Reply-input" match="/"&gt;
-        &lt;tns2:postResponse&gt;
-            &lt;item&gt;
-                &lt;tns5:assetAdditionResponseElement&gt;
-                    &lt;tns5:Status&gt;
-                        &lt;tns5:statusCode&gt;
-                            &lt;xsl:value-of select="400"/&gt;
-                        &lt;/tns5:statusCode&gt;
-                        &lt;tns5:statusMessage&gt;
-                            &lt;xsl:value-of select="&amp;quot;Bad Request&amp;quot;"/&gt;
-                        &lt;/tns5:statusMessage&gt;
-                    &lt;/tns5:Status&gt;
-                &lt;/tns5:assetAdditionResponseElement&gt;
-            &lt;/item&gt;
-        &lt;/tns2:postResponse&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             <bpws:targets>
-                                <bpws:target linkName="Log1ToReply2"/>
+                                <bpws:target linkName="LogToReply"/>
                             </bpws:targets>
                         </bpws:reply>
                     </bpws:flow>
                 </bpws:scope>
             </bpws:catch>
-            <bpws:catchAll tibex:faultDetailsVar="FaultDetails1"
-                tibex:faultNameVar="FaultName1" tibex:xpdlId="c711c166-944a-414d-8fd6-35dd55bc1680">
-                <bpws:scope name="scope6">
-                    <bpws:flow name="flow6">
+            <bpws:catchAll tibex:faultDetailsVar="FaultDetails"
+                tibex:faultNameVar="FaultName" tibex:xpdlId="a9a8c547-7fc1-4f82-af81-1e254181eb52">
+                <bpws:scope name="scope4">
+                    <bpws:flow name="flow4">
                         <bpws:links>
-                            <bpws:link name="Log1ToReply11" tibex:linkType="SUCCESS"/>
+                            <bpws:link name="Log1ToReply1" tibex:linkType="SUCCESS"/>
                         </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:activityExtension
                                 inputVariable="ExceptionLog-input"
                                 name="ExceptionLog"
-                                tibex:xpdlId="7b3bc75c-e8d4-4e75-8646-93f9427f100c" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                tibex:xpdlId="02604c2d-c07b-49fc-be1b-9fdfb6d898db" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <bpws:sources>
-                                    <bpws:source linkName="Log1ToReply11"/>
+                                    <bpws:source linkName="Log1ToReply1"/>
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails1&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails1)&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails,true())&quot;/>&lt;/message>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -2063,17 +2059,17 @@
                             </tibex:activityExtension>
                         </bpws:extensionActivity>
                         <bpws:reply name="ReplyFault" operation="post"
-                            partnerLink="assetaddition"
-                            portType="ns0:assetaddition"
-                            tibex:xpdlId="79579c4f-0cfd-4b9f-9b70-74122e4ec1b7" variable="ReplyFault-input1">
+                            partnerLink="opr-inv-operationassetinventoryassetaddition"
+                            portType="ns:opr-inv-operationassetinventoryassetaddition"
+                            tibex:xpdlId="ee64ef97-5aa8-48d4-9107-f65f9fc316f0" variable="ReplyFault-input">
+                            <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210430172518PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;&lt;xsl:param name="FaultDetails"/&gt;&lt;xsl:template name="ReplyFault-input" match="/"&gt;&lt;tns1:postResponse&gt;&lt;item&gt;&lt;tns5:assetAdditionResponseElement&gt;&lt;tns5:Status&gt;&lt;tns5:statusCode&gt;&lt;xsl:value-of select="500"/&gt;&lt;/tns5:statusCode&gt;&lt;tns5:statusMessage&gt;&lt;xsl:value-of select="concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)"/&gt;&lt;/tns5:statusMessage&gt;&lt;/tns5:Status&gt;&lt;/tns5:assetAdditionResponseElement&gt;&lt;/item&gt;&lt;/tns1:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             <tibex:inputBindings>
                                 <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210427113502PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;FaultDetails1&quot;/>&#xa;    &lt;xsl:template name=&quot;ReplyFault-input1&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;500&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails1/Msg)&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210430172518PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;FaultDetails&quot;/>&#xa;    &lt;xsl:template name=&quot;ReplyFault-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;500&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                             </tibex:inputBindings>
-                            <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210427113502PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;&lt;xsl:param name="FaultDetails1"/&gt;&lt;xsl:template name="ReplyFault-input1" match="/"&gt;&lt;tns2:postResponse&gt;&lt;item&gt;&lt;tns5:assetAdditionResponseElement&gt;&lt;tns5:Status&gt;&lt;tns5:statusCode&gt;&lt;xsl:value-of select="500"/&gt;&lt;/tns5:statusCode&gt;&lt;tns5:statusMessage&gt;&lt;xsl:value-of select="concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails1/Msg)"/&gt;&lt;/tns5:statusMessage&gt;&lt;/tns5:Status&gt;&lt;/tns5:assetAdditionResponseElement&gt;&lt;/item&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             <bpws:targets>
-                                <bpws:target linkName="Log1ToReply11"/>
+                                <bpws:target linkName="Log1ToReply1"/>
                             </bpws:targets>
                         </bpws:reply>
                     </bpws:flow>
@@ -2082,36 +2078,36 @@
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links/>
-            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="282e6265-3c2c-4a08-9346-c20c746a2778">
+            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="a8333363-f07a-41fe-8f61-8a8bb7a5f02f">
                 <bpws:onMessage operation="post"
-                    partnerLink="assetaddition"
-                    portType="ns0:assetaddition"
-                    tibex:xpdlId="23176d51-3cc6-47d0-bcb1-db602a102079" variable="post">
+                    partnerLink="opr-inv-operationassetinventoryassetaddition"
+                    portType="ns:opr-inv-operationassetinventoryassetaddition"
+                    tibex:xpdlId="fa3228d2-782a-4d6b-895b-67a73b01a9ff" variable="post">
                     <bpws:scope name="scope1">
                         <bpws:flow name="flow1">
                             <bpws:links>
-                                <bpws:link name="LogToParseJSON" tibex:linkType="SUCCESS"/>
                                 <bpws:link
-                                    name="ParseJSONToJMSSendMessage" tibex:linkType="SUCCESS"/>
+                                    name="PublishAppianReqTopostOut" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="LogRequestToParseJSON" tibex:linkType="SUCCESS"/>
                                 <bpws:link
-                                    name="JMSSendMessageTopostOut" tibex:linkType="SUCCESS"/>
+                                    name="ParseJSONToPublishAppianReq" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="8cd0b306-e59a-40dd-a6bd-bfe0e6cccdbb"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="84f084d7-f50d-4e84-9199-76c52ab9b40e"/>
                             <bpws:empty name="OnMessageEnd"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="05e82651-934d-453e-bc99-96ce2a0ce961"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="649b24be-40b8-42b9-8528-46df7d79e72d"/>
                             <bpws:reply name="postOut" operation="post"
-                                partnerLink="assetaddition"
-                                portType="ns0:assetaddition"
-                                tibex:xpdlId="743b3504-b6ba-412e-bd6d-05480fcac972" variable="postOut-input">
+                                partnerLink="opr-inv-operationassetinventoryassetaddition"
+                                portType="ns:opr-inv-operationassetinventoryassetaddition"
+                                tibex:xpdlId="71cab843-130f-4063-8a7b-55bbce909383" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210427113502PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;200&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210430172518PLT&quot; xmlns:tns5=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:assetAdditionResponseElement>&#xa;            &lt;tns5:Status>&#xa;                &lt;tns5:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;200&quot;/>&#xa;                &lt;/tns5:statusCode>&#xa;                &lt;tns5:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&#xa;                &lt;/tns5:statusMessage>&#xa;            &lt;/tns5:Status>&#xa;        &lt;/tns5:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210427113502PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210430172518PLT" xmlns:tns5="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;
     &lt;xsl:template name="postOut-input" match="/"&gt;
-        &lt;tns2:postResponse&gt;
+        &lt;tns1:postResponse&gt;
             &lt;item&gt;
                 &lt;tns5:assetAdditionResponseElement&gt;
                     &lt;tns5:Status&gt;
@@ -2124,25 +2120,26 @@
                     &lt;/tns5:Status&gt;
                 &lt;/tns5:assetAdditionResponseElement&gt;
             &lt;/item&gt;
-        &lt;/tns2:postResponse&gt;
+        &lt;/tns1:postResponse&gt;
     &lt;/xsl:template&gt;
 &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
-                                    <bpws:target linkName="JMSSendMessageTopostOut"/>
+                                    <bpws:target linkName="PublishAppianReqTopostOut"/>
                                 </bpws:targets>
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;$post/item&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post&quot;/>&#xa;    &lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;$post/item&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns2:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="Log-input" name="Log"
-                                    tibex:xpdlId="5953773e-4878-498b-a505-6ca81f78eef6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    inputVariable="LogRequest-input"
+                                    name="LogRequest"
+                                    tibex:xpdlId="2c0039ab-3463-4398-a699-cea86ff0f1f4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>
-                                    <bpws:source linkName="LogToParseJSON"/>
+                                    <bpws:source linkName="LogRequestToParseJSON"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;$post.item&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;$post.item&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns2:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2165,61 +2162,21 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInputClass>&lt;jsonString>&lt;xsl:value-of select=&quot;$post/item&quot;/>&lt;/jsonString>&lt;/tns1:ActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseRequest&quot;/>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;PublishAppianReq-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;Body>&lt;tns:assetAdditionSchemaElement>&lt;xsl:if test=&quot;$ParseRequest/tns:requestId&quot;>&lt;tns:requestId>&lt;xsl:copy-of select=&quot;$ParseRequest/tns:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ParseRequest/tns:requestId&quot;/>&lt;/tns:requestId>&lt;/xsl:if>&lt;tns:correlationid>&lt;xsl:value-of select=&quot;substring(tib:trim($post/httpHeaders/tns8:httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value),1,20)&quot;/>&lt;/tns:correlationid>&lt;xsl:for-each select=&quot;$ParseRequest/tns:addAssets&quot;>&lt;tns:addAssets>&lt;xsl:if test=&quot;tns:additionAssetId&quot;>&lt;tns:additionAssetId>&lt;xsl:copy-of select=&quot;tns:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:additionAssetId&quot;/>&lt;/tns:additionAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:companyId&quot;>&lt;tns:companyId>&lt;xsl:copy-of select=&quot;tns:companyId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:companyId&quot;/>&lt;/tns:companyId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:businessUnit&quot;>&lt;tns:businessUnit>&lt;xsl:copy-of select=&quot;tns:businessUnit/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:businessUnit&quot;/>&lt;/tns:businessUnit>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:assetDesc&quot;>&lt;tns:assetDesc>&lt;xsl:copy-of select=&quot;tns:assetDesc/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:assetDesc&quot;/>&lt;/tns:assetDesc>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:objectAccount&quot;>&lt;tns:objectAccount>&lt;xsl:copy-of select=&quot;tns:objectAccount/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:objectAccount&quot;/>&lt;/tns:objectAccount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:subsidiary&quot;>&lt;tns:subsidiary>&lt;xsl:copy-of select=&quot;tns:subsidiary/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:subsidiary&quot;/>&lt;/tns:subsidiary>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:assetType&quot;>&lt;tns:assetType>&lt;xsl:copy-of select=&quot;tns:assetType/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:assetType&quot;/>&lt;/tns:assetType>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:suite&quot;>&lt;tns:suite>&lt;xsl:copy-of select=&quot;tns:suite/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:suite&quot;/>&lt;/tns:suite>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:lifeInMonths&quot;>&lt;tns:lifeInMonths>&lt;xsl:copy-of select=&quot;tns:lifeInMonths/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:lifeInMonths&quot;/>&lt;/tns:lifeInMonths>&lt;/xsl:if>&lt;xsl:if test=&quot;tns:startDepreciationDate&quot;>&lt;tns:startDepreciationDate>&lt;xsl:copy-of select=&quot;tns:startDepreciationDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns:startDepreciationDate&quot;/>&lt;/tns:startDepreciationDate>&lt;/xsl:if>&lt;/tns:addAssets>&lt;/xsl:for-each>&lt;/tns:assetAdditionSchemaElement>&lt;/Body>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="ParseJSON-input"
-                                    name="ParseJSON"
-                                    outputVariable="ParseJSON"
-                                    tibex:xpdlId="849f8bbc-9328-4f95-b948-b5b112e1bfae" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    inputVariable="PublishAppianReq-input"
+                                    name="PublishAppianReq"
+                                    outputVariable="PublishAppianReq"
+                                    tibex:xpdlId="69c3d5f7-dc15-4d91-a2cb-61903c1e9439" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="LogToParseJSON"/>
+                                    <bpws:target linkName="ParseJSONToPublishAppianReq"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="ParseJSONToJMSSendMessage"/>
+                                    <bpws:source linkName="PublishAppianReqTopostOut"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+849f8bbc-9328-4f95-b948-b5b112e1bfae+ActivityInputType&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInputClass>&#xa;            &lt;jsonString>&#xa;                &lt;xsl:value-of select=&quot;$post.item&quot;/>&#xa;            &lt;/jsonString>&#xa;        &lt;/tns1:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.restjson.JsonParser"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
-                                    <value
-                                    jsonInputStyle="None"
-                                    schemaType="Xsd" xsi:type="restjson:JsonParser">
-
-                                    <outputEditorElement href="platform:/resource/Opr_Inv_OperationAssetsInventory/Schemas/assetAdditionRequestSchema.xsd#//assetAdditionSchemaElement;XSDElementDeclaration"/>
-                                    </value>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                </tibex:activityExtension>
-                            </bpws:extensionActivity>
-                            <bpws:extensionActivity>
-                                <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input&quot; xmlns:tns4=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;PublishAppian-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;Body>&lt;tns4:assetAdditionSchemaElement>&lt;xsl:if test=&quot;$ParseJSON/tns4:requestId&quot;>&lt;tns4:requestId>&lt;xsl:copy-of select=&quot;$ParseJSON/tns4:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$ParseJSON/tns4:requestId&quot;/>&lt;/tns4:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;$post/httpHeaders/tns8:httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value&quot;>&lt;tns4:correlationid>&lt;xsl:value-of select=&quot;$post/httpHeaders/tns8:httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value&quot;/>&lt;/tns4:correlationid>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$ParseJSON/tns4:addAssets&quot;>&lt;tns4:addAssets>&lt;xsl:if test=&quot;tns4:additionAssetId&quot;>&lt;tns4:additionAssetId>&lt;xsl:copy-of select=&quot;tns4:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:additionAssetId&quot;/>&lt;/tns4:additionAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:companyId&quot;>&lt;tns4:companyId>&lt;xsl:copy-of select=&quot;tns4:companyId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:companyId&quot;/>&lt;/tns4:companyId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:businessUnit&quot;>&lt;tns4:businessUnit>&lt;xsl:copy-of select=&quot;tns4:businessUnit/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:businessUnit&quot;/>&lt;/tns4:businessUnit>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:assetDesc&quot;>&lt;tns4:assetDesc>&lt;xsl:copy-of select=&quot;tns4:assetDesc/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:assetDesc&quot;/>&lt;/tns4:assetDesc>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:objectAccount&quot;>&lt;tns4:objectAccount>&lt;xsl:copy-of select=&quot;tns4:objectAccount/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:objectAccount&quot;/>&lt;/tns4:objectAccount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:subsidiary&quot;>&lt;tns4:subsidiary>&lt;xsl:copy-of select=&quot;tns4:subsidiary/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:subsidiary&quot;/>&lt;/tns4:subsidiary>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:assetType&quot;>&lt;tns4:assetType>&lt;xsl:copy-of select=&quot;tns4:assetType/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:assetType&quot;/>&lt;/tns4:assetType>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:suite&quot;>&lt;tns4:suite>&lt;xsl:copy-of select=&quot;tns4:suite/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:suite&quot;/>&lt;/tns4:suite>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:lifeInMonths&quot;>&lt;tns4:lifeInMonths>&lt;xsl:copy-of select=&quot;tns4:lifeInMonths/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:lifeInMonths&quot;/>&lt;/tns4:lifeInMonths>&lt;/xsl:if>&lt;xsl:if test=&quot;tns4:startDepreciationDate&quot;>&lt;tns4:startDepreciationDate>&lt;xsl:copy-of select=&quot;tns4:startDepreciationDate/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns4:startDepreciationDate&quot;/>&lt;/tns4:startDepreciationDate>&lt;/xsl:if>&lt;/tns4:addAssets>&lt;/xsl:for-each>&lt;/tns4:assetAdditionSchemaElement>&lt;/Body>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="PublishAppian-input"
-                                    name="PublishAppian"
-                                    outputVariable="PublishAppian"
-                                    tibex:xpdlId="188b6a1c-bab2-4000-956d-4f50b6ac074c" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="ParseJSONToJMSSendMessage"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="JMSSendMessageTopostOut"/>
-                                    </bpws:sources>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+188b6a1c-bab2-4000-956d-4f50b6ac074c+input&quot; xmlns:tns4=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;PublishAppian-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:ActivityInput>&#xa;            &lt;Body>&#xa;                &lt;tns4:assetAdditionSchemaElement>&#xa;                    &lt;xsl:if test=&quot;$ParseJSON/tns4:requestId&quot;>&#xa;                        &lt;tns4:requestId>&#xa;                            &lt;xsl:copy-of select=&quot;$ParseJSON/tns4:requestId/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;$ParseJSON/tns4:requestId&quot;/>&#xa;                        &lt;/tns4:requestId>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;$post.httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value&quot;>&#xa;                        &lt;tns4:correlationid>&#xa;                            &lt;xsl:value-of select=&quot;$post.httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value&quot;/>&#xa;                        &lt;/tns4:correlationid>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:for-each select=&quot;$ParseJSON/tns4:addAssets&quot;>&#xa;                        &lt;tns4:addAssets>&#xa;                            &lt;xsl:if test=&quot;tns4:additionAssetId&quot;>&#xa;                                &lt;tns4:additionAssetId>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:additionAssetId/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:additionAssetId&quot;/>&#xa;                                &lt;/tns4:additionAssetId>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:companyId&quot;>&#xa;                                &lt;tns4:companyId>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:companyId/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:companyId&quot;/>&#xa;                                &lt;/tns4:companyId>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:businessUnit&quot;>&#xa;                                &lt;tns4:businessUnit>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:businessUnit/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:businessUnit&quot;/>&#xa;                                &lt;/tns4:businessUnit>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:assetDesc&quot;>&#xa;                                &lt;tns4:assetDesc>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:assetDesc/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:assetDesc&quot;/>&#xa;                                &lt;/tns4:assetDesc>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:objectAccount&quot;>&#xa;                                &lt;tns4:objectAccount>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:objectAccount/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:objectAccount&quot;/>&#xa;                                &lt;/tns4:objectAccount>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:subsidiary&quot;>&#xa;                                &lt;tns4:subsidiary>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:subsidiary/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:subsidiary&quot;/>&#xa;                                &lt;/tns4:subsidiary>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:assetType&quot;>&#xa;                                &lt;tns4:assetType>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:assetType/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:assetType&quot;/>&#xa;                                &lt;/tns4:assetType>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:suite&quot;>&#xa;                                &lt;tns4:suite>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:suite/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:suite&quot;/>&#xa;                                &lt;/tns4:suite>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:lifeInMonths&quot;>&#xa;                                &lt;tns4:lifeInMonths>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:lifeInMonths/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:lifeInMonths&quot;/>&#xa;                                &lt;/tns4:lifeInMonths>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns4:startDepreciationDate&quot;>&#xa;                                &lt;tns4:startDepreciationDate>&#xa;                                    &lt;xsl:copy-of select=&quot;tns4:startDepreciationDate/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns4:startDepreciationDate&quot;/>&#xa;                                &lt;/tns4:startDepreciationDate>&#xa;                            &lt;/xsl:if>&#xa;                        &lt;/tns4:addAssets>&#xa;                    &lt;/xsl:for-each>&#xa;                &lt;/tns4:assetAdditionSchemaElement>&#xa;            &lt;/Body>&#xa;        &lt;/tns3:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms+69c3d5f7-dc15-4d91-a2cb-61903c1e9439+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:tns8=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.httpHeaders&quot;/>&#xa;    &lt;xsl:param name=&quot;ParseRequest&quot;/>&#xa;    &lt;xsl:template name=&quot;PublishAppianReq-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:ActivityInput>&#xa;            &lt;Body>&#xa;                &lt;tns:assetAdditionSchemaElement>&#xa;                    &lt;xsl:if test=&quot;$ParseRequest/tns:requestId&quot;>&#xa;                        &lt;tns:requestId>&#xa;                            &lt;xsl:copy-of select=&quot;$ParseRequest/tns:requestId/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;$ParseRequest/tns:requestId&quot;/>&#xa;                        &lt;/tns:requestId>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;tns:correlationid>&#xa;                        &lt;xsl:value-of select=&quot;substring(tib:trim($post.httpHeaders/DynamicHeaders/Header[lower-case(Name)='correlationid']/Value),1,20)&quot;/>&#xa;                    &lt;/tns:correlationid>&#xa;                    &lt;xsl:for-each select=&quot;$ParseRequest/tns:addAssets&quot;>&#xa;                        &lt;tns:addAssets>&#xa;                            &lt;xsl:if test=&quot;tns:additionAssetId&quot;>&#xa;                                &lt;tns:additionAssetId>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:additionAssetId/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:additionAssetId&quot;/>&#xa;                                &lt;/tns:additionAssetId>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:companyId&quot;>&#xa;                                &lt;tns:companyId>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:companyId/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:companyId&quot;/>&#xa;                                &lt;/tns:companyId>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:businessUnit&quot;>&#xa;                                &lt;tns:businessUnit>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:businessUnit/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:businessUnit&quot;/>&#xa;                                &lt;/tns:businessUnit>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:assetDesc&quot;>&#xa;                                &lt;tns:assetDesc>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:assetDesc/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:assetDesc&quot;/>&#xa;                                &lt;/tns:assetDesc>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:objectAccount&quot;>&#xa;                                &lt;tns:objectAccount>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:objectAccount/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:objectAccount&quot;/>&#xa;                                &lt;/tns:objectAccount>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:subsidiary&quot;>&#xa;                                &lt;tns:subsidiary>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:subsidiary/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:subsidiary&quot;/>&#xa;                                &lt;/tns:subsidiary>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:assetType&quot;>&#xa;                                &lt;tns:assetType>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:assetType/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:assetType&quot;/>&#xa;                                &lt;/tns:assetType>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:suite&quot;>&#xa;                                &lt;tns:suite>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:suite/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:suite&quot;/>&#xa;                                &lt;/tns:suite>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:lifeInMonths&quot;>&#xa;                                &lt;tns:lifeInMonths>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:lifeInMonths/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:lifeInMonths&quot;/>&#xa;                                &lt;/tns:lifeInMonths>&#xa;                            &lt;/xsl:if>&#xa;                            &lt;xsl:if test=&quot;tns:startDepreciationDate&quot;>&#xa;                                &lt;tns:startDepreciationDate>&#xa;                                    &lt;xsl:copy-of select=&quot;tns:startDepreciationDate/@xsi:nil&quot;/>&#xa;                                    &lt;xsl:value-of select=&quot;tns:startDepreciationDate&quot;/>&#xa;                                &lt;/tns:startDepreciationDate>&#xa;                            &lt;/xsl:if>&#xa;                        &lt;/tns:addAssets>&#xa;                    &lt;/xsl:for-each>&#xa;                &lt;/tns:assetAdditionSchemaElement>&#xa;            &lt;/Body>&#xa;        &lt;/tns3:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2248,30 +2205,70 @@
                                     </tibex:config>
                                 </tibex:activityExtension>
                             </bpws:extensionActivity>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;ParseRequest-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInputClass>&lt;jsonString>&lt;xsl:value-of select=&quot;$post/item&quot;/>&lt;/jsonString>&lt;/tns6:ActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="ParseRequest-input"
+                                    name="ParseRequest"
+                                    outputVariable="ParseRequest"
+                                    tibex:xpdlId="109ff5d7-6234-4a76-8c8c-7e5cd53080a2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="LogRequestToParseJSON"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="ParseJSONToPublishAppianReq"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;activity.jsonParser.input+109ff5d7-6234-4a76-8c8c-7e5cd53080a2+ActivityInputType&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseRequest-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInputClass>&#xa;            &lt;jsonString>&#xa;                &lt;xsl:value-of select=&quot;$post.item&quot;/>&#xa;            &lt;/jsonString>&#xa;        &lt;/tns6:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.restjson.JsonParser"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
+                                    <value
+                                    jsonInputStyle="None"
+                                    schemaType="Xsd" xsi:type="restjson:JsonParser">
+
+                                    <outputEditorElement href="platform:/resource/Opr_Inv_OperationAssetsInventory/Schemas/assetAdditionRequestSchema.xsd#//assetAdditionSchemaElement;XSDElementDeclaration"/>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
                 <bpws:onMessage operation="get"
-                    partnerLink="assetaddition"
-                    portType="ns0:assetaddition"
-                    tibex:xpdlId="c8062b70-3c6b-4b54-b69c-ce3ee93fc52e" variable="get">
+                    partnerLink="opr-inv-operationassetinventoryassetaddition"
+                    portType="ns:opr-inv-operationassetinventoryassetaddition"
+                    tibex:xpdlId="234b2a89-753f-445f-8aa0-bd069e269505" variable="get">
                     <bpws:scope name="scope2">
                         <bpws:flow name="flow2">
                             <bpws:links/>
                             <bpws:empty name="OnMessageStart1"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="04b290d2-ec33-4ca5-a523-8c80a8a7e82a"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="c8c4446d-ec54-4278-9e29-068a974c3ba9"/>
                             <bpws:empty name="OnMessageEnd1"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="627c9b8c-46b7-4ccb-85c7-88e01f261b05"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="7484094d-22c0-4df0-9e3e-df9346885666"/>
                             <bpws:reply name="getOut" operation="get"
-                                partnerLink="assetaddition"
-                                portType="ns0:assetaddition"
-                                tibex:xpdlId="c02d94e7-1216-4b5c-aeb3-b3934b82ccff" variable="getOut-input">
+                                partnerLink="opr-inv-operationassetinventoryassetaddition"
+                                portType="ns:opr-inv-operationassetinventoryassetaddition"
+                                tibex:xpdlId="1de3dc08-564a-4b0e-a015-5aaf3da23a40" variable="getOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210427113502PLT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210430172518PLT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210427113502PLT" xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns2:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))"/&gt;&lt;/item&gt;&lt;/tns2:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210430172518PLT" xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns1:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))"/&gt;&lt;/item&gt;&lt;/tns1:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>

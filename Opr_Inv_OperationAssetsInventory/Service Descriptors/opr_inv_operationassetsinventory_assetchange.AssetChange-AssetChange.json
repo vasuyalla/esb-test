@@ -9,7 +9,7 @@
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/assetchange" : {
+    "/opr/inv/operationassetinventory/assetchange" : {
       "post" : {
         "summary" : "",
         "description" : "",

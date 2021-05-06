@@ -2404,6 +2404,18 @@
             <bendpoints
                 points="[25, 18, -165, -121]$[166, 121, -24, -18]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints
+                points="[0, 25, -1396, 153]$[0, 245, -1396, 373]$[698, 245, -698, 373]$[698, 288, -698, 416]$[1396, 288, 0, 416]$[1396, -103, 0, 25]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -2528,7 +2540,7 @@
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;LogException-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails)&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;LogException-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails,true())&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -2559,12 +2571,14 @@
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToRepeatOnError" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToRepeatOnError_X12"
+                    tibex:label="1=2" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="AssetChange_Pre_CallBackAppianToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="RepeatOnErrorToRepeatOnError1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="RepeatOnSPErrorToParseXml" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseSpDataToEmpty1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="Empty1ToAssetChange_Pre_CallBackAppian" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToAssetChange_Pre_CallBackAppian" tibex:linkType="SUCCESSWITHNOCONDITION"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -2572,7 +2586,19 @@
                     tibex:xpdlId="773bb0e7-ea87-4062-94e5-69154fbec64e"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToRepeatOnError"/>
+                        <bpws:source linkName="StartToRepeatOnError_X12">
+                            <tibex:DesignExpression>
+                                <tibex:expression expression="1=2" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[1=2]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="StartToAssetChange_Pre_CallBackAppian">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -2603,7 +2629,7 @@
             </bpws:extensionActivity>
             <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="58b8f6b1-6ba5-4f95-b02a-b9bed5ac766a">
                 <bpws:targets>
-                    <bpws:target linkName="StartToRepeatOnError"/>
+                    <bpws:target linkName="StartToRepeatOnError_X12"/>
                 </bpws:targets>
                 <bpws:sources>
                     <bpws:source linkName="RepeatOnErrorToRepeatOnError1"/>
@@ -2909,13 +2935,14 @@
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="Empty1ToAssetChange_Pre_CallBackAppian"/>
+                        <bpws:target linkName="StartToAssetChange_Pre_CallBackAppian"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="AssetChange_Pre_CallBackAppianToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:tns8=&quot;http://www.example.org/assetChangeCallBackAppian&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;AssetChange_Pre_CallBackAppian-input&quot; match=&quot;/&quot;>&lt;tns8:assetChangeCallbackAppianRequestElement>&lt;xsl:if test=&quot;$Start/tns7:requestId&quot;>&lt;tns8:requestId>&lt;xsl:copy-of select=&quot;$Start/tns7:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns7:requestId&quot;/>&lt;/tns8:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns7:correlationid&quot;>&lt;tns8:correlationId>&lt;xsl:copy-of select=&quot;$Start/tns7:correlationid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns7:correlationid&quot;/>&lt;/tns8:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$Start/tns7:addChanges&quot;>&lt;tns8:assetChangeAnswerBack>&lt;xsl:if test=&quot;tns7:changeAssetId&quot;>&lt;tns8:changeAssetId>&lt;xsl:copy-of select=&quot;tns7:changeAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns7:changeAssetId&quot;/>&lt;/tns8:changeAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns7:assetNumber&quot;>&lt;tns8:assetNumber>&lt;xsl:copy-of select=&quot;tns7:assetNumber/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns7:assetNumber&quot;/>&lt;/tns8:assetNumber>&lt;/xsl:if>&lt;/tns8:assetChangeAnswerBack>&lt;/xsl:for-each>&lt;/tns8:assetChangeCallbackAppianRequestElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:tns8=&quot;http://www.example.org/assetChangeCallBackAppian&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;AssetChange_Pre_CallBackAppian-input&quot; match=&quot;/&quot;>&lt;tns8:assetChangeCallbackAppianRequestElement>&lt;xsl:if test=&quot;$Start/tns7:requestId&quot;>&lt;tns8:requestId>&lt;xsl:copy-of select=&quot;$Start/tns7:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns7:requestId&quot;/>&lt;/tns8:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns7:correlationid&quot;>&lt;tns8:correlationId>&lt;xsl:copy-of select=&quot;$Start/tns7:correlationid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns7:correlationid&quot;/>&lt;/tns8:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$Start/tns7:addChanges&quot;>&lt;tns8:assetChangeAnswerBack>&lt;xsl:if test=&quot;tns7:changeAssetId&quot;>&lt;tns8:changeAssetId>&lt;xsl:copy-of select=&quot;tns7:changeAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns7:changeAssetId&quot;/>&lt;/tns8:changeAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns7:assetNumber&quot;>&lt;tns8:assetNumber>&lt;xsl:copy-of select=&quot;tns7:assetNumber/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns7:assetNumber&quot;/>&lt;/tns8:assetNumber>&lt;/xsl:if>&lt;tns8:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns8:status>&lt;tns8:errorMessage>&lt;xsl:value-of select=&quot;&amp;quot;Test&amp;quot;&quot;/>&lt;/tns8:errorMessage>&lt;/tns8:assetChangeAnswerBack>&lt;/xsl:for-each>&lt;/tns8:assetChangeCallbackAppianRequestElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="opr_inv_operationassetsinventory_assetchange_subprocesses.AssetChange_Pre_CallBackAppian" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

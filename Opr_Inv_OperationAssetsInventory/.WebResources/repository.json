@@ -28,6 +28,14 @@
         {
             "location": "Service Descriptors/opr_inv_operationassetsinventory_assetaddition.x-AssetAddition.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/opr_inv_operationassetsinventory_assetchange.opr_inv_operationassetsinventory-ondemand-opr_inv_operationassetsinventory-ondemand.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/opr_inv_operationassetsinventory_assetchange.ondemand-ondemand.json",
+            "type": "generated"
         }
     ]
 }

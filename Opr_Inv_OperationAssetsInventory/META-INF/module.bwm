@@ -24,7 +24,7 @@
   </sca:service>
   <sca:service xmi:id="_oc8_kqdIEeu357mb3Ky1qw" name="assetchange" promote="ComponentAssetChange/assetchange">
     <sca:interface.wsdl xmi:id="_odbgsKdIEeu357mb3Ky1qw" interface="http://xmlns.example.com/20210427163635PLT#wsdl.interface(assetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/AssetChange.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_odbgsadIEeu357mb3Ky1qw" name="RestService3" path="/assetchange" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetChange" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_odbgsadIEeu357mb3Ky1qw" name="RestService3" path="/opr/inv/operationassetinventory/assetchange" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetChange" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json">
       <operation xmi:id="_odgZMKdIEeu357mb3Ky1qw" operationName="post" nickname="post-assetchange" httpMethod="POST" responseStyle="element" requestStyle="element">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
@@ -33,14 +33,13 @@
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_odhnUKdIEeu357mb3Ky1qw"/>
       <advancedConfig xmi:id="_odbgsqdIEeu357mb3Ky1qw" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_odgZMqdIEeu357mb3Ky1qw" bindingName="RestService3"/>
   </sca:service>
   <sca:service xmi:id="_T-3TMajnEeuCi_KoE1YnEw" name="ondemand" promote="ComponentOnDemand/ondemand">
     <sca:interface.wsdl xmi:id="_T_JnEqjnEeuCi_KoE1YnEw" interface="http://xmlns.example.com/20210429180459PLT#wsdl.interface(ondemand)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/OnDemand.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_T_b68KjnEeuCi_KoE1YnEw" name="RestService1" path="/ondemand" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="OnDemand" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_T_b68KjnEeuCi_KoE1YnEw" name="RestService1" path="/opr/inv/operationassetinventory/ondemandassetaddition" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="OnDemand" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
       <operation xmi:id="_T_gzcKjnEeuCi_KoE1YnEw" operationName="post" nickname="post-ondemand" httpMethod="POST" responseStyle="element">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
@@ -49,10 +48,39 @@
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_T_0VcKjnEeuCi_KoE1YnEw"/>
       <advancedConfig xmi:id="_T_b68ajnEeuCi_KoE1YnEw" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_T_iBkKjnEeuCi_KoE1YnEw" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_QnT9AKjxEeuRnaG3smgqXw" name="opr-inv-operationassetinventory-ondemandassetchange" promote="Componentondemand/opr-inv-operationassetinventory-ondemandassetchange">
+    <sca:interface.wsdl xmi:id="_Qnb40KjxEeuRnaG3smgqXw" interface="http://xmlns.example.com/20210429191611PLT#wsdl.interface(opr-inv-operationassetinventory-ondemandassetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/ondemand.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Qnh_cKjxEeuRnaG3smgqXw" name="RestService4" path="/opr/inv/operationassetinventory/ondemandassetchange" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="ondemand" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetchange.ondemand-ondemand.json">
+      <operation xmi:id="_Qnj0oKjxEeuRnaG3smgqXw" operationName="post" nickname="post-opr-inv-operationassetinventory-ondemandassetchange" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_Qnj0oajxEeuRnaG3smgqXw" operationName="get" nickname="get-opr-inv-operationassetinventory-ondemandassetchange" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_Qnh_cajxEeuRnaG3smgqXw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Qnj0oqjxEeuRnaG3smgqXw" bindingName="RestService4"/>
+  </sca:service>
+  <sca:service xmi:id="_70TzoKmqEeulbq2wsplM4g" name="opr-inv-operationassetinventoryassetaddition" promote="ComponentAssetAddition/opr-inv-operationassetinventoryassetaddition">
+    <sca:interface.wsdl xmi:id="_70Z6QKmqEeulbq2wsplM4g" interface="http://xmlns.example.com/20210430172518PLT#wsdl.interface(opr-inv-operationassetinventoryassetaddition)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/AssetAddition.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_70fZ0KmqEeulbq2wsplM4g" name="RestService5" path="/opr/inv/operationassetinventory/assetaddition" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetAddition" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.AssetAddition-AssetAddition.json">
+      <operation xmi:id="_70hPAKmqEeulbq2wsplM4g" operationName="post" nickname="post-opr-inv-operationassetinventoryassetaddition" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_70hPAamqEeulbq2wsplM4g" operationName="get" nickname="get-opr-inv-operationassetinventoryassetaddition" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_70fZ0amqEeulbq2wsplM4g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_70hPAqmqEeulbq2wsplM4g" bindingName="RestService5"/>
   </sca:service>
   <sca:property xmi:id="_gztvYKceEeufvIOJ6OAa0g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_gz3gYKceEeufvIOJ6OAa0g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -93,13 +121,15 @@
   <sca:property xmi:id="_Y7Gj0KdfEeuLLswsXqfqtA" name="/Appian/appianPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Y9B2cKdfEeuLLswsXqfqtA" name="/Appian/appianEndpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZDkjUKdfEeuLLswsXqfqtA" name="/Appian/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_ZFaWYKdfEeuLLswsXqfqtA" name="/Appian/password" type="property:password" scaext:simpleValue="#!2NA2rcP4dYsxuX6Ui1qrAg==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZFaWYKdfEeuLLswsXqfqtA" name="/Appian/password" type="property:password" scaext:simpleValue="#!l+8wzQ5tbZVoJjwfhCjUTw==" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZHVB8KdfEeuLLswsXqfqtA" name="/Appian/method" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZJGjkKdfEeuLLswsXqfqtA" name="/Appian/idleConnectionTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZK4FMKdfEeuLLswsXqfqtA" name="/Appian/maxTotalConnection" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZMnKkKdfEeuLLswsXqfqtA" name="/Appian/maxTotalConPerHost" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZOYsMKdfEeuLLswsXqfqtA" name="/Appian/socketTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZP_OsKdfEeuLLswsXqfqtA" name="/Appian/connectionTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gbzX8Kv7EeuOvvGj7qhCSw" name="/Timer/StartTime" type="XMLSchema:dateTime" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qMiSMKv7EeuOvvGj7qhCSw" name="/Timer/TimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_bQ9cAKcfEeufvIOJ6OAa0g" name="ComponentHealthCheck" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bQ9cAacfEeufvIOJ6OAa0g" processName="http_healthcheck.HealthCheck"/>
     <sca:service xmi:id="_bQ9cAqcfEeufvIOJ6OAa0g" name="healthcheck-liveliness">
@@ -129,5 +159,20 @@
     <sca:service xmi:id="_T-k_UKjnEeuCi_KoE1YnEw" name="ondemand">
       <sca:interface.wsdl xmi:id="_T-3TMKjnEeuCi_KoE1YnEw" interface="http://xmlns.example.com/20210429180459PLT#wsdl.interface(ondemand)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/OnDemand.bwp"/>
     </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_QnKMAKjxEeuRnaG3smgqXw" name="Componentondemand" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_QnKMAajxEeuRnaG3smgqXw" processName="opr_inv_operationassetsinventory_assetchange.OnDemand"/>
+    <sca:service xmi:id="_QnPrkKjxEeuRnaG3smgqXw" name="opr-inv-operationassetinventory-ondemandassetchange">
+      <sca:interface.wsdl xmi:id="_QnQ5sKjxEeuRnaG3smgqXw" interface="http://xmlns.example.com/20210429191611PLT#wsdl.interface(opr-inv-operationassetinventory-ondemandassetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/ondemand.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_70LQwKmqEeulbq2wsplM4g" name="ComponentAssetAddition" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_70LQwamqEeulbq2wsplM4g" processName="opr_inv_operationassetsinventory_assetaddition.AssetAddition"/>
+    <sca:service xmi:id="_70PiMKmqEeulbq2wsplM4g" name="opr-inv-operationassetinventoryassetaddition">
+      <sca:interface.wsdl xmi:id="_70RXYKmqEeulbq2wsplM4g" interface="http://xmlns.example.com/20210430172518PLT#wsdl.interface(opr-inv-operationassetinventoryassetaddition)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetaddition/AssetAddition.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_Qjn1IKnIEeuhbuOPlc5ung" name="Component1Scheduler" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Qjn1IanIEeuhbuOPlc5ung" processName="opr_inv_operationassetsinventory_assetchange.Scheduler"/>
   </sca:component>
 </sca:composite>

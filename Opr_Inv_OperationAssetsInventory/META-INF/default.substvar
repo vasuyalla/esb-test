@@ -75,7 +75,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>AuthXMLPath</name>
-			<value>D:\Kadambari\MBF Project\Documents\Dev_XmlUsers.xml</value>
+			<value>D:\HHC\Work\MBF\Dev_XmlUsers.xml</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -299,7 +299,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/Appian/appianEndpoint</name>
-			<value>/suite/webapi/esbcallback</value>
+			<value>/suite/webapi/fadesbcallback</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -315,7 +315,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/Appian/password</name>
-			<value>#!EAaHT5jXKi6NojpANCvpLB0J2sl0/g9JFwBHcu1+zQo8hGrOSp2OhsfdZEQU3Uyj</value>
+			<value>#!DSCVYIyWREf8QCVRUn7cOpdqc8sxsKL0BIY2J2OB6IM=</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
@@ -364,6 +364,22 @@
 		<globalVariable>
 			<name>/Appian/connectionTimeout</name>
 			<value>0</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/Timer/StartTime</name>
+			<value>2021-05-11T04:07:39-05:00</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/Timer/TimeInterval</name>
+			<value>10</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="opr_inv_operationassetsinventory_assetaddition.OnDemand"
+    name="opr_inv_operationassetsinventory_assetchange.OnDemand"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20210429180459"
+    targetNamespace="http://xmlns.example.com/20210429191611"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
-    xmlns:ns="http://xmlns.example.com/20210429180459PLT"
+    xmlns:ns="http://xmlns.example.com/20210429191611PLT"
     xmlns:ns0="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns1="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
@@ -191,39 +191,39 @@
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
         <wsdl:definitions
-            targetNamespace="http://xmlns.example.com/20210429180459PLT"
-            xmlns:extns="http://tns.tibco.com/bw/REST"
-            xmlns:extns1="http://www.example.org/assetAdditionResponseSchema"
-            xmlns:extns2="http://xmlns.example.com/OnDemand/parameters"
+            targetNamespace="http://xmlns.example.com/20210429191611PLT"
+            xmlns:extns="http://www.example.org/assetChangeResponseSchema"
+            xmlns:extns1="http://tns.tibco.com/bw/REST"
+            xmlns:extns2="http://xmlns.example.com/20210429191611PLT/ConceptSchema"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-            xmlns:tns="http://xmlns.example.com/20210429180459PLT"
+            xmlns:tns="http://xmlns.example.com/20210429191611PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <plnk:partnerLinkType name="partnerLinkType">
-                <plnk:role name="use" portType="tns:ondemand"/>
+                <plnk:role name="use" portType="tns:opr-inv-operationassetinventory-ondemandassetchange"/>
             </plnk:partnerLinkType>
+            <wsdl:import namespace="http://www.example.org/assetChangeResponseSchema"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
-            <wsdl:import namespace="http://www.example.org/assetAdditionResponseSchema"/>
-            <wsdl:import namespace="http://xmlns.example.com/OnDemand/parameters"/>
+            <wsdl:import namespace="http://xmlns.example.com/20210429191611PLT/ConceptSchema"/>
             <wsdl:message name="postRequest">
                 <wsdl:part name="item"
                     tibex:hasMultipleNamespaces="false" type="xsd:string"/>
-                <wsdl:part element="extns:httpHeaders"
+                <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="postResponse">
-                <wsdl:part element="extns1:assetAdditionResponseElement"
+                <wsdl:part element="extns:assetChangeResponseElement"
                     name="item" tibex:hasMultipleNamespaces="false"/>
             </wsdl:message>
             <wsdl:message name="post4XXFaultMessage">
-                <wsdl:part element="extns:client4XXError" name="clientError"/>
+                <wsdl:part element="extns1:client4XXError" name="clientError"/>
             </wsdl:message>
             <wsdl:message name="post5XXFaultMessage">
-                <wsdl:part element="extns:server5XXError" name="serverError"/>
+                <wsdl:part element="extns1:server5XXError" name="serverError"/>
             </wsdl:message>
             <wsdl:message name="getRequest">
-                <wsdl:part element="extns:httpHeaders"
+                <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse">
@@ -231,15 +231,16 @@
                     tibex:hasMultipleNamespaces="false" type="xsd:string"/>
             </wsdl:message>
             <wsdl:message name="get4XXFaultMessage">
-                <wsdl:part element="extns:client4XXError" name="clientError"/>
+                <wsdl:part element="extns1:client4XXError" name="clientError"/>
             </wsdl:message>
             <wsdl:message name="get5XXFaultMessage">
-                <wsdl:part element="extns:server5XXError" name="serverError"/>
+                <wsdl:part element="extns1:server5XXError" name="serverError"/>
             </wsdl:message>
-            <wsdl:portType name="ondemand"
-                tibex:bw.rest.apipath="/opr/inv/operationassetinventory/ondemandassetaddition"
-                tibex:bw.rest.basepath="OnDemand"
-                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetaddition.OnDemand-OnDemand.json"
+            <wsdl:portType
+                name="opr-inv-operationassetinventory-ondemandassetchange"
+                tibex:bw.rest.apipath="/opr/inv/operationassetinventory/ondemandassetchange"
+                tibex:bw.rest.basepath="ondemand"
+                tibex:bw.rest.resource="Service Descriptors/opr_inv_operationassetsinventory_assetchange.OnDemand-ondemand.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="post">
@@ -257,8 +258,8 @@
             </wsdl:portType>
         </wsdl:definitions>
     </tibex:Types>
-    <tibex:ProcessInfo callable="false" createdBy="kadambari_sontakke"
-        createdOn="Thu Apr 29 18:04:59 IST 2021" description=""
+    <tibex:ProcessInfo callable="false" createdBy="rohan_shinde"
+        createdOn="Thu Apr 29 19:16:11 IST 2021" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="2.4.5 V45 2019-07-18" scalable="true"
         singleton="true" stateless="true" type="IT"/>
@@ -268,7 +269,9 @@
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
         xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <children type="2001">
-            <children type="5001"/>
+            <children type="5001">
+                <element href="//0/@process"/>
+            </children>
             <children type="3001">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -277,10 +280,12 @@
             <children type="3002">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
+                <element href="//0/@process"/>
             </children>
             <children type="3003">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
+                <element href="//0/@process"/>
             </children>
             <children type="3004">
                 <children type="4018">
@@ -290,13 +295,16 @@
                                 <children type="4005">
                                     <children type="3007">
                                     <children type="4010">
-                                    <children type="5002"/>
+                                    <children type="5002">
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
+                                    </children>
                                     <children type="3010">
                                     <children type="4013">
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -304,6 +312,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -311,6 +320,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -318,6 +328,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -332,6 +343,7 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     </children>
                                     <children type="3011">
                                     <children type="4011">
@@ -341,6 +353,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -348,6 +361,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -355,6 +369,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -362,6 +377,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -401,14 +417,7 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -419,6 +428,8 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
+
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -427,6 +438,19 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -443,8 +467,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="395"
-                                    xsi:type="notation:Bounds" y="83"/>
+                                    x="334"
+                                    xsi:type="notation:Bounds" y="84"/>
                                     </children>
 
                                     <children type="4002">
@@ -455,14 +479,7 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -473,6 +490,8 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
+
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -481,6 +500,19 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -497,8 +529,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="42"
-                                    xsi:type="notation:Bounds" y="83"/>
+                                    x="3"
+                                    xsi:type="notation:Bounds" y="92"/>
                                     </children>
 
                                     <children type="4002">
@@ -509,14 +541,7 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -527,6 +552,8 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
+
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -535,6 +562,19 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -551,8 +591,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
-                                    x="223"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    x="164"
+                                    xsi:type="notation:Bounds" y="30"/>
                                     </children>
 
                                     <children type="4002">
@@ -563,14 +603,7 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -581,6 +614,8 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
+
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -589,6 +624,19 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -605,8 +653,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint
-                                    x="223"
-                                    xsi:type="notation:Bounds" y="153"/>
+                                    x="164"
+                                    xsi:type="notation:Bounds" y="140"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -632,13 +680,15 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="269"
-                                    width="613" xsi:type="notation:Bounds"/>
+                                    height="235"
+                                    width="522" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
 
                                     <styles xsi:type="notation:FilteringStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
                                     </children>
 
                                     <styles
@@ -652,10 +702,9 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="-45"
-                                    width="-76"
-                                    x="30"
-                                    xsi:type="notation:Bounds" y="20"/>
+                                    height="235"
+                                    width="525"
+                                    x="15" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -668,7 +717,9 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    <layoutConstraint
+                                    height="259"
+                                    width="565" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -680,6 +731,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -687,6 +739,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -694,6 +747,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -701,6 +755,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -727,8 +782,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="312"
-                                    width="718"
+                                    height="278"
+                                    width="627"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4011">
@@ -738,6 +793,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -745,6 +801,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -752,6 +809,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -759,6 +817,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.0"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -798,14 +857,7 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -816,6 +868,8 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
+
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -824,6 +878,19 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -840,8 +907,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="402"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="336"
+                                    xsi:type="notation:Bounds" y="51"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -867,13 +934,15 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="162"
-                                    width="613" xsi:type="notation:Bounds"/>
+                                    height="154"
+                                    width="522" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
 
                                     <styles xsi:type="notation:FilteringStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
                                     </children>
 
                                     <styles
@@ -887,213 +956,10 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
                                     <layoutConstraint
-                                    height="149"
-                                    width="616"
-                                    x="15" xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4022">
-
-                                    <children type="3022">
-
-                                    <children type="4029">
-
-                                    <children type="3031">
-
-                                    <children type="4033">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll"/>
-
-                                    <layoutConstraint
-                                    height="34"
-                                    width="34"
-                                    xsi:type="notation:Bounds" y="68"/>
-                                    </children>
-
-                                    <styles xsi:type="notation:SortingStyle"/>
-
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-
-                                    <children type="3032">
-
-                                    <children type="4005">
-
-                                    <children type="3007">
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
-
-                                    <layoutConstraint
-                                    x="14"
-                                    xsi:type="notation:Bounds" y="44"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
-
-                                    <layoutConstraint
-                                    x="262"
-                                    xsi:type="notation:Bounds" y="44"/>
-                                    </children>
-
-                                    <styles xsi:type="notation:DrawerStyle"/>
-
-                                    <styles xsi:type="notation:SortingStyle"/>
-
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
-
-                                    <layoutConstraint
-                                    height="168"
-                                    width="535" xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles xsi:type="notation:SortingStyle"/>
-
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles xsi:type="notation:SortingStyle"/>
-
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers"/>
-
-                                    <layoutConstraint
-                                    height="200"
-                                    width="-96" xsi:type="notation:Bounds"/>
+                                    height="-45"
+                                    width="-76"
+                                    x="30"
+                                    xsi:type="notation:Bounds" y="20"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1106,9 +972,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity"/>
 
-                                    <layoutConstraint
-                                    height="385"
-                                    width="656" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1120,6 +984,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1127,6 +992,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1134,6 +1000,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1141,6 +1008,7 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1167,10 +1035,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     <layoutConstraint
-                                    height="404"
-                                    width="718"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="312"/>
+                                    height="140"
+                                    width="485" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1182,7 +1048,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="747" width="697" xsi:type="notation:Bounds"/>
+                                    height="506" width="646" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1196,17 +1062,164 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="757"
-                                    width="747" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="516"
+                                    width="656" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
+                                <element href="//0/@process/@activity"/>
                             </children>
                             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="757" width="750" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="516" width="659" xsi:type="notation:Bounds"/>
+                        </children>
+                        <children type="4022">
+                            <children type="3022">
+                                <children type="4029">
+                                    <children type="3031">
+                                    <children type="4033">
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
+                                    <layoutConstraint
+                                    height="34" width="34"
+                                    xsi:type="notation:Bounds" y="68"/>
+                                    </children>
+                                    <styles xsi:type="notation:SortingStyle"/>
+                                    <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
+                                    </children>
+                                    <children type="3032">
+                                    <children type="4005">
+                                    <children type="3007">
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
+                                    <layoutConstraint
+                                    x="9"
+                                    xsi:type="notation:Bounds" y="34"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint
+                                    x="190"
+                                    xsi:type="notation:Bounds" y="34"/>
+                                    </children>
+                                    <styles xsi:type="notation:DrawerStyle"/>
+                                    <styles xsi:type="notation:SortingStyle"/>
+                                    <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
+                                    <layoutConstraint
+                                    height="168" width="558" xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles xsi:type="notation:SortingStyle"/>
+                                    <styles xsi:type="notation:FilteringStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles xsi:type="bwnotation:BackgroundStyle"/>
+                                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                </children>
+                                <styles xsi:type="notation:SortingStyle"/>
+                                <styles xsi:type="notation:FilteringStyle"/>
+                                <element href="//0/@process/@activity/@faultHandlers"/>
+                            </children>
+                            <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
+                            <styles xsi:type="bwnotation:BackgroundStyle"/>
+                            <styles xsi:type="bwnotation:ResizingStyle"/>
+                            <element href="//0/@process/@activity/@faultHandlers"/>
+                            <layoutConstraint height="200" width="424" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1216,7 +1229,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="781" width="750" x="1"
+                    <layoutConstraint height="717" width="659" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1225,10 +1238,21 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="833" width="1092" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="769" width="1001" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
@@ -1238,7 +1262,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, -11, -156, 70]$[157, -70, -24, 11]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
@@ -1249,7 +1273,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, 6, -156, -42]$[157, 42, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -1260,7 +1284,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, 9, -146, -57]$[147, 57, -24, -9]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 8, -145, -46]$[146, 46, -24, -8]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
@@ -1271,38 +1295,31 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[25, -12, -146, 73]$[147, -73, -24, 12]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.1/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 0, -223, 0]$[224, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -9, -134, 47]$[135, -47, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
             namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns"/>
         <tibex:namespaceItem
-            namespace="http://xmlns.example.com/20210429180459PLT" prefix="tns1"/>
+            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/assetChangeResponseSchema" prefix="tns1"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xpath/bw-custom-functions" prefix="bw"/>
+            namespace="http://xmlns.example.com/20210429191611PLT" prefix="tns2"/>
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+            namespace="http://www.tibco.com/bw/xpath/bw-custom-functions" prefix="bw"/>
     </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetChangeResponseSchema"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetAdditionResponseSchema"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/OnDemand/parameters"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../Schemas/ondemandSchema2.xsd" namespace="http://xmlns.example.com/20210429191611PLT/ConceptSchema"/>
     <bpws:partnerLinks>
-        <bpws:partnerLink myRole="use" name="ondemand"
-            partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="ondemand"/>
+        <bpws:partnerLink myRole="use"
+            name="opr-inv-operationassetinventory-ondemandassetchange"
+            partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="opr-inv-operationassetinventory-ondemandassetchange"/>
     </bpws:partnerLinks>
     <bpws:variables>
         <bpws:variable element="ns0:ProcessContext"
@@ -1312,13 +1329,14 @@
             name="postOut-input" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns:getRequest" name="get" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns:getResponse" name="getOut-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns0:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityInput"
             name="ExceptionLog-input" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns:postResponse"
             name="ReplyFault-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ActivityInput"
+            name="LogRequest-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1329,51 +1347,111 @@
         <bpws:extension mustUnderstand="no" namespace="http://www.tibco.com/bpel/2007/extensions"/>
     </bpws:extensions>
     <bpws:scope name="scope">
+        <bpws:faultHandlers>
+            <bpws:catchAll tibex:faultDetailsVar="FaultDetails"
+                tibex:faultNameVar="FaultName" tibex:xpdlId="f029b537-d91d-4d2a-872e-acc27f51c7ad">
+                <bpws:scope name="scope3">
+                    <bpws:flow name="flow3">
+                        <bpws:links>
+                            <bpws:link name="ExceptionLogToReply" tibex:linkType="SUCCESS"/>
+                        </bpws:links>
+                        <bpws:extensionActivity>
+                            <tibex:activityExtension
+                                inputVariable="ExceptionLog-input"
+                                name="ExceptionLog"
+                                tibex:xpdlId="68b60880-889e-426c-99a9-0257db496af6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                <bpws:sources>
+                                    <bpws:source linkName="ExceptionLogToReply"/>
+                                </bpws:sources>
+                                <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, true())&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.log"
+                                    version="6.0.0.001"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                </tibex:config>
+                            </tibex:activityExtension>
+                        </bpws:extensionActivity>
+                        <bpws:reply name="ReplyFault" operation="post"
+                            partnerLink="opr-inv-operationassetinventory-ondemandassetchange"
+                            portType="ns:opr-inv-operationassetinventory-ondemandassetchange"
+                            tibex:xpdlId="42ff6068-f842-48aa-96c3-9130b98a428e" variable="ReplyFault-input">
+                            <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210429191611PLT" xmlns:tns1="http://www.example.org/assetChangeResponseSchema" version="2.0"&gt;
+    &lt;xsl:param name="FaultDetails"/&gt;
+    &lt;xsl:template name="ReplyFault-input" match="/"&gt;
+        &lt;tns2:postResponse&gt;
+            &lt;item&gt;
+                &lt;tns1:assetChangeResponseElement&gt;
+                    &lt;tns1:Status&gt;
+                        &lt;tns1:statusCode&gt;
+                            &lt;xsl:value-of select="500"/&gt;
+                        &lt;/tns1:statusCode&gt;
+                        &lt;tns1:statusMessage&gt;
+                            &lt;xsl:value-of select="concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)"/&gt;
+                        &lt;/tns1:statusMessage&gt;
+                    &lt;/tns1:Status&gt;
+                &lt;/tns1:assetChangeResponseElement&gt;
+            &lt;/item&gt;
+        &lt;/tns2:postResponse&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                            <tibex:inputBindings>
+                                <tibex:partBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210429191611PLT&quot; xmlns:tns1=&quot;http://www.example.org/assetChangeResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;FaultDetails&quot;/>&#xa;    &lt;xsl:template name=&quot;ReplyFault-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:assetChangeResponseElement>&#xa;            &lt;tns1:Status>&#xa;                &lt;tns1:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;500&quot;/>&#xa;                &lt;/tns1:statusCode>&#xa;                &lt;tns1:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)&quot;/>&#xa;                &lt;/tns1:statusMessage>&#xa;            &lt;/tns1:Status>&#xa;        &lt;/tns1:assetChangeResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            </tibex:inputBindings>
+                            <bpws:targets>
+                                <bpws:target linkName="ExceptionLogToReply"/>
+                            </bpws:targets>
+                        </bpws:reply>
+                    </bpws:flow>
+                </bpws:scope>
+            </bpws:catchAll>
+        </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links/>
-            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="0d789ce0-5900-4a28-89f7-aad984ec65ce">
-                <bpws:onMessage operation="post" partnerLink="ondemand"
-                    portType="ns:ondemand"
-                    tibex:xpdlId="07016764-7bb0-4dac-935c-5ab1b6b98b78" variable="post">
+            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="b2c092b1-6502-444b-8680-f1a11b07a7a6">
+                <bpws:onMessage operation="post"
+                    partnerLink="opr-inv-operationassetinventory-ondemandassetchange"
+                    portType="ns:opr-inv-operationassetinventory-ondemandassetchange"
+                    tibex:xpdlId="e62688fb-655e-47ff-9aa6-2947332c7fe2" variable="post">
                     <bpws:scope name="scope1">
                         <bpws:flow name="flow1">
                             <bpws:links>
-                                <bpws:link name="LogToCallProcess" tibex:linkType="SUCCESS"/>
-                                <bpws:link name="LogToCallProcess1" tibex:linkType="SUCCESS"/>
+                                <bpws:link
+                                    name="LogRequestToCallProcess" tibex:linkType="SUCCESS"/>
+                                <bpws:link
+                                    name="LogRequestToCallProcess1" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="CallProcessTopostOut" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="CallProcess1TopostOut" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="0ab8c32c-0c45-489d-807c-baec0652e523"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="fed8f643-4442-46d5-af23-87c96478bf05"/>
                             <bpws:empty name="OnMessageEnd"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="7ad8942f-293b-4c2e-9bcd-f2ca5f23a2e3"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="3d80fb48-1769-482e-9a74-5c31aefc76c4"/>
                             <bpws:reply name="postOut" operation="post"
-                                partnerLink="ondemand"
-                                portType="ns:ondemand"
-                                tibex:xpdlId="72fa55f5-05d3-4671-86e6-91f6058859d6" variable="postOut-input">
+                                partnerLink="opr-inv-operationassetinventory-ondemandassetchange"
+                                portType="ns:opr-inv-operationassetinventory-ondemandassetchange"
+                                tibex:xpdlId="08d8f751-5567-46c8-8e55-c1987e567c2e" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210429180459PLT&quot; xmlns:tns2=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:assetAdditionResponseElement>&#xa;            &lt;tns2:Status>&#xa;                &lt;tns2:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;200&quot;/>&#xa;                &lt;/tns2:statusCode>&#xa;                &lt;tns2:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&#xa;                &lt;/tns2:statusMessage>&#xa;            &lt;/tns2:Status>&#xa;        &lt;/tns2:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210429191611PLT&quot; xmlns:tns1=&quot;http://www.example.org/assetChangeResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:assetChangeResponseElement>&#xa;            &lt;tns1:Status>&#xa;                &lt;tns1:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;200&quot;/>&#xa;                &lt;/tns1:statusCode>&#xa;                &lt;tns1:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;&amp;quot;Sucess&amp;quot;&quot;/>&#xa;                &lt;/tns1:statusMessage>&#xa;            &lt;/tns1:Status>&#xa;        &lt;/tns1:assetChangeResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210429180459PLT" xmlns:tns2="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;
-    &lt;xsl:template name="postOut-input" match="/"&gt;
-        &lt;tns1:postResponse&gt;
-            &lt;item&gt;
-                &lt;tns2:assetAdditionResponseElement&gt;
-                    &lt;tns2:Status&gt;
-                        &lt;tns2:statusCode&gt;
-                            &lt;xsl:value-of select="200"/&gt;
-                        &lt;/tns2:statusCode&gt;
-                        &lt;tns2:statusMessage&gt;
-                            &lt;xsl:value-of select="&amp;quot;Success&amp;quot;"/&gt;
-                        &lt;/tns2:statusMessage&gt;
-                    &lt;/tns2:Status&gt;
-                &lt;/tns2:assetAdditionResponseElement&gt;
-            &lt;/item&gt;
-        &lt;/tns1:postResponse&gt;
-    &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210429191611PLT" xmlns:tns1="http://www.example.org/assetChangeResponseSchema" version="2.0"&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;item&gt;&lt;tns1:assetChangeResponseElement&gt;&lt;tns1:Status&gt;&lt;tns1:statusCode&gt;&lt;xsl:value-of select="200"/&gt;&lt;/tns1:statusCode&gt;&lt;tns1:statusMessage&gt;&lt;xsl:value-of select="&amp;quot;Sucess&amp;quot;"/&gt;&lt;/tns1:statusMessage&gt;&lt;/tns1:Status&gt;&lt;/tns1:assetChangeResponseElement&gt;&lt;/item&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="CallProcessTopostOut"/>
                                     <bpws:target linkName="CallProcess1TopostOut"/>
@@ -1381,15 +1459,16 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    inputVariable="Log-input" name="Log"
-                                    tibex:xpdlId="803a6181-3be4-4247-acf9-d4c4c917b86d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    inputVariable="LogRequest-input"
+                                    name="LogRequest"
+                                    tibex:xpdlId="4335ddce-4b5e-4d73-b722-02b33eaa01fa" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:sources>
-                                    <bpws:source linkName="LogToCallProcess"/>
-                                    <bpws:source linkName="LogToCallProcess1"/>
+                                    <bpws:source linkName="LogRequestToCallProcess"/>
+                                    <bpws:source linkName="LogRequestToCallProcess1"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;OnDemand Call Invoked&amp;quot;&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;LogRequest-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;OnDemand Call Invoked&amp;quot;&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1412,118 +1491,58 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    name="Post_CallBackAppainSuccess_AssetAddition"
-                                    tibex:xpdlId="31a85e6c-1d34-4f2d-bfbf-2ebe9af38781"
+                                    name="Post_CallBackAppainSuccess_AssetChange"
+                                    tibex:xpdlId="615738b3-c675-40ac-a485-eda4f7dee793"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="LogToCallProcess"/>
+                                    <bpws:target linkName="LogRequestToCallProcess"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="CallProcessTopostOut"/>
                                     </bpws:sources>
                                     <tibex:CallProcess
-                                    subProcessName="opr_inv_operationassetsinventory_assetaddition_subprocesses.Post_CallBackAppainSuccess_AssetAddition" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="opr_inv_operationassetsinventory_assetchange_subprocesses.Post_CallBackAppainSuccess_AssetChange" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    name="Post_CallBackAppainFailure_AssetAddition"
-                                    tibex:xpdlId="a56ee4c4-dac4-41a6-a78d-9bf100ee6b5e"
+                                    name="Post_CallBackAppainFailure_AssetChange"
+                                    tibex:xpdlId="c95a8cce-16dd-4990-9a33-e93e972b061a"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="LogToCallProcess1"/>
+                                    <bpws:target linkName="LogRequestToCallProcess1"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="CallProcess1TopostOut"/>
                                     </bpws:sources>
                                     <tibex:CallProcess
-                                    subProcessName="opr_inv_operationassetsinventory_assetaddition_subprocesses.Post_CallBackAppainFailure_AssetAddition" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="opr_inv_operationassetsinventory_assetchange_subprocesses.Post_CallBackAppainFailure_AssetChange" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
-                <bpws:onMessage operation="get" partnerLink="ondemand"
-                    portType="ns:ondemand"
-                    tibex:xpdlId="934df5a2-be22-452c-8382-a0c90c838aa9" variable="get">
+                <bpws:onMessage operation="get"
+                    partnerLink="opr-inv-operationassetinventory-ondemandassetchange"
+                    portType="ns:opr-inv-operationassetinventory-ondemandassetchange"
+                    tibex:xpdlId="423c1185-26ab-4771-959b-dd0832bc181b" variable="get">
                     <bpws:scope name="scope2">
-                        <bpws:faultHandlers>
-                            <bpws:catchAll
-                                tibex:faultDetailsVar="FaultDetails"
-                                tibex:faultNameVar="FaultName" tibex:xpdlId="997f7730-b00a-4875-a4a3-33ebaa6cbedd">
-                                <bpws:scope name="scope3">
-                                    <bpws:flow name="flow3">
-                                    <bpws:links>
-                                    <bpws:link
-                                    name="Log1ToReply" tibex:linkType="SUCCESS"/>
-                                    </bpws:links>
-                                    <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="ExceptionLog-input"
-                                    name="ExceptionLog"
-                                    tibex:xpdlId="69815e61-86c5-4401-86cb-bba1faf86c68" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:sources>
-                                    <bpws:source linkName="Log1ToReply"/>
-                                    </bpws:sources>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails, true())&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                    </bpws:extensionActivity>
-                                    <bpws:reply name="ReplyFault"
-                                    operation="post"
-                                    partnerLink="ondemand"
-                                    portType="ns:ondemand"
-                                    tibex:xpdlId="169dcb7e-c270-4169-8dac-77376a79d024" variable="ReplyFault-input">
-                                    <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210429180459PLT" xmlns:tns="http://www.example.org/assetAdditionResponseSchema" version="2.0"&gt;&lt;xsl:param name="FaultDetails"/&gt;&lt;xsl:template name="ReplyFault-input" match="/"&gt;&lt;tns1:postResponse&gt;&lt;item&gt;&lt;tns:assetAdditionResponseElement&gt;&lt;tns:Status&gt;&lt;tns:statusCode&gt;&lt;xsl:value-of select="500"/&gt;&lt;/tns:statusCode&gt;&lt;tns:statusMessage&gt;&lt;xsl:value-of select="concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)"/&gt;&lt;/tns:statusMessage&gt;&lt;/tns:Status&gt;&lt;/tns:assetAdditionResponseElement&gt;&lt;/item&gt;&lt;/tns1:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
-                                    <tibex:inputBindings>
-                                    <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210429180459PLT&quot; xmlns:tns=&quot;http://www.example.org/assetAdditionResponseSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;FaultDetails&quot;/>&#xa;    &lt;xsl:template name=&quot;ReplyFault-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:assetAdditionResponseElement>&#xa;            &lt;tns:Status>&#xa;                &lt;tns:statusCode>&#xa;                    &lt;xsl:value-of select=&quot;500&quot;/>&#xa;                &lt;/tns:statusCode>&#xa;                &lt;tns:statusMessage>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;Internal server error: &amp;quot;,$FaultDetails/Msg)&quot;/>&#xa;                &lt;/tns:statusMessage>&#xa;            &lt;/tns:Status>&#xa;        &lt;/tns:assetAdditionResponseElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <bpws:targets>
-                                    <bpws:target linkName="Log1ToReply"/>
-                                    </bpws:targets>
-                                    </bpws:reply>
-                                    </bpws:flow>
-                                </bpws:scope>
-                            </bpws:catchAll>
-                        </bpws:faultHandlers>
                         <bpws:flow name="flow2">
                             <bpws:links/>
                             <bpws:empty name="OnMessageStart1"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="0e512966-eb75-405d-9fff-480d0da9e67d"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="57d2dda4-0060-4449-8b16-c68c2b3b64fd"/>
                             <bpws:empty name="OnMessageEnd1"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="73f3a7c7-8b5e-4667-bc11-00c7de7f1f96"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="a65b7ee1-85df-4811-bff6-ccd6c644fc60"/>
                             <bpws:reply name="getOut" operation="get"
-                                partnerLink="ondemand"
-                                portType="ns:ondemand"
-                                tibex:xpdlId="69e3afd7-fcf4-4190-a176-fd77b843c9e4" variable="getOut-input">
+                                partnerLink="opr-inv-operationassetinventory-ondemandassetchange"
+                                portType="ns:opr-inv-operationassetinventory-ondemandassetchange"
+                                tibex:xpdlId="2bd92e4f-c9f1-4432-9fbd-178cc2765f6f" variable="getOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20210429180459PLT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20210429191611PLT&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;getOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20210429180459PLT" xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns1:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))"/&gt;&lt;/item&gt;&lt;/tns1:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20210429191611PLT" xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;&lt;xsl:template name="getOut-input" match="/"&gt;&lt;tns2:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="concat(bw:getModuleProperty(&amp;quot;BW.APPLICATION.NAME&amp;quot;),&amp;quot; &amp;quot;,xsd:string(current-dateTime()))"/&gt;&lt;/item&gt;&lt;/tns2:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>

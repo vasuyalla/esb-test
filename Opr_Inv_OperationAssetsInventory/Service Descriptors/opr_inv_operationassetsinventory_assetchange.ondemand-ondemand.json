@@ -9,11 +9,11 @@
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {
-    "/opr/inv/operationassetinventory/assetaddition" : {
+    "/opr/inv/operationassetinventory/ondemandassetchange" : {
       "post" : {
         "summary" : "",
         "description" : "",
-        "operationId" : "post-opr-inv-operationassetinventoryassetaddition",
+        "operationId" : "post-opr-inv-operationassetinventory-ondemandassetchange",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -25,9 +25,9 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "a assetAdditionResponseElement to be returned",
+            "description" : "a assetChangeResponseElement to be returned",
             "schema" : {
-              "$ref" : "#/definitions/assetAdditionResponseElement"
+              "$ref" : "#/definitions/assetChangeResponseElement"
             }
           }
         }
@@ -35,7 +35,7 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "operationId" : "get-opr-inv-operationassetinventoryassetaddition",
+        "operationId" : "get-opr-inv-operationassetinventory-ondemandassetchange",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ ],
@@ -62,7 +62,7 @@
         }
       }
     },
-    "assetAdditionResponseElement" : {
+    "assetChangeResponseElement" : {
       "type" : "object",
       "properties" : {
         "Status" : {

@@ -13,7 +13,7 @@
     <substitutionBindings xmi:id="_ml7qMKdhEeuLLswsXqfqtA" template="maxTotalConnectionsPerHost" propName="/Appian/maxTotalConPerHost"/>
     <substitutionBindings xmi:id="_vZcHMKdhEeuLLswsXqfqtA" template="retryCount" propName="retryCount"/>
     <tcpDetails xmi:id="_R9xTYKdhEeuLLswsXqfqtA">
-      <substitutionBindings xmi:id="_WPQ9wKdhEeuLLswsXqfqtA" template="host" propName="/HTTP/HostName"/>
+      <substitutionBindings xmi:id="_WPQ9wKdhEeuLLswsXqfqtA" template="host" propName="/Appian/appianHost"/>
       <substitutionBindings xmi:id="_eFDOQKdhEeuLLswsXqfqtA" template="port" propName="/Appian/appianPort"/>
       <substitutionBindings xmi:id="_rGnnIKdhEeuLLswsXqfqtA" template="soTimeout" propName="/Appian/socketTimeout"/>
       <substitutionBindings xmi:id="_s7oA8KdhEeuLLswsXqfqtA" template="connectionTimeout" propName="/Appian/connectionTimeout"/>

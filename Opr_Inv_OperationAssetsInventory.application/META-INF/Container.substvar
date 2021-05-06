@@ -369,5 +369,21 @@
 			<type>String</type>
 			<isOverride>true</isOverride>
 		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/StartTime</name>
+			<value>#TIMER_START#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/TimeInterval</name>
+			<value>#TIMER_TIMEINTERVAL#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
 	</globalVariables>
 </repository>

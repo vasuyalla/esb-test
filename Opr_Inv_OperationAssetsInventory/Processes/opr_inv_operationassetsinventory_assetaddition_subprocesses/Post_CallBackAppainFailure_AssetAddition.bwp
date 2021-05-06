@@ -27,6 +27,8 @@
     xmlns:ns25="http://www.example.org/postCallBackAppainFailure_AssetAdditionSchema"
     xmlns:ns26="http://www.tibco.com/namespaces/tnt/plugins/jdbc+3e4132b5-f006-49c8-a739-d51f6f233235+input"
     xmlns:ns27="http://tns.tibco.com/bw/palette/internal/activityerror+com.tibco.bw.core.design.process.editor.Activity_4002_Throw"
+    xmlns:ns28="activity.jsonRender.output+7d265c2a-989c-457f-bf63-87c5a3db18a3+ActivityOutputType"
+    xmlns:ns29="http://tns.tibco.com/bw/palette/internal/accumulateoutput+e4ca134c-b256-4c1f-84fb-2162e1407491"
     xmlns:ns3="http://tns.tibco.com/bw/activity/sendhttprequest/output+d2be4d53-f57e-4ce1-94e8-3221693ad813+RequestActivityOutput"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+bw.http.sendHTTPRequest"
     xmlns:ns5="http://tns.tibco.com/bw/activity/sleep/xsd"
@@ -806,17 +808,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema
-            targetNamespace="activity.jsonRender.output+ActivityOutputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonRender.output+ActivityOutputType">
-            <complexType name="ActivityOutputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="jsonString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
-        </schema>
         <schema elementFormDefault="unqualified"
             targetNamespace="http://tns.tibco.com/bw/activity/sendhttprequest/input+RequestActivityInput"
             xmlns="http://www.w3.org/2001/XMLSchema"
@@ -1027,6 +1018,29 @@
                 </choice>
             </complexType>
         </schema>
+        <schema
+            targetNamespace="activity.jsonRender.output+7d265c2a-989c-457f-bf63-87c5a3db18a3+ActivityOutputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonRender.output+7d265c2a-989c-457f-bf63-87c5a3db18a3+ActivityOutputType">
+            <complexType name="ActivityOutputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
+        </schema>
+        <xs:schema elementFormDefault="qualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/accumulateoutput+e4ca134c-b256-4c1f-84fb-2162e1407491"
+            xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
+            xmlns:tns="http://tns.tibco.com/bw/palette/internal/accumulateoutput+e4ca134c-b256-4c1f-84fb-2162e1407491" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc"/>
+            <xs:element name="AccumulatedOutput" type="tns:AccumulatedOutputType"/>
+            <xs:complexType name="AccumulatedOutputType">
+                <xs:sequence maxOccurs="1" minOccurs="0">
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="Q1:jdbcUpdateActivityOutput"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20210302153930"
             xmlns:tns="http://xmlns.example.com/20210302153930"
@@ -2190,8 +2204,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="1"
-                                    xsi:type="notation:Bounds" y="11"/>
+                                    x="21"
+                                    xsi:type="notation:Bounds" y="28"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -2317,7 +2331,14 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2328,8 +2349,6 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@activities.1"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -2338,19 +2357,6 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@activities.1"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -2393,8 +2399,8 @@
                                     <layoutConstraint
                                     height="165"
                                     width="236"
-                                    x="73"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    x="74"
+                                    xsi:type="notation:Bounds" y="41"/>
                                     </children>
 
                                     <children type="4002">
@@ -2458,6 +2464,60 @@
                                     x="234"
                                     xsi:type="notation:Bounds" y="243"/>
                                     </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.5"/>
+
+                                    <layoutConstraint
+                                    x="320"
+                                    xsi:type="notation:Bounds" y="129"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2475,7 +2535,7 @@
 
                                     <layoutConstraint
                                     height="423"
-                                    width="386" xsi:type="notation:Bounds"/>
+                                    width="469" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2488,8 +2548,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="423"
-                                    width="389"
+                                    height="363"
+                                    width="507"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -2592,7 +2652,7 @@
                                     restoreY="41" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="467" width="429"
+                                    height="407" width="547"
                                     x="804"
                                     xsi:type="notation:Bounds" y="47"/>
                                     </children>
@@ -2648,7 +2708,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="663"
-                                    width="1443" xsi:type="notation:Bounds"/>
+                                    width="1653" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -3007,17 +3067,6 @@
             <bendpoints points="[8, -24, 0, 190]$[0, -189, -8, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 11, -131, -61]$[144, 66, -12, -6]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
@@ -3025,7 +3074,7 @@
             </children>
             <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.1"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[12, 4, -70, -27]$[58, 22, -24, -9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -3070,7 +3119,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.2"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -3081,7 +3130,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[12, -5, -199, 77]$[111, -43, -100, 39]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -3128,6 +3177,28 @@
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@activities.3/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[25, 4, -104, -16]$[117, 18, -12, -2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[25, 8, -131, -45]$[144, 48, -12, -5]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -3170,7 +3241,7 @@
         <bpws:variable
             element="ns25:postCallBackAppainFailure_AssetAdditionElement"
             name="RenderDBOutput-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns20:ActivityOutputClass"
+        <bpws:variable element="ns28:ActivityOutputClass"
             name="RenderDBOutput" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityErrorData"
             name="_error_RenderDBOutput" sca-bpel:internal="true"/>
@@ -3230,7 +3301,8 @@
             name="_error_GetStatusFromJDE" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName1" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails1" sca-bpel:internal="true"/>
-        <bpws:variable element="ns12:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityInput"
+            name="ExceptionLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:SleepInputSchema"
             name="Sleep1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:SleepInputSchema"
@@ -3244,11 +3316,11 @@
             element="ns25:postCallBackAppainFailure_AssetAdditionElement"
             name="ErrorRecordGrouping" sca-bpel:internal="true"/>
         <bpws:variable element="ns26:jdbcUpdateActivityInput"
-            name="JDBCUpdate-input" sca-bpel:internal="true"/>
+            name="UpdateMBEDSP-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:jdbcUpdateActivityOutput"
-            name="JDBCUpdate" sca-bpel:internal="true"/>
+            name="UpdateMBEDSP" sca-bpel:internal="true"/>
         <bpws:variable element="ns16:ActivityErrorData"
-            name="_error_JDBCUpdate" sca-bpel:internal="true"/>
+            name="_error_UpdateMBEDSP" sca-bpel:internal="true"/>
         <bpws:variable name="MaxConnections" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/MaxConnections" type="xsd:int"/>
@@ -3258,6 +3330,10 @@
             name="_error_Throw2" sca-bpel:internal="true"/>
         <bpws:variable element="ns27:ActivityErrorData"
             name="_error_Throw1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:ActivityInput"
+            name="LogNoOfUpdates-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns29:AccumulatedOutput"
+            name="noOfUpdates" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3278,13 +3354,15 @@
                         </bpws:links>
                         <bpws:extensionActivity>
                             <tibex:activityExtension
-                                inputVariable="Log-input" name="Exception">
+                                inputVariable="ExceptionLog-input"
+                                name="ExceptionLog"
+                                tibex:xpdlId="8909e644-6e12-4c57-9db8-f8bef5055f6f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <bpws:sources>
                                     <bpws:source linkName="LogToThrow1"/>
                                 </bpws:sources>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails1&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails1)&quot;/>&lt;/message>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails1&quot;/>&lt;xsl:template name=&quot;ExceptionLog-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails1,true())&quot;/>&lt;/message>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -3308,7 +3386,7 @@
                             faultVariable="Throw1-input" name="Throw1" tibex:xpdlId="0c891c05-21b8-415d-ba7b-a9b13cc81c25">
                             <tibex:inputBindings>
                                 <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;Throw1-input&quot; match=&quot;/&quot;>&lt;tns6:DefaultFault>&lt;message>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/message>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;msgCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/msgCode>&lt;/xsl:if>&lt;/tns6:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FaultDetails1&quot;/>&lt;xsl:template name=&quot;Throw1-input&quot; match=&quot;/&quot;>&lt;tns6:DefaultFault>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails1,true())&quot;/>&lt;/message>&lt;/tns6:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                             </tibex:inputBindings>
                             <bpws:targets>
                                 <bpws:target linkName="LogToThrow1"/>
@@ -3332,7 +3410,8 @@
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
-                    eventTimeout="0" name="Start">
+                    eventTimeout="0" name="Start"
+                    tibex:xpdlId="fb68c8d6-1036-4249-8e48-22496ed15b6f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToRepeatOnError1"/>
                     </bpws:sources>
@@ -3342,7 +3421,8 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension name="End">
+                <tibex:activityExtension name="End"
+                    tibex:xpdlId="33a51c30-8b54-4475-a389-1d566689c56d" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RepeatOnError2ToEnd"/>
                         <bpws:target linkName="RepeatOnDBErrorToEnd"/>
@@ -3366,7 +3446,9 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="RenderDBOutput-input"
-                    name="RenderDBOutput" outputVariable="RenderDBOutput">
+                    name="RenderDBOutput"
+                    outputVariable="RenderDBOutput"
+                    tibex:xpdlId="7d265c2a-989c-457f-bf63-87c5a3db18a3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="MapperToRenderDBOutput"/>
                     </bpws:targets>
@@ -3375,7 +3457,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns8=&quot;http://www.example.org/postCallBackAppainFailure_AssetAdditionSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ErrorRecordGrouping&quot;/>&lt;xsl:template name=&quot;RenderDBOutput-input&quot; match=&quot;/&quot;>&lt;tns8:postCallBackAppainFailure_AssetAdditionElement>&lt;xsl:for-each select=&quot;$ErrorRecordGrouping/tns8:list&quot;>&lt;tns8:list>&lt;xsl:if test=&quot;tns8:requestId&quot;>&lt;tns8:requestId>&lt;xsl:copy-of select=&quot;tns8:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:requestId&quot;/>&lt;/tns8:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:correlationId&quot;>&lt;tns8:correlationId>&lt;xsl:copy-of select=&quot;tns8:correlationId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:correlationId&quot;/>&lt;/tns8:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns8:assetAddErrorAnswerBack&quot;>&lt;tns8:assetAddErrorAnswerBack>&lt;xsl:if test=&quot;tns8:additionAssetId&quot;>&lt;tns8:additionAssetId>&lt;xsl:copy-of select=&quot;tns8:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:additionAssetId&quot;/>&lt;/tns8:additionAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:lineItemId&quot;>&lt;tns8:lineItemId>&lt;xsl:copy-of select=&quot;tns8:lineItemId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:lineItemId&quot;/>&lt;/tns8:lineItemId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:errorNumber&quot;>&lt;tns8:errorNumber>&lt;xsl:copy-of select=&quot;tns8:errorNumber/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:errorNumber&quot;/>&lt;/tns8:errorNumber>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:errorDescription&quot;>&lt;tns8:errorDescription>&lt;xsl:copy-of select=&quot;tns8:errorDescription/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:errorDescription&quot;/>&lt;/tns8:errorDescription>&lt;/xsl:if>&lt;/tns8:assetAddErrorAnswerBack>&lt;/xsl:for-each>&lt;/tns8:list>&lt;/xsl:for-each>&lt;/tns8:postCallBackAppainFailure_AssetAdditionElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns8=&quot;http://www.example.org/postCallBackAppainFailure_AssetAdditionSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ErrorRecordGrouping&quot;/>&lt;xsl:template name=&quot;RenderDBOutput-input&quot; match=&quot;/&quot;>&lt;tns8:postCallBackAppainFailure_AssetAdditionElement>&lt;xsl:for-each select=&quot;$ErrorRecordGrouping/tns8:list&quot;>&lt;tns8:list>&lt;xsl:if test=&quot;tns8:requestId&quot;>&lt;tns8:requestId>&lt;xsl:copy-of select=&quot;tns8:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:requestId&quot;/>&lt;/tns8:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:correlationId&quot;>&lt;tns8:correlationId>&lt;xsl:copy-of select=&quot;tns8:correlationId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:correlationId&quot;/>&lt;/tns8:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns8:assetAddErrorAnswerBack&quot;>&lt;tns8:assetAddErrorAnswerBack>&lt;xsl:if test=&quot;tns8:additionAssetId&quot;>&lt;tns8:additionAssetId>&lt;xsl:copy-of select=&quot;tns8:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:additionAssetId&quot;/>&lt;/tns8:additionAssetId>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:errorNumber&quot;>&lt;tns8:errorNumber>&lt;xsl:copy-of select=&quot;tns8:errorNumber/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:errorNumber&quot;/>&lt;/tns8:errorNumber>&lt;/xsl:if>&lt;xsl:if test=&quot;tns8:errorDescription&quot;>&lt;tns8:errorDescription>&lt;xsl:copy-of select=&quot;tns8:errorDescription/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns8:errorDescription&quot;/>&lt;/tns8:errorDescription>&lt;/xsl:if>&lt;/tns8:assetAddErrorAnswerBack>&lt;/xsl:for-each>&lt;/tns8:list>&lt;/xsl:for-each>&lt;/tns8:postCallBackAppainFailure_AssetAdditionElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3396,7 +3478,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="c96b3224-8c94-4dda-aabd-21326df09768">
+            <bpws:scope name="RepeatOnHttpError"
+                tibex:group="repeatOnError" tibex:xpdlId="c96b3224-8c94-4dda-aabd-21326df09768">
                 <bpws:targets>
                     <bpws:target linkName="LogToRepeatOnError"/>
                 </bpws:targets>
@@ -3406,7 +3489,8 @@
                     </bpws:source>
                 </bpws:sources>
                 <bpws:variables>
-                    <bpws:variable name="index" sca-bpel:internal="true" type="xsd:int">
+                    <bpws:variable name="indexHttpError"
+                        sca-bpel:internal="true" type="xsd:int">
                         <bpws:from>
                             <bpws:literal>1</bpws:literal>
                         </bpws:from>
@@ -3430,7 +3514,7 @@
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:compensationHandler>
-                <bpws:repeatUntil name="repeatUntil" tibex:counterName="index">
+                <bpws:repeatUntil name="repeatUntil" tibex:counterName="indexHttpError">
                     <tibex:DesignExpression>
                         <tibex:expression
                             expression="boolean($repeatOnError_success_flag)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -3442,9 +3526,9 @@
                                 <bpws:if name="if">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$index=$retryCount or ($exitLoop=true())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$indexHttpError = $retryCount or ($exitLoop = true())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$index=$retryCount or ($exitLoop=true())]]></bpws:condition>
+                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$indexHttpError = $retryCount or ($exitLoop = true())]]></bpws:condition>
                                     <bpws:rethrow name="Rethrow" tibex:xpdlId="2563d36e-d455-4bb6-9a8d-96c467f3d47a"/>
                                     <bpws:else>
                                     <bpws:assign name="Assign" validate="no">
@@ -3511,7 +3595,9 @@
                             </bpws:empty>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    inputVariable="Sleep-input" name="Sleep">
+                                    inputVariable="Sleep-input"
+                                    name="Sleep"
+                                    tibex:xpdlId="e64e7f58-cb0f-4c2f-bcb4-a1d8d052e4f8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToSleep_TimedOutException"/>
                                     </bpws:targets>
@@ -3553,7 +3639,9 @@
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
                                     inputVariable="exitLoop"
-                                    name="ExitLoop" outputVariable="exitLoop">
+                                    name="ExitLoop"
+                                    outputVariable="exitLoop"
+                                    tibex:xpdlId="44279a53-d20b-40bd-9057-f7f5deec67aa" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToAssign"/>
                                     </bpws:targets>
@@ -3586,7 +3674,9 @@
                                 <tibex:activityExtension
                                     governedObjectTypes="BWHttpReference"
                                     inputVariable="CallBackAppian-input"
-                                    name="CallBackAppian" outputVariable="CallBackAppian">
+                                    name="CallBackAppian"
+                                    outputVariable="CallBackAppian"
+                                    tibex:xpdlId="d3adab15-5a41-422d-a6d4-8823ce6d3216" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartToCallBackAppian"/>
                                     </bpws:targets>
@@ -3639,7 +3729,8 @@
             </bpws:scope>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="LogRenderOP-input" name="LogRenderOP">
+                    inputVariable="LogRenderOP-input" name="LogRenderOP"
+                    tibex:xpdlId="e1c42dd0-65b4-4ec4-b06f-76aa22dbd8b3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RenderJSONToLog"/>
                     </bpws:targets>
@@ -3670,7 +3761,9 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    inputVariable="CallBackAppainStatus-input" name="CallBackAppainStatus">
+                    inputVariable="CallBackAppainStatus-input"
+                    name="CallBackAppainStatus"
+                    tibex:xpdlId="fbff8cca-9338-4399-b3d0-9e23bb128bf4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RepeatOnErrorToEnd_Name"/>
                     </bpws:targets>
@@ -3720,7 +3813,7 @@
                     </bpws:source>
                 </bpws:sources>
                 <bpws:variables>
-                    <bpws:variable name="index3"
+                    <bpws:variable name="indexDbError"
                         sca-bpel:internal="true" type="xsd:int">
                         <bpws:from>
                             <bpws:literal>1</bpws:literal>
@@ -3733,7 +3826,7 @@
                     <bpws:variable element="ns:FaultDetail"
                         name="FaultDetails2" sca-bpel:internal="true"/>
                 </bpws:variables>
-                <bpws:repeatUntil name="repeatUntil1" tibex:counterName="index3">
+                <bpws:repeatUntil name="repeatUntil1" tibex:counterName="indexDbError">
                     <tibex:DesignExpression>
                         <tibex:expression
                             expression="boolean($repeatOnError_success_flag)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -3745,9 +3838,9 @@
                                 <bpws:if name="if1">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$index3 = $retryCount" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$indexDbError = $retryCount" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$index3 = $retryCount]]></bpws:condition>
+                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$indexDbError = $retryCount]]></bpws:condition>
                                     <bpws:rethrow name="Rethrow" tibex:xpdlId="68d49348-2153-49a9-860a-cce299e6f7e4"/>
                                     <bpws:else>
                                     <bpws:assign name="Assign" validate="no">
@@ -3776,9 +3869,9 @@
                                     <bpws:source linkName="GroupStart1ToGetStatusFromJDE">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$index3 = 1" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$indexDbError = 1" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$index3 = 1]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$indexDbError = 1]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="GroupStart1ToSleep1">
                                     <tibex:DesignExpression>
@@ -3803,7 +3896,9 @@
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
                                     inputVariable="GetStatusFromJDE-input"
-                                    name="GetStatusFromJDE" outputVariable="GetStatusFromJDE">
+                                    name="GetStatusFromJDE"
+                                    outputVariable="GetStatusFromJDE"
+                                    tibex:xpdlId="79c29164-cfda-4749-947b-e95b341885f8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStart1ToGetStatusFromJDE"/>
                                     <bpws:target linkName="Sleep1ToGetStatusFromJDE"/>
@@ -3859,7 +3954,9 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    inputVariable="Sleep1-input" name="Sleep1">
+                                    inputVariable="Sleep1-input"
+                                    name="Sleep1"
+                                    tibex:xpdlId="509279d3-a8fa-45fa-9122-ea118820fa82" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStart1ToSleep1"/>
                                     </bpws:targets>
@@ -3892,7 +3989,7 @@
                     <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[boolean($repeatOnError_success_flag)]]></bpws:condition>
                 </bpws:repeatUntil>
             </bpws:scope>
-            <bpws:scope name="RepeatOnError2"
+            <bpws:scope name="RepeatOnUpdateError"
                 tibex:group="repeatOnError" tibex:xpdlId="1ebaf3ce-654b-4bb9-a3f4-e9338819ac20">
                 <bpws:targets>
                     <bpws:target linkName="CallBackAppainStatusToRepeatOnError2"/>
@@ -3901,7 +3998,7 @@
                     <bpws:source linkName="RepeatOnError2ToEnd"/>
                 </bpws:sources>
                 <bpws:variables>
-                    <bpws:variable name="index2"
+                    <bpws:variable name="indexUpdateError"
                         sca-bpel:internal="true" type="xsd:int">
                         <bpws:from>
                             <bpws:literal>1</bpws:literal>
@@ -3914,7 +4011,7 @@
                     <bpws:variable element="ns:FaultDetail"
                         name="FaultDetails3" sca-bpel:internal="true"/>
                 </bpws:variables>
-                <bpws:repeatUntil name="repeatUntil2" tibex:counterName="index2">
+                <bpws:repeatUntil name="repeatUntil2" tibex:counterName="indexUpdateError">
                     <tibex:DesignExpression>
                         <tibex:expression
                             expression="boolean($repeatOnError_success_flag)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -3926,9 +4023,9 @@
                                 <bpws:if name="if2">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$index2 = $retryCount" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$indexUpdateError = $retryCount" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$index2 = $retryCount]]></bpws:condition>
+                                    <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$indexUpdateError = $retryCount]]></bpws:condition>
                                     <bpws:rethrow name="Rethrow" tibex:xpdlId="a76da7bb-6fcf-4b84-8b9f-92d3a8d368db"/>
                                     <bpws:else>
                                     <bpws:assign name="Assign" validate="no">
@@ -3943,10 +4040,12 @@
                         </bpws:faultHandlers>
                         <bpws:flow name="flow5">
                             <bpws:links>
-                                <bpws:link name="IterateToGroupEnd2" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="GroupStart2ToSleep2" tibex:linkType="ERROR"/>
                                 <bpws:link name="Sleep2ToThrow2" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="GroupStart2ToIterate" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="IterateToLog" tibex:linkType="SUCCESS"/>
+                                <bpws:link
+                                    name="LogNoOfUpdatesToGroupEnd2" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="GroupStart2"
                                 tibex:group="groupStart" tibex:xpdlId="0c5ae4a9-1995-4bb9-b2b3-a45ba42efcad">
@@ -3967,7 +4066,7 @@
                                 tibex:group="groupEnd"
                                 tibex:xpdlId="ec756417-71a3-465b-b1fa-702a0cc66398" validate="no">
                                 <bpws:targets>
-                                    <bpws:target linkName="IterateToGroupEnd2"/>
+                                    <bpws:target linkName="LogNoOfUpdatesToGroupEnd2"/>
                                 </bpws:targets>
                                 <bpws:copy>
                                     <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[true()]]></bpws:from>
@@ -3976,7 +4075,9 @@
                             </bpws:assign>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    inputVariable="Sleep2-input" name="Sleep2">
+                                    inputVariable="Sleep2-input"
+                                    name="Sleep2"
+                                    tibex:xpdlId="9798a7b5-4ccd-436b-9a9f-ce4a327bf4c8" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStart2ToSleep2"/>
                                     </bpws:targets>
@@ -4010,10 +4111,17 @@
                                     <bpws:target linkName="GroupStart2ToIterate"/>
                                 </bpws:targets>
                                 <bpws:sources>
-                                    <bpws:source linkName="IterateToGroupEnd2"/>
+                                    <bpws:source linkName="IterateToLog"/>
                                 </bpws:sources>
                                 <bpws:sequence name="sequence" tibex:group="iterate">
-                                    <bpws:empty name="GroupInit" tibex:group="groupInit"/>
+                                    <bpws:assign name="GroupInit"
+                                    tibex:group="groupInit"
+                                    tibex:xpdlId="8dcd481f-1895-46e3-b54f-1d66af0950a7" validate="no">
+                                    <bpws:copy>
+                                    <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"><![CDATA[<?xml version="1.0" encoding="UTF-8"?> <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://tns.tibco.com/bw/palette/internal/accumulateoutput+e4ca134c-b256-4c1f-84fb-2162e1407491" version="2.0"> <xsl:template name="Accumulate" match="/"> <tns:AccumulatedOutput/></xsl:template> </xsl:stylesheet>]]></bpws:from>
+                                    <bpws:to variable="noOfUpdates"/>
+                                    </bpws:copy>
+                                    </bpws:assign>
                                     <bpws:forEach counterName="index"
                                     name="iterate" parallel="no" tibex:group="iterate">
                                     <tibex:DesignExpression name="variableList">
@@ -4047,19 +4155,45 @@
                                     <bpws:to variable="currentElement"/>
                                     </bpws:copy>
                                     </bpws:assign>
-                                    <bpws:empty
-                                    name="GroupEnd3"
-                                    tibex:group="groupEnd" tibex:xpdlId="03f464d3-480d-42e7-9981-17fe56b77a6e">
-                                    <bpws:targets>
-                                    <bpws:target linkName="JDBCUpdateToGroupEnd3"/>
-                                    </bpws:targets>
-                                    </bpws:empty>
                                     <bpws:extensionActivity>
 
                                     <tibex:activityExtension
-                                    inputVariable="JDBCUpdate-input"
-                                    name="JDBCUpdate"
-                                    outputVariable="JDBCUpdate"
+                                    name="noOfUpdates"
+                                    outputVariable="noOfUpdates"
+                                    tibex:group="groupEnd"
+                                    tibex:xpdlId="e4ca134c-b256-4c1f-84fb-2162e1407491" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="JDBCUpdateToGroupEnd3"/>
+                                    </bpws:targets>
+                                    <tibex:config>
+
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.internal.accumulateend"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:internalactivities="http://ns.tibco.com/bw/core/internalactivity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+
+                                    <type href="http://ns.tibco.com/bw/core/internalactivity#//AccumulateEnd"/>
+
+                                    <value xsi:type="internalactivities:AccumulateEnd">
+                                    <activityNames>UpdateMBEDSP</activityNames>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                    </tibex:activityExtension>
+                                    </bpws:extensionActivity>
+                                    <bpws:extensionActivity>
+
+                                    <tibex:activityExtension
+                                    inputVariable="UpdateMBEDSP-input"
+                                    name="UpdateMBEDSP"
+                                    outputVariable="UpdateMBEDSP"
                                     tibex:xpdlId="3e4132b5-f006-49c8-a739-d51f6f233235" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStart3ToJDBCUpdate"/>
@@ -4120,6 +4254,40 @@
                                     <bpws:target linkName="Sleep2ToThrow2"/>
                                 </bpws:targets>
                             </bpws:throw>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    inputVariable="LogNoOfUpdates-input"
+                                    name="LogNoOfUpdates"
+                                    tibex:xpdlId="02c0a21d-9a9f-4045-a33d-71c732544aa3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="IterateToLog"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="LogNoOfUpdatesToGroupEnd2"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;noOfUpdates&quot;/>&lt;xsl:template name=&quot;LogNoOfUpdates-input&quot; match=&quot;/&quot;>&lt;tns3:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;No Of Updated Record Is: &amp;quot;,xsd:string(count($noOfUpdates/tns:jdbcUpdateActivityOutput/noOfUpdates)), &amp;quot; On Timestamp: &amp;quot;,xsd:string(current-dateTime()))&quot;/>&lt;/message>&lt;/tns3:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.log"
+                                    version="6.0.0.001"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>
                     <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[boolean($repeatOnError_success_flag)]]></bpws:condition>
@@ -4128,7 +4296,9 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="ErrorRecordGrouping-input"
-                    name="ErrorRecordGrouping" outputVariable="ErrorRecordGrouping">
+                    name="ErrorRecordGrouping"
+                    outputVariable="ErrorRecordGrouping"
+                    tibex:xpdlId="a091a484-ad65-422c-bccb-a610e5d64e9a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RepeatOnDBErrorToMapper"/>
                     </bpws:targets>
