@@ -2844,13 +2844,13 @@
             tibex:propertySource="/JDBC/JDE/FAEDUS" type="xsd:string"/>
         <bpws:variable name="FAEDTN" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/JDBC/JDE/FAEDTN" type="xsd:string"/>
+            tibex:propertySource="/JDBC/JDE/FAEDTN" type="xsd:int"/>
         <bpws:variable name="FADRIN" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/JDBC/JDE/FADRIN" type="xsd:string"/>
+            tibex:propertySource="/JDBC/JDE/FADRIN" type="xsd:int"/>
         <bpws:variable name="FAEDDL" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/JDBC/JDE/FAEDDL" type="xsd:string"/>
+            tibex:propertySource="/JDBC/JDE/FAEDDL" type="xsd:int"/>
         <bpws:variable name="FATNAC_Addition" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FATNAC_Addition" type="xsd:string"/>
