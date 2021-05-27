@@ -118,9 +118,9 @@
   <sca:property xmi:id="_84EX4KdTEeuOaKLt1-2m3A" name="/JDBC/JDE/maxRows" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_85psQKdTEeuOaKLt1-2m3A" name="/JDBC/JDE/procSchema" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_YfIhMLmBEeuQIqwA7-_WNw" name="/JDBC/JDE/FAEDUS" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_sCoPYLoYEeuvt5JRh8SJNQ" name="/JDBC/JDE/FAEDTN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_3L7poLoZEeuvt5JRh8SJNQ" name="/JDBC/JDE/FADRIN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_5egwQLoZEeuvt5JRh8SJNQ" name="/JDBC/JDE/FAEDDL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sCoPYLoYEeuvt5JRh8SJNQ" name="/JDBC/JDE/FAEDTN" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3L7poLoZEeuvt5JRh8SJNQ" name="/JDBC/JDE/FADRIN" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_5egwQLoZEeuvt5JRh8SJNQ" name="/JDBC/JDE/FAEDDL" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_AUw2YLoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FATNAC_Addition" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_AYyawLoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FATNAC_Change" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_aBmA8LoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FLDIR1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
@@ -136,8 +136,10 @@
   <sca:property xmi:id="_ZMnKkKdfEeuLLswsXqfqtA" name="/Appian/maxTotalConPerHost" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZOYsMKdfEeuLLswsXqfqtA" name="/Appian/socketTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZP_OsKdfEeuLLswsXqfqtA" name="/Appian/connectionTimeout" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_gbzX8Kv7EeuOvvGj7qhCSw" name="/Timer/StartTime" type="XMLSchema:dateTime" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_qMiSMKv7EeuOvvGj7qhCSw" name="/Timer/TimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qSoYwL73EeuW3MHpxEJudw" name="/Timer/AssetChangeStartTime" type="XMLSchema:dateTime" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qcCzcL73EeuW3MHpxEJudw" name="/Timer/AssetChangeTimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zLB80L73EeuW3MHpxEJudw" name="/Timer/AssetAddStartTime" type="XMLSchema:dateTime" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zMy3YL73EeuW3MHpxEJudw" name="/Timer/AssetAddTimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_bQ9cAKcfEeufvIOJ6OAa0g" name="ComponentHealthCheck" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bQ9cAacfEeufvIOJ6OAa0g" processName="http_healthcheck.HealthCheck"/>
     <sca:service xmi:id="_bQ9cAqcfEeufvIOJ6OAa0g" name="healthcheck-liveliness">

@@ -608,14 +608,16 @@
         <bpws:variable element="ns2:ActivityErrorData"
             name="_error_Throw" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable name="StartTime" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/Timer/StartTime" type="xsd:dateTime"/>
-        <bpws:variable name="TimeInterval" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/Timer/TimeInterval" type="xsd:int"/>
         <bpws:variable element="ns3:ActivityInput"
             name="LogException-input" sca-bpel:internal="true"/>
+        <bpws:variable name="AssetAddStartTime"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="/Timer/AssetAddStartTime" type="xsd:dateTime"/>
+        <bpws:variable name="AssetAddTimeInterval"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="/Timer/AssetAddTimeInterval" type="xsd:int"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -648,7 +650,7 @@
                             <tibex:activityExtension
                                 inputVariable="LogException-input"
                                 name="LogException"
-                                tibex:xpdlId="68bc98b4-45fa-4df4-999c-d568a743f148" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                tibex:xpdlId="b9cc4e26-2896-4368-bf89-e4bee6048e5a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <bpws:sources>
                                     <bpws:source linkName="LogToThrow"/>
                                 </bpws:sources>
@@ -686,7 +688,7 @@
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="60" name="Timer"
-                    tibex:xpdlId="31cc4e54-ebaa-45bd-961c-d4701d7a560f"
+                    tibex:xpdlId="87b3b46e-f70a-4e0e-8d75-356a2382c7a7"
                     variable="Timer" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="TimerToCallProcess"/>
@@ -701,16 +703,16 @@
                             xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                             <attributeBindings
                                 bindingType="moduleProperty"
-                                eAttributeName="startTime" processProperty="StartTime"/>
+                                eAttributeName="startTime" processProperty="AssetAddStartTime"/>
                             <attributeBindings
                                 bindingType="moduleProperty"
-                                eAttributeName="timeInterval" processProperty="TimeInterval"/>
+                                eAttributeName="timeInterval" processProperty="AssetAddTimeInterval"/>
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/generalactivities#//Timer"/>
                                     <value
                                     endTime="2021-04-29T16:40:22.728+0530"
-                                    intervalUnit="Minute" xsi:type="generalactivities:Timer"/>
+                                    intervalUnit="Month" xsi:type="generalactivities:Timer"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>
@@ -720,7 +722,7 @@
             <bpws:extensionActivity>
                 <tibex:extActivity
                     name="Post_CallBackAppianSuccess_AssetAddition"
-                    tibex:xpdlId="6e6ae79c-7800-4890-9d99-914003385582"
+                    tibex:xpdlId="0ade6d30-4b11-481f-bbd6-eaa93f72bd26"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="TimerToCallProcess"/>
@@ -732,7 +734,7 @@
             <bpws:extensionActivity>
                 <tibex:extActivity
                     name="Post_CallBackAppianFailure_AssetAddition"
-                    tibex:xpdlId="f1d398b1-2b33-4e15-84e5-538978923b08"
+                    tibex:xpdlId="86f1e340-f6c3-4668-9086-b21a51f15b70"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="TimerToCallProcess1"/>

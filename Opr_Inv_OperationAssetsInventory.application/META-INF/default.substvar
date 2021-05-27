@@ -294,7 +294,7 @@
 			<value>0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
@@ -302,7 +302,7 @@
 			<value>0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
@@ -318,7 +318,7 @@
 			<value>1</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
+			<type>Integer</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
@@ -434,7 +434,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///Timer/StartTime</name>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeStartTime</name>
 			<value>2021-05-11T04:07:39-05:00</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
@@ -442,7 +442,23 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///Timer/TimeInterval</name>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeTimeInterval</name>
+			<value>10</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddStartTime</name>
+			<value>2021-05-11T04:07:39-05:00</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddTimeInterval</name>
 			<value>10</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>

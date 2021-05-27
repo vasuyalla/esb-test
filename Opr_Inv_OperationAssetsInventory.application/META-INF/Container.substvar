@@ -283,67 +283,67 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDUS</name>
-			<value>FIXEDASSET</value>
+			<value>#FAEDUS#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDTN</name>
-			<value>0</value>
+			<value>#FAEDTN#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
+			<type>Integer</type>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDDL</name>
-			<value>0</value>
+			<value>#FAEDDL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
+			<type>Integer</type>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FATNAC_Change</name>
-			<value>C</value>
+			<value>#FATNAC_Change#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FADRIN</name>
-			<value>1</value>
+			<value>#FADRIN#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
+			<type>Integer</type>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FATNAC_Addition</name>
-			<value>A</value>
+			<value>#FATNAC_Addition#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLLT</name>
-			<value>AA</value>
+			<value>#FLLT#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLDIR1</name>
-			<value>R</value>
+			<value>#FLDIR1#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
@@ -434,16 +434,32 @@
 			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///Timer/StartTime</name>
-			<value>#TIMER_START#</value>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeStartTime</name>
+			<value>#ASSETCHANGE_TIMER_START#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
 			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///Timer/TimeInterval</name>
-			<value>#TIMER_TIMEINTERVAL#</value>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeTimeInterval</name>
+			<value>#ASSETCHANGE_TIMER_TIMEINTERVAL#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddStartTime</name>
+			<value>#ASSETADD_TIMER_START#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddTimeInterval</name>
+			<value>#ASSETADD_TIMER_TIMEINTERVAL#</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>

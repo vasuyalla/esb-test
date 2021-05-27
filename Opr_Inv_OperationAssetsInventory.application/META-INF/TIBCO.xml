@@ -325,20 +325,6 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/StartTime</packaging:name>
-      <packaging:type>xsd:dateTime</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
-      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/TimeInterval</packaging:name>
-      <packaging:type>xsd:int</packaging:type>
-      <packaging:visibility>public</packaging:visibility>
-      <packaging:scalable>true</packaging:scalable>
-      <packaging:overrideValue>false</packaging:overrideValue>
-    </packaging:property>
-    <packaging:property>
       <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDUS</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
@@ -347,14 +333,14 @@
     </packaging:property>
     <packaging:property>
       <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDTN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
       <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAEDDL</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
@@ -368,7 +354,7 @@
     </packaging:property>
     <packaging:property>
       <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FADRIN</packaging:name>
-      <packaging:type>xsd:string</packaging:type>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
@@ -390,6 +376,34 @@
     <packaging:property>
       <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLDIR1</packaging:name>
       <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeStartTime</packaging:name>
+      <packaging:type>xsd:dateTime</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/AssetChangeTimeInterval</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddStartTime</packaging:name>
+      <packaging:type>xsd:dateTime</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///Timer/AssetAddTimeInterval</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
