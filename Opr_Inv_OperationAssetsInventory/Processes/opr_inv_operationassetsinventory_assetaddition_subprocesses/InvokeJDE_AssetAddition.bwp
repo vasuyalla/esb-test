@@ -369,6 +369,8 @@
                             name="FLDSD" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1" name="FLLT"
                             nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLDIR1" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -552,7 +554,9 @@
                             <complexType>
                                 <sequence>
                                     <element maxOccurs="1" minOccurs="1"
-                                    name="BATCHNUMBER"
+                                    name="RequestID" nillable="true" type="string"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="CorrelationID"
                                     nillable="true" type="string"/>
                                 </sequence>
                             </complexType>
@@ -763,7 +767,7 @@
                         <element maxOccurs="1" minOccurs="1"
                             name="FAAMCU" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
-                            name="FADIR1" nillable="true" type="string"/>
+                            name="FAEDSP" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -881,8 +885,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
-                                    height="99" x="1766"
-                                    xsi:type="notation:Bounds" y="3"/>
+                                    height="99" x="1590"
+                                    xsi:type="notation:Bounds" y="164"/>
                                     </children>
                                     <children type="4018">
                                     <children type="3018">
@@ -1734,8 +1738,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="1622"
-                                    xsi:type="notation:Bounds" y="15"/>
+                                    <layoutConstraint x="1452"
+                                    xsi:type="notation:Bounds" y="25"/>
                                     </children>
                                     <children type="4018">
                                     <children type="3018">
@@ -2187,8 +2191,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="1622"
-                                    xsi:type="notation:Bounds" y="297"/>
+                                    <layoutConstraint x="1452"
+                                    xsi:type="notation:Bounds" y="307"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -2222,8 +2226,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="1622"
-                                    xsi:type="notation:Bounds" y="166"/>
+                                    <layoutConstraint x="1452"
+                                    xsi:type="notation:Bounds" y="176"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -2464,7 +2468,8 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 0, -462, 0]$[463, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, -141, -139]$[166, 0, 0, -139]$[166, 103, 0, -36]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0"
@@ -2528,8 +2533,8 @@
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="-6"/>
             </children>
-            <styles lineColor="16711680" xsi:type="notation:ConnectorStyle"/>
-            <styles fontColor="16711680" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, 16, -143, -94]$[144, 94, -24, -16]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
@@ -2559,12 +2564,13 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="19" xsi:type="notation:Location" y="-19"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[204, 0, -265, -128]$[324, 0, -145, -128]$[324, 128, -145, 0]$[445, 128, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
@@ -2581,7 +2587,7 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="-8" xsi:type="notation:Location" y="8"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
@@ -2699,6 +2705,29 @@
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, 3, -436, -48]$[121, 13, -340, -38]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint x="-3" xsi:type="notation:Location" y="2"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints
+                points="[204, 2, -265, 156]$[326, 2, -143, 156]$[326, -156, -143, -2]$[445, -156, -24, -2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[25, -2, -141, 10]$[142, -10, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -2733,12 +2762,10 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+8aa95261-963c-4c2f-aa77-78ada6e153c2+input" prefix="tns11"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
-        location="../../Schemas/assetChangeRequestSchema.xsd" namespace="http://tns.tibco.com/bw/json/1619506729905"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetChangeCallBackAppian"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../Schemas/assetAdditionRequestSchema.xsd" namespace="http://tns.tibco.com/bw/json/1619506670629"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema"
+        location="../../Schemas/assetAddPreValSPResponse.xsd" namespace=""/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/assetAdditionCallBackAppian"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/xml/parser/example"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -2798,7 +2825,7 @@
         <bpws:variable element="ns8:SleepInputSchema"
             name="Sleep1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns17:xmlString" name="ParseSpData-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns20:OutputElement" name="ParseSpData" sca-bpel:internal="true"/>
+        <bpws:variable element="Resultsets" name="ParseSpData" sca-bpel:internal="true"/>
         <bpws:variable element="ns18:ActivityErrorData"
             name="_error_ParseSpData" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:DefaultFault" name="Throw1-input" sca-bpel:internal="true"/>
@@ -2827,9 +2854,9 @@
         <bpws:variable name="FATNAC_Addition" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FATNAC_Addition" type="xsd:string"/>
-        <bpws:variable name="FADIR1" sca-bpel:hotUpdate="false"
+        <bpws:variable name="FLDIR1" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/JDBC/JDE/FADIR1" type="xsd:string"/>
+            tibex:propertySource="/JDBC/JDE/FLDIR1" type="xsd:string"/>
         <bpws:variable name="FLLT" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FLLT" type="xsd:string"/>
@@ -2894,17 +2921,22 @@
         <bpws:flow name="flow">
             <bpws:links>
                 <bpws:link name="AssetChange_Pre_CallBackAppianToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="RepeatOnSPErrorToParseXml" tibex:linkType="SUCCESS"/>
+                <bpws:link name="RepeatOnSPErrorToParseXml_RV0or-6"
+                    tibex:label="RV=0 or -6" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="ParseSpDataToEmpty1" tibex:linkType="SUCCESS"/>
-                <bpws:link
-                    name="Empty1ToAssetAddition_Pre_CallBackAppian" tibex:linkType="SUCCESS"/>
+                <bpws:link name="Empty1ToAssetAddition_Pre_ErrorExists"
+                    tibex:label="ErrorExists" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="RepeatOnErrorToRepeatOnSPError" tibex:linkType="SUCCESS"/>
                 <bpws:link name="StartToRepeatOnError" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="RepeatOnSPErrorToAssetAddition_Pre_Otherwise"
+                    tibex:label="Otherwise" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="Empty1ToEnd" tibex:linkType="SUCCESSWITHNOCONDITION"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="773bb0e7-ea87-4062-94e5-69154fbec64e"
+                    tibex:xpdlId="085297ca-816f-4be2-90a3-7e44f18777f1"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToRepeatOnError"/>
@@ -2919,6 +2951,7 @@
                     tibex:xpdlId="b8f03289-26f6-458b-aa87-ffe01d283d4a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="AssetChange_Pre_CallBackAppianToEnd"/>
+                        <bpws:target linkName="Empty1ToEnd"/>
                     </bpws:targets>
                     <tibex:config>
                         <bwext:BWActivity
@@ -2936,8 +2969,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError"
-                tibex:indexToGlobal="false" tibex:xpdlId="58b8f6b1-6ba5-4f95-b02a-b9bed5ac766a">
+            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="58b8f6b1-6ba5-4f95-b02a-b9bed5ac766a">
                 <bpws:targets>
                     <bpws:target linkName="StartToRepeatOnError"/>
                 </bpws:targets>
@@ -3222,7 +3254,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e4b3a0df-b0c4-4844-8b80-f5174a68847e+input&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FLLT&quot;/>&lt;xsl:template name=&quot;InsertToTtable-input&quot; match=&quot;/&quot;>&lt;tns7:jdbcUpdateActivityInput>&lt;FLURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 20)&quot;/>&lt;/FLURRF>&lt;FLEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/FLEDBT>&lt;FLEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns5:additionAssetId) * 1000)&quot;/>&lt;/FLEDLN>&lt;FLADLM>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:lifeInMonths)&quot;/>&lt;/FLADLM>&lt;FLDSD>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLDSD)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLDSD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLDSD>&lt;FLLT>&lt;xsl:value-of select=&quot;$FLLT&quot;/>&lt;/FLLT>&lt;/tns7:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e4b3a0df-b0c4-4844-8b80-f5174a68847e+input&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FLLT&quot;/>&lt;xsl:param name=&quot;FLDIR1&quot;/>&lt;xsl:template name=&quot;InsertToTtable-input&quot; match=&quot;/&quot;>&lt;tns7:jdbcUpdateActivityInput>&lt;FLURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/FLURRF>&lt;FLEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/FLEDBT>&lt;FLEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns5:additionAssetId) * 1000)&quot;/>&lt;/FLEDLN>&lt;FLADLM>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:lifeInMonths)&quot;/>&lt;/FLADLM>&lt;FLDSD>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLDSD)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLDSD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLDSD>&lt;FLLT>&lt;xsl:value-of select=&quot;$FLLT&quot;/>&lt;/FLLT>&lt;FLDIR1>&lt;xsl:value-of select=&quot;$FLDIR1&quot;/>&lt;/FLDIR1>&lt;/tns7:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3244,7 +3276,7 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="INSERT INTO INTFACE.F551202T (FLURRF, FLEDBT, FLEDLN, FLADLM,&#xa;  FLDSD, FLLT)&#xa;  VALUES (?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    sqlStatement="INSERT INTO INTFACE.F551202T (FLURRF, FLEDBT, FLEDLN, FLADLM,&#xa;  FLDSD, FLLT, FLDIR1)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
@@ -3269,6 +3301,10 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="FLLT"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLDIR1"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3294,7 +3330,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+8aa95261-963c-4c2f-aa77-78ada6e153c2+input&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FADRIN&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Addition&quot;/>&lt;xsl:param name=&quot;FADIR1&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns11:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns5:additionAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 20)&quot;/>&lt;/FAURRF>&lt;FACO>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:companyId)&quot;/>&lt;/FACO>&lt;FAMCU>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:businessUnit)&quot;/>&lt;/FAMCU>&lt;FAAOBJ>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:objectAccount)&quot;/>&lt;/FAAOBJ>&lt;FAACL1>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:assetType)&quot;/>&lt;/FAACL1>&lt;FADL01>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:assetDesc)&quot;/>&lt;/FADL01>&lt;FAASUB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:subsidiary)&quot;/>&lt;/FAASUB>&lt;FADRIN>&lt;xsl:value-of select=&quot;$FADRIN&quot;/>&lt;/FADRIN>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Addition&quot;/>&lt;/FATNAC>&lt;FAAMCU>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:businessUnit)&quot;/>&lt;/FAAMCU>&lt;FADIR1>&lt;xsl:value-of select=&quot;$FADIR1&quot;/>&lt;/FADIR1>&lt;/tns11:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+8aa95261-963c-4c2f-aa77-78ada6e153c2+input&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FADRIN&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Addition&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns11:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns5:additionAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/FAURRF>&lt;FACO>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:companyId)&quot;/>&lt;/FACO>&lt;FAMCU>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:businessUnit)&quot;/>&lt;/FAMCU>&lt;FAAOBJ>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:objectAccount)&quot;/>&lt;/FAAOBJ>&lt;FAACL1>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:assetType)&quot;/>&lt;/FAACL1>&lt;FADL01>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:assetDesc)&quot;/>&lt;/FADL01>&lt;FAASUB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:subsidiary)&quot;/>&lt;/FAASUB>&lt;FADRIN>&lt;xsl:value-of select=&quot;$FADRIN&quot;/>&lt;/FADRIN>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Addition&quot;/>&lt;/FATNAC>&lt;FAAMCU>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns5:businessUnit)&quot;/>&lt;/FAAMCU>&lt;FAEDSP>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/FAEDSP>&lt;/tns11:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3316,7 +3352,7 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xa;  FAURRF, FACO, FAMCU, FAAOBJ, FAACL1, FADL01, FAASUB, FADRIN,&#xa;  FAEDDL, FATNAC, FAAMCU, FADIR1)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xa;  FAURRF, FACO, FAMCU, FAAOBJ, FAACL1, FADL01, FAASUB, FADRIN,&#xa;  FAEDDL, FATNAC, FAAMCU, FAEDSP)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
@@ -3380,7 +3416,7 @@
 
                                     <PreparedParameters
                                     DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="FADIR1"/>
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAEDSP"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3406,14 +3442,15 @@
                     tibex:xpdlId="e420fcb2-1074-4ab0-bbd0-789ca3047e61"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="Empty1ToAssetAddition_Pre_CallBackAppian"/>
+                        <bpws:target linkName="Empty1ToAssetAddition_Pre_ErrorExists"/>
+                        <bpws:target linkName="RepeatOnSPErrorToAssetAddition_Pre_Otherwise"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="AssetChange_Pre_CallBackAppianToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns10=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;AssetAddition_Pre_CallBackAppian-input&quot; match=&quot;/&quot;>&lt;tns10:assetAdditionCallbackAppianRequestElement>&lt;xsl:if test=&quot;$Start/tns5:requestId&quot;>&lt;tns10:requestId>&lt;xsl:copy-of select=&quot;$Start/tns5:requestId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:requestId&quot;/>&lt;/tns10:requestId>&lt;/xsl:if>&lt;xsl:if test=&quot;$Start/tns5:correlationid&quot;>&lt;tns10:correlationId>&lt;xsl:copy-of select=&quot;$Start/tns5:correlationid/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns5:correlationid&quot;/>&lt;/tns10:correlationId>&lt;/xsl:if>&lt;xsl:for-each select=&quot;$Start/tns5:addAssets&quot;>&lt;tns10:assetAddAnswerBack>&lt;xsl:if test=&quot;tns5:additionAssetId&quot;>&lt;tns10:additionAssetId>&lt;xsl:copy-of select=&quot;tns5:additionAssetId/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns5:additionAssetId&quot;/>&lt;/tns10:additionAssetId>&lt;/xsl:if>&lt;tns10:assetNumber>&lt;xsl:value-of select=&quot;&amp;quot;12345&amp;quot;&quot;/>&lt;/tns10:assetNumber>&lt;tns10:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns10:status>&lt;tns10:errorMessage>&lt;xsl:value-of select=&quot;&amp;quot;Test&amp;quot;&quot;/>&lt;/tns10:errorMessage>&lt;/tns10:assetAddAnswerBack>&lt;/xsl:for-each>&lt;/tns10:assetAdditionCallbackAppianRequestElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns10=&quot;http://www.example.org/assetAdditionCallBackAppian&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;Pre_Validate_StoreProc&quot;/>&lt;xsl:param name=&quot;ParseSpData&quot;/>&lt;xsl:template name=&quot;AssetAddition_Pre_CallBackAppian-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$Pre_Validate_StoreProc/outputSet/RETURN_VALUE = 0&quot;>&lt;tns10:assetAdditionCallbackAppianRequestElement>&lt;tns10:requestId>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/tns10:requestId>&lt;tns10:correlationId>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/tns10:correlationId>&lt;xsl:for-each select=&quot;$ParseSpData/ResultSet1/Record1&quot;>&lt;tns10:assetAddAnswerBack>&lt;tns10:additionAssetId>&lt;xsl:value-of select=&quot;xsd:string(xsd:double(FAEDLN) div 1000)&quot;/>&lt;/tns10:additionAssetId>&lt;tns10:assetNumber>&lt;xsl:value-of select=&quot;tib:trim(FANUMB)&quot;/>&lt;/tns10:assetNumber>&lt;tns10:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns10:status>&lt;xsl:if test=&quot;LongMessage&quot;>&lt;tns10:errorMessage>&lt;xsl:copy-of select=&quot;LongMessage/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;LongMessage&quot;/>&lt;/tns10:errorMessage>&lt;/xsl:if>&lt;/tns10:assetAddAnswerBack>&lt;/xsl:for-each>&lt;/tns10:assetAdditionCallbackAppianRequestElement>&lt;/xsl:when>&lt;xsl:when test=&quot;$Pre_Validate_StoreProc/outputSet/RETURN_VALUE = -6&quot;>&lt;tns10:assetAdditionCallbackAppianRequestElement>&lt;tns10:requestId>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/tns10:requestId>&lt;tns10:correlationId>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/tns10:correlationId>&lt;xsl:for-each select=&quot;$ParseSpData/ResultSet1/Record1&quot;>&lt;tns10:assetAddAnswerBack>&lt;tns10:additionAssetId>&lt;xsl:value-of select=&quot;xsd:string(xsd:double(FAEDLN) div 1000)&quot;/>&lt;/tns10:additionAssetId>&lt;tns10:assetNumber>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns10:assetNumber>&lt;tns10:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns10:status>&lt;tns10:errorMessage>&lt;xsl:value-of select=&quot;concat(&amp;quot;StoreProc Fail With ErrorMessage:- &amp;quot;, ErrorMessage)&quot;/>&lt;/tns10:errorMessage>&lt;/tns10:assetAddAnswerBack>&lt;/xsl:for-each>&lt;/tns10:assetAdditionCallbackAppianRequestElement>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns10:assetAdditionCallbackAppianRequestElement>&lt;tns10:requestId>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/tns10:requestId>&lt;tns10:correlationId>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/tns10:correlationId>&lt;xsl:for-each select=&quot;$ParseSpData/ResultSet1/Record1&quot;>&lt;tns10:assetAddAnswerBack>&lt;tns10:additionAssetId>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns10:additionAssetId>&lt;tns10:assetNumber>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns10:assetNumber>&lt;tns10:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns10:status>&lt;tns10:errorMessage>&lt;xsl:value-of select=&quot;&amp;quot;Record Processing Failed at JDE&amp;quot;&quot;/>&lt;/tns10:errorMessage>&lt;/tns10:assetAddAnswerBack>&lt;/xsl:for-each>&lt;/tns10:assetAdditionCallbackAppianRequestElement>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="opr_inv_operationassetsinventory_assetaddition_subprocesses.AssetAddition_Pre_CallBackAppian" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -3425,7 +3462,19 @@
                     <bpws:target linkName="RepeatOnErrorToRepeatOnSPError"/>
                 </bpws:targets>
                 <bpws:sources>
-                    <bpws:source linkName="RepeatOnSPErrorToParseXml"/>
+                    <bpws:source linkName="RepeatOnSPErrorToParseXml_RV0or-6">
+                        <tibex:DesignExpression>
+                            <tibex:expression
+                                expression="$Pre_Validate_StoreProc/outputSet/RETURN_VALUE = 0 or $Pre_Validate_StoreProc/outputSet/RETURN_VALUE = -6" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                        </tibex:DesignExpression>
+                        <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Pre_Validate_StoreProc/outputSet/RETURN_VALUE = 0 or $Pre_Validate_StoreProc/outputSet/RETURN_VALUE = -6]]></bpws:transitionCondition>
+                    </bpws:source>
+                    <bpws:source linkName="RepeatOnSPErrorToAssetAddition_Pre_Otherwise">
+                        <tibex:DesignExpression>
+                            <tibex:expression expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                        </tibex:DesignExpression>
+                        <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                    </bpws:source>
                 </bpws:sources>
                 <bpws:variables>
                     <bpws:variable name="indexSpError"
@@ -3486,8 +3535,8 @@
                                 <bpws:link name="Sleep1ToThrow1" tibex:linkType="SUCCESS"/>
                                 <bpws:link
                                     name="Pre_Validate_StoreProcToGroupEnd2" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                <bpws:link name="Pre_Validate_change"
-                                    tibex:label="change" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                <bpws:link name="Pre_Validate_Otherwise"
+                                    tibex:label="Otherwise" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="ExitLoopToThrow1" tibex:linkType="SUCCESS"/>
                                 <bpws:link
                                     name="GroupStart2ToPre_Validate_StoreProc" tibex:linkType="SUCCESS"/>
@@ -3535,7 +3584,7 @@
                                     </tibex:DesignExpression>
                                     <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[exists($Pre_Validate_StoreProc/outputSet/RETURN_VALUE )]]></bpws:transitionCondition>
                                     </bpws:source>
-                                    <bpws:source linkName="Pre_Validate_change">
+                                    <bpws:source linkName="Pre_Validate_Otherwise">
                                     <tibex:DesignExpression>
                                     <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -3545,7 +3594,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+c7388542-6fd4-41b9-8e1d-20583953af6d+input&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Pre_Validate_StoreProc-input&quot; match=&quot;/&quot;>&lt;tns8:inputs>&lt;inputSet>&lt;BATCHNUMBER>&lt;xsl:value-of select=&quot;&amp;quot;MBF-1118&amp;quot;&quot;/>&lt;/BATCHNUMBER>&lt;/inputSet>&lt;/tns8:inputs>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+c7388542-6fd4-41b9-8e1d-20583953af6d+input&quot; xmlns:tns5=&quot;http://tns.tibco.com/bw/json/1619506670629&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;Pre_Validate_StoreProc-input&quot; match=&quot;/&quot;>&lt;tns8:inputs>&lt;inputSet>&lt;RequestID>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns5:requestId))&quot;/>&lt;/RequestID>&lt;CorrelationID>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns5:correlationid), 1, 15)&quot;/>&lt;/CorrelationID>&lt;/inputSet>&lt;/tns8:inputs>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -3567,7 +3616,7 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCCallProcedureActivity"/>
                                     <value
-                                    procedureOrFunctionName="F56XX_ARManualBillingInvoice_Validations;1"
+                                    procedureOrFunctionName="F56XX_FixedAssetDigitalForm_Validations;1"
                                     schema="INTFACE"
                                     sharedResourceProperty="jdbcProperty" xsi:type="jdbcPalette:JDBCCallProcedureActivity">
 
@@ -3579,7 +3628,12 @@
                                     <preparedParamters
                                     DataType="-9"
                                     DataTypeDisplayValue="nvarchar"
-                                    ParameterName="BATCHNUMBER" ProcedureParamterType="1"/>
+                                    ParameterName="RequestID" ProcedureParamterType="1"/>
+
+                                    <preparedParamters
+                                    DataType="-9"
+                                    DataTypeDisplayValue="nvarchar"
+                                    ParameterName="CorrelationID" ProcedureParamterType="1"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3660,7 +3714,7 @@
                                     tibex:xpdlId="01dfc64c-a382-4851-8ccd-2ceb9a71b170" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToAssign_Otherwise"/>
-                                    <bpws:target linkName="Pre_Validate_change"/>
+                                    <bpws:target linkName="Pre_Validate_Otherwise"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="ExitLoopToThrow1"/>
@@ -3698,7 +3752,7 @@
                     outputVariable="ParseSpData"
                     tibex:xpdlId="befff120-fbd4-4a08-b65a-392677613bae" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="RepeatOnSPErrorToParseXml"/>
+                        <bpws:target linkName="RepeatOnSPErrorToParseXml_RV0or-6"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="ParseSpDataToEmpty1"/>
@@ -3713,13 +3767,12 @@
                             version="6.0.0.20121128"
                             xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
                             xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:example="http://www.tibco.com/xml/parser/example"
                             xmlns:palettexml="http://ns.tibco.com/bw/palette/xmlpalette" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/xmlpalette#//ParseXml"/>
                                     <value inputStyle="text"
-                                    outputElementQName="example:OutputElement"
+                                    outputElementQName="Resultsets"
                                     validateOutput="true" xsi:type="palettexml:ParseXml"/>
                                 </properties>
                             </activityConfig>
@@ -3732,7 +3785,19 @@
                     <bpws:target linkName="ParseSpDataToEmpty1"/>
                 </bpws:targets>
                 <bpws:sources>
-                    <bpws:source linkName="Empty1ToAssetAddition_Pre_CallBackAppian"/>
+                    <bpws:source linkName="Empty1ToAssetAddition_Pre_ErrorExists">
+                        <tibex:DesignExpression>
+                            <tibex:expression
+                                expression="(string-length($ParseSpData/ResultSet1/Record1[1]/LongMessage) > 0) or (string-length($ParseSpData/ResultSet1/Record1[1]/ErrorMessage) > 0)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                        </tibex:DesignExpression>
+                        <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[(string-length($ParseSpData/ResultSet1/Record1[1]/LongMessage) > 0) or (string-length($ParseSpData/ResultSet1/Record1[1]/ErrorMessage) > 0)]]></bpws:transitionCondition>
+                    </bpws:source>
+                    <bpws:source linkName="Empty1ToEnd">
+                        <tibex:DesignExpression>
+                            <tibex:expression expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                        </tibex:DesignExpression>
+                        <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                    </bpws:source>
                 </bpws:sources>
             </bpws:empty>
         </bpws:flow>

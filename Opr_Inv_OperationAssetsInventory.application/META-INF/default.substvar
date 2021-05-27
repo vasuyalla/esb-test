@@ -330,16 +330,16 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FADIR1</name>
-			<value>R</value>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLLT</name>
+			<value>AA</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLLT</name>
-			<value>AA</value>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLDIR1</name>
+			<value>R</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>

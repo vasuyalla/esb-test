@@ -330,7 +330,7 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>/JDBC/JDE/FADIR1</name>
+			<name>/JDBC/JDE/FLDIR1</name>
 			<value>R</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>

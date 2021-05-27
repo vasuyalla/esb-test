@@ -123,7 +123,7 @@
   <sca:property xmi:id="_5egwQLoZEeuvt5JRh8SJNQ" name="/JDBC/JDE/FAEDDL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_AUw2YLoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FATNAC_Addition" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_AYyawLoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FATNAC_Change" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_aBmA8LoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FADIR1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_aBmA8LoaEeuvt5JRh8SJNQ" name="/JDBC/JDE/FLDIR1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_1roNILocEeuvt5JRh8SJNQ" name="/JDBC/JDE/FLLT" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_XRDc0KdfEeuLLswsXqfqtA" name="/Appian/appianHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Y7Gj0KdfEeuLLswsXqfqtA" name="/Appian/appianPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>

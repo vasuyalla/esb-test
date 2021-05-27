@@ -381,14 +381,14 @@
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FADIR1</packaging:name>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLLT</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
     <packaging:property>
-      <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLLT</packaging:name>
+      <packaging:name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLDIR1</packaging:name>
       <packaging:type>xsd:string</packaging:type>
       <packaging:visibility>public</packaging:visibility>
       <packaging:scalable>true</packaging:scalable>
