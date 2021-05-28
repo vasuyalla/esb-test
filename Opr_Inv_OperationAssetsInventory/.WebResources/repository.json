@@ -36,6 +36,10 @@
         {
             "location": "Service Descriptors/opr_inv_operationassetsinventory_assetchange.ondemand-ondemand.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/http_healthcheck.HealthCheck-healthcheck-liveliness.json",
+            "type": "generated"
         }
     ]
 }

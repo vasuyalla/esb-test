@@ -83,11 +83,11 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/Port</name>
-			<value>9098</value>
+			<value>8082</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/QueueSize</name>
@@ -127,7 +127,7 @@
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
-			<isOverride>false</isOverride>
+			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JMS/UserName</name>

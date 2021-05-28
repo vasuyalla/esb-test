@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_gGbyoKceEeufvIOJ6OAa0g" targetNamespace="http://tns.tibco.com/bw/composite/Opr_Inv_OperationAssetsInventory" name="Opr_Inv_OperationAssetsInventory" compositeext:version="1.0.0" compositeext:formatVersion="2">
-  <sca:service xmi:id="_bQ9cBKcfEeufvIOJ6OAa0g" name="healthcheck-liveliness" promote="ComponentHealthCheck/healthcheck-liveliness">
-    <sca:interface.wsdl xmi:id="_bQ9cCKcfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-liveliness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_XbZqQKcgEeufvIOJ6OAa0g" name="RestService2" path="/healthcheck-liveliness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
-      <operation xmi:id="_XbZqQqcgEeufvIOJ6OAa0g" operationName="get" nickname="getItem" httpMethod="GET" notes="Get an item">
-        <clientFormat>json</clientFormat>
-      </operation>
-      <advancedConfig xmi:id="_XbZqQacgEeufvIOJ6OAa0g" blockingQueueSize="2147483647"/>
-    </scaext:binding>
-    <scact:bindingAdjunct xmi:id="_XbZqQ6cgEeufvIOJ6OAa0g" bindingName="RestService2"/>
-  </sca:service>
-  <sca:service xmi:id="_bQ9cC6cfEeufvIOJ6OAa0g" name="healthcheck-readiness" promote="ComponentHealthCheck/healthcheck-readiness">
-    <sca:interface.wsdl xmi:id="_bQ9cD6cfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-readiness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_bQ9cEKcfEeufvIOJ6OAa0g" name="RestService" path="/healthcheck-readiness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0">
-      <operation xmi:id="_bQ9cEqcfEeufvIOJ6OAa0g" operationName="get" nickname="get-healthcheck-readiness" httpMethod="GET" responseStyle="element">
-        <clientFormat>json</clientFormat>
-        <clientRequestFormat>json</clientRequestFormat>
-      </operation>
-      <parameters xmi:id="_bQ9cFKcfEeufvIOJ6OAa0g"/>
-      <advancedConfig xmi:id="_bQ9cEacfEeufvIOJ6OAa0g" blockingQueueSize="2147483647"/>
-    </scaext:binding>
-    <scact:bindingAdjunct xmi:id="_bQ9cE6cfEeufvIOJ6OAa0g" bindingName="RestService"/>
-  </sca:service>
   <sca:service xmi:id="_oc8_kqdIEeu357mb3Ky1qw" name="assetchange" promote="ComponentAssetChange/assetchange">
     <sca:interface.wsdl xmi:id="_odbgsKdIEeu357mb3Ky1qw" interface="http://xmlns.example.com/20210427163635PLT#wsdl.interface(assetchange)" scaext:wsdlLocation="../Processes/opr_inv_operationassetsinventory_assetchange/AssetChange.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_odbgsadIEeu357mb3Ky1qw" name="RestService3" path="/opr/inv/operationassetinventory/assetchange" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="AssetChange" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/opr_inv_operationassetsinventory_assetchange.AssetChange-AssetChange.json">
@@ -82,6 +60,28 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_70hPAqmqEeulbq2wsplM4g" bindingName="RestService5"/>
   </sca:service>
+  <sca:service xmi:id="_M83DcL-5Eeum7OtOKT1NCA" name="healthcheck-liveliness" promote="ComponentHealthCheck/healthcheck-liveliness">
+    <sca:interface.wsdl xmi:id="_M88jAL-5Eeum7OtOKT1NCA" interface="http://xmlns.example.com/20210528190108PLT#wsdl.interface(healthcheck-liveliness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_M8_mUL-5Eeum7OtOKT1NCA" name="RestService" path="/healthcheck/liveliness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck-liveliness" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/http_healthcheck.HealthCheck-healthcheck-liveliness.json">
+      <operation xmi:id="_M9A0cL-5Eeum7OtOKT1NCA" operationName="get" nickname="healthcheck-liveliness/get" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_M8_mUb-5Eeum7OtOKT1NCA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_M9A0cb-5Eeum7OtOKT1NCA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_Z-kmQr-5Eeum7OtOKT1NCA" name="healthcheck-readiness" promote="ComponentHealthCheck/healthcheck-readiness">
+    <sca:interface.wsdl xmi:id="_Z-lNUL-5Eeum7OtOKT1NCA" interface="http://xmlns.example.com/20210528190108PLT#wsdl.interface(healthcheck-readiness)" scaext:wsdlLocation="../Processes/http_healthcheck/HealthCheck.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Z-mbcL-5Eeum7OtOKT1NCA" name="RestService2" path="/healthcheck/readiness" docBasePath="http://localhost:7777/Opr_Inv_OperationAssetsInventory" docResourcePath="healthcheck-liveliness" basePath="/" connector="opr_inv_operationassetsinventory.HTTP_OperationAssetsInventory" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/http_healthcheck.HealthCheck-healthcheck-liveliness.json">
+      <operation xmi:id="_Z-nCgL-5Eeum7OtOKT1NCA" operationName="get" nickname="healthcheck-readiness/get" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <advancedConfig xmi:id="_Z-mbcb-5Eeum7OtOKT1NCA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Z-nCgb-5Eeum7OtOKT1NCA" bindingName="RestService2"/>
+  </sca:service>
   <sca:property xmi:id="_gztvYKceEeufvIOJ6OAa0g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_gz3gYKceEeufvIOJ6OAa0g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_g0AqUKceEeufvIOJ6OAa0g" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
@@ -140,15 +140,6 @@
   <sca:property xmi:id="_qcCzcL73EeuW3MHpxEJudw" name="/Timer/AssetChangeTimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_zLB80L73EeuW3MHpxEJudw" name="/Timer/AssetAddStartTime" type="XMLSchema:dateTime" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_zMy3YL73EeuW3MHpxEJudw" name="/Timer/AssetAddTimeInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
-  <sca:component xmi:id="_bQ9cAKcfEeufvIOJ6OAa0g" name="ComponentHealthCheck" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bQ9cAacfEeufvIOJ6OAa0g" processName="http_healthcheck.HealthCheck"/>
-    <sca:service xmi:id="_bQ9cAqcfEeufvIOJ6OAa0g" name="healthcheck-liveliness">
-      <sca:interface.wsdl xmi:id="_bQ9cA6cfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-liveliness)"/>
-    </sca:service>
-    <sca:service xmi:id="_bQ9cCacfEeufvIOJ6OAa0g" name="healthcheck-readiness">
-      <sca:interface.wsdl xmi:id="_bQ9cCqcfEeufvIOJ6OAa0g" interface="http://xmlns.example.com/20210427113746PLT#wsdl.interface(healthcheck-readiness)"/>
-    </sca:service>
-  </sca:component>
   <sca:component xmi:id="_egk3AKc9EeupFupa8gJVlg" name="ComponentCallAppian_AssetAddition" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_egk3Aac9EeupFupa8gJVlg" processName="opr_inv_operationassetsinventory_assetaddition.AssetAddition_Subscriber"/>
   </sca:component>
@@ -184,5 +175,14 @@
   </sca:component>
   <sca:component xmi:id="_Qjn1IKnIEeuhbuOPlc5ung" name="Component1Scheduler" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Qjn1IanIEeuhbuOPlc5ung" processName="opr_inv_operationassetsinventory_assetchange.Scheduler"/>
+  </sca:component>
+  <sca:component xmi:id="_9cXKAL-4Eeum7OtOKT1NCA" name="ComponentHealthCheck" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_9cXKAb-4Eeum7OtOKT1NCA" processName="http_healthcheck.HealthCheck"/>
+    <sca:service xmi:id="_M8zZEL-5Eeum7OtOKT1NCA" name="healthcheck-liveliness">
+      <sca:interface.wsdl xmi:id="_M80nML-5Eeum7OtOKT1NCA" interface="http://xmlns.example.com/20210528190108PLT#wsdl.interface(healthcheck-liveliness)"/>
+    </sca:service>
+    <sca:service xmi:id="_Z-kmQL-5Eeum7OtOKT1NCA" name="healthcheck-readiness">
+      <sca:interface.wsdl xmi:id="_Z-kmQb-5Eeum7OtOKT1NCA" interface="http://xmlns.example.com/20210528190108PLT#wsdl.interface(healthcheck-readiness)"/>
+    </sca:service>
   </sca:component>
 </sca:composite>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
     name="http_healthcheck.HealthCheck" suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20210427113746"
+    targetNamespace="http://xmlns.example.com/20210528190108"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
-    xmlns:ns="http://xmlns.example.com/20210427113746PLT"
-    xmlns:ns0="http://www.tibco.com/pe/EngineTypes"
+    xmlns:ns="http://www.tibco.com/pe/EngineTypes"
+    xmlns:ns0="http://xmlns.example.com/20210528190108PLT"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -172,12 +172,12 @@
             <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
         <wsdl:definitions
-            targetNamespace="http://xmlns.example.com/20210427113746PLT"
+            targetNamespace="http://xmlns.example.com/20210528190108PLT"
             xmlns:extns="http://tns.tibco.com/bw/REST"
-            xmlns:extns1="http://xmlns.example.com/HealthCheck/parameters"
+            xmlns:extns1="http://xmlns.example.com/healthcheck-liveliness/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-            xmlns:tns="http://xmlns.example.com/20210427113746PLT"
+            xmlns:tns="http://xmlns.example.com/20210528190108PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
             <plnk:partnerLinkType name="partnerLinkType">
@@ -186,17 +186,15 @@
             <plnk:partnerLinkType name="partnerLinkType1">
                 <plnk:role name="use" portType="tns:healthcheck-readiness"/>
             </plnk:partnerLinkType>
-            <plnk:partnerLinkType name="partnerLinkType2">
-                <plnk:role name="use" portType="tns:healthcheck-liveliness1"/>
-            </plnk:partnerLinkType>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
-            <wsdl:import namespace="http://xmlns.example.com/HealthCheck/parameters"/>
+            <wsdl:import namespace="http://xmlns.example.com/healthcheck-liveliness/parameters"/>
             <wsdl:message name="getRequest">
                 <wsdl:part element="extns:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse">
-                <wsdl:part element="extns:statusLine" name="item" tibex:hasMultipleNamespaces="false"/>
+                <wsdl:part name="item"
+                    tibex:hasMultipleNamespaces="false" type="xsd:string"/>
             </wsdl:message>
             <wsdl:message name="get4XXFaultMessage">
                 <wsdl:part element="extns:client4XXError" name="clientError"/>
@@ -209,7 +207,8 @@
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse1">
-                <wsdl:part element="extns:statusLine" name="item" tibex:hasMultipleNamespaces="false"/>
+                <wsdl:part name="item"
+                    tibex:hasMultipleNamespaces="false" type="xsd:string"/>
             </wsdl:message>
             <wsdl:message name="get4XXFaultMessage1">
                 <wsdl:part element="extns:client4XXError" name="clientError"/>
@@ -217,24 +216,10 @@
             <wsdl:message name="get5XXFaultMessage1">
                 <wsdl:part element="extns:server5XXError" name="serverError"/>
             </wsdl:message>
-            <wsdl:message name="getRequest2">
-                <wsdl:part element="extns:httpHeaders"
-                    name="httpHeaders" tibex:source="bw.rest"/>
-            </wsdl:message>
-            <wsdl:message name="getResponse2">
-                <wsdl:part name="item"
-                    tibex:hasMultipleNamespaces="false" type="xsd:string"/>
-            </wsdl:message>
-            <wsdl:message name="get4XXFaultMessage2">
-                <wsdl:part element="extns:client4XXError" name="clientError"/>
-            </wsdl:message>
-            <wsdl:message name="get5XXFaultMessage2">
-                <wsdl:part element="extns:server5XXError" name="serverError"/>
-            </wsdl:message>
             <wsdl:portType name="healthcheck-liveliness"
-                tibex:bw.rest.apipath="/healthcheck-live"
-                tibex:bw.rest.basepath="HealthCheck"
-                tibex:bw.rest.resource="Service Descriptors/http_healthcheck.HealthCheck-healthcheck.json"
+                tibex:bw.rest.apipath="/healthcheck/liveliness"
+                tibex:bw.rest.basepath="healthcheck-liveliness"
+                tibex:bw.rest.resource="Service Descriptors/http_healthcheck.HealthCheck-healthcheck-liveliness.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="get">
@@ -245,9 +230,9 @@
                 </wsdl:operation>
             </wsdl:portType>
             <wsdl:portType name="healthcheck-readiness"
-                tibex:bw.rest.apipath="/healthcheck-readiness"
-                tibex:bw.rest.basepath="healthcheck"
-                tibex:bw.rest.resource="Service Descriptors/http_healthcheck.HealthCheck-healthcheck.json"
+                tibex:bw.rest.apipath="/healthcheck/readiness"
+                tibex:bw.rest.basepath="healthcheck-liveliness"
+                tibex:bw.rest.resource="Service Descriptors/http_healthcheck.HealthCheck-healthcheck-liveliness.json"
                 tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
                 <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
                 <wsdl:operation name="get">
@@ -257,23 +242,10 @@
                     <wsdl:fault message="tns:get5XXFaultMessage1" name="serverFault"/>
                 </wsdl:operation>
             </wsdl:portType>
-            <wsdl:portType name="healthcheck-liveliness1"
-                tibex:bw.rest.apipath="/healthcheck-liveliness"
-                tibex:bw.rest.basepath="healthcheck"
-                tibex:bw.rest.resource="Service Descriptors/http_healthcheck.HealthCheck-healthcheck.json"
-                tibex:bw.rest.resource.source="generated" tibex:source="bw.rest.service">
-                <wsdl:documentation>Summary about the new REST service.</wsdl:documentation>
-                <wsdl:operation name="get">
-                    <wsdl:input message="tns:getRequest2" name="getInput"/>
-                    <wsdl:output message="tns:getResponse2" name="getOutput"/>
-                    <wsdl:fault message="tns:get4XXFaultMessage2" name="clientFault"/>
-                    <wsdl:fault message="tns:get5XXFaultMessage2" name="serverFault"/>
-                </wsdl:operation>
-            </wsdl:portType>
         </wsdl:definitions>
     </tibex:Types>
-    <tibex:ProcessInfo callable="false" createdBy="kadambari_sontakke"
-        createdOn="Tue Apr 27 11:37:46 IST 2021" description=""
+    <tibex:ProcessInfo callable="false" createdBy="izahaq_mohammad"
+        createdOn="Fri May 28 19:01:08 IST 2021" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="2.4.5 V45 2019-07-18" scalable="true"
         singleton="true" stateless="true" type="IT"/>
@@ -394,7 +366,6 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <children type="3013">
                                     <children type="4018">
@@ -467,8 +438,6 @@
                                     <styles xsi:type="notation:SortingStyle"/>
 
                                     <styles xsi:type="notation:FilteringStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
                                     </children>
 
                                     <styles
@@ -514,7 +483,6 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -527,7 +495,6 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <children type="3016">
                                     <children type="4002">
@@ -573,7 +540,6 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     </children>
                                     <styles
                                     fontName="Segoe UI"
@@ -817,7 +783,6 @@
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     </children>
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
@@ -825,7 +790,9 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="310" width="561" xsi:type="notation:Bounds"/>
+                                    height="312" width="561"
+                                    x="20"
+                                    xsi:type="notation:Bounds" y="20"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -839,8 +806,9 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="496"
-                                    width="515" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="108"
+                                    width="400" x="2"
+                                    xsi:type="notation:Bounds" y="2"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -868,36 +836,34 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="572" width="860" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="860" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://xmlns.example.com/20210427113746PLT" prefix="tns"/>
-        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns1"/>
+            namespace="http://xmlns.example.com/20210528190108PLT" prefix="tns"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/HealthCheck/parameters"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/healthcheck-liveliness/parameters"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="healthcheck-liveliness"
-            partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="healthcheck-liveliness"/>
+            partnerLinkType="ns0:partnerLinkType"
+            sca-bpel:ignore="false" sca-bpel:service="healthcheck-liveliness"/>
         <bpws:partnerLink myRole="use" name="healthcheck-readiness"
-            partnerLinkType="ns:partnerLinkType1"
+            partnerLinkType="ns0:partnerLinkType1"
             sca-bpel:ignore="false" sca-bpel:service="healthcheck-readiness"/>
     </bpws:partnerLinks>
     <bpws:variables>
-        <bpws:variable element="ns0:ProcessContext"
+        <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getRequest" name="get" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getResponse"
+        <bpws:variable messageType="ns0:getRequest" name="get" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse"
             name="livelinessOut-Success-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getRequest1" name="get1" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getResponse1"
+        <bpws:variable messageType="ns0:getRequest1" name="get1" sca-bpel:internal="true"/>
+        <bpws:variable messageType="ns0:getResponse1"
             name="readinessOut-Success-input" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getRequest2" name="get2" sca-bpel:internal="true"/>
-        <bpws:variable messageType="ns:getResponse2" name="getOut-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -910,55 +876,55 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links/>
-            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="83d498b4-2e1a-469b-90ea-24d414e01b5e">
+            <bpws:pick createInstance="yes" name="pick" tibex:xpdlId="6094d8b8-a99c-4c03-85c3-2cf831f540b2">
                 <bpws:onMessage operation="get"
                     partnerLink="healthcheck-liveliness"
-                    portType="ns:healthcheck-liveliness"
-                    tibex:xpdlId="2afe08ce-2c4f-4fc9-90f7-81de3b3b6073" variable="get">
+                    portType="ns0:healthcheck-liveliness"
+                    tibex:xpdlId="f4a331bf-f165-482a-97fe-16f3a0262b9b" variable="get">
                     <bpws:scope name="scope1">
                         <bpws:flow name="flow1">
                             <bpws:links/>
                             <bpws:empty name="OnMessageStart"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="296b7f43-824d-41f4-ab61-08eda3fd0034"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="c9fa0c6f-2d54-4e28-9195-bcda202a816b"/>
                             <bpws:empty name="OnMessageEnd"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="dfeea09e-d3b0-4780-bb53-1b52f75c84c8"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="cd954d3a-607f-474d-aca8-4e9d1d0efdeb"/>
                             <bpws:reply name="livelinessOut-Success"
                                 operation="get"
                                 partnerLink="healthcheck-liveliness"
-                                portType="ns:healthcheck-liveliness"
-                                tibex:xpdlId="b9554b78-8ea6-4739-ad73-bcec8a73fcfa" variable="livelinessOut-Success-input">
+                                portType="ns0:healthcheck-liveliness"
+                                tibex:xpdlId="c68fea07-b4a5-4fcd-b041-343985cff1e2" variable="livelinessOut-Success-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20210427113746PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;livelinessOut-Success-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:statusLine>&#xa;            &lt;statusCode>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/statusCode>&#xa;        &lt;/tns1:statusLine>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20210528190108PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;livelinessOut-Success-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;200&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20210427113746PLT" xmlns:tns1="http://tns.tibco.com/bw/REST" version="2.0"&gt;&lt;xsl:template name="livelinessOut-Success-input" match="/"&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;tns1:statusLine&gt;&lt;statusCode&gt;&lt;xsl:value-of select="200"/&gt;&lt;/statusCode&gt;&lt;/tns1:statusLine&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20210528190108PLT" version="2.0"&gt;&lt;xsl:template name="livelinessOut-Success-input" match="/"&gt;&lt;tns:getResponse&gt;&lt;item&gt;&lt;xsl:value-of select="200"/&gt;&lt;/item&gt;&lt;/tns:getResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
                 <bpws:onMessage operation="get"
                     partnerLink="healthcheck-readiness"
-                    portType="ns:healthcheck-readiness"
-                    tibex:xpdlId="afad781a-9e96-47d8-9c03-81a83e02ea1a" variable="get1">
+                    portType="ns0:healthcheck-readiness"
+                    tibex:xpdlId="3d065ea9-ee93-4a48-8051-aae8ddb1db8f" variable="get1">
                     <bpws:scope name="scope2">
                         <bpws:flow name="flow2">
                             <bpws:links/>
                             <bpws:empty name="OnMessageStart1"
-                                tibex:constructor="onMessageStart" tibex:xpdlId="c3d6531e-c0b5-4ad8-b0dd-697f2282cb1d"/>
+                                tibex:constructor="onMessageStart" tibex:xpdlId="7bdde5f4-6c0f-46ef-bdef-a3b851998431"/>
                             <bpws:empty name="OnMessageEnd1"
-                                tibex:constructor="onMessageEnd" tibex:xpdlId="5a65b4eb-fcd7-43b3-a133-7d56fac22fcc"/>
+                                tibex:constructor="onMessageEnd" tibex:xpdlId="0e288f03-d7a8-4841-9c14-7f8f35f1e5ec"/>
                             <bpws:reply name="readinessOut-Success"
                                 operation="get"
                                 partnerLink="healthcheck-readiness"
-                                portType="ns:healthcheck-readiness"
-                                tibex:xpdlId="a335872f-637b-4cd0-8e8f-1f4915ff13c5" variable="readinessOut-Success-input">
+                                portType="ns0:healthcheck-readiness"
+                                tibex:xpdlId="8003453d-a2dc-41d3-92ff-d3be80b0b3e9" variable="readinessOut-Success-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20210427113746PLT&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;readinessOut-Success-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:statusLine>&#xa;            &lt;statusCode>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/statusCode>&#xa;        &lt;/tns1:statusLine>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20210528190108PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;readinessOut-Success-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;200&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20210427113746PLT" xmlns:tns1="http://tns.tibco.com/bw/REST" version="2.0"&gt;&lt;xsl:template name="readinessOut-Success-input" match="/"&gt;&lt;tns:getResponse1&gt;&lt;item&gt;&lt;tns1:statusLine&gt;&lt;statusCode&gt;&lt;xsl:value-of select="200"/&gt;&lt;/statusCode&gt;&lt;/tns1:statusLine&gt;&lt;/item&gt;&lt;/tns:getResponse1&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://xmlns.example.com/20210528190108PLT" version="2.0"&gt;&lt;xsl:template name="readinessOut-Success-input" match="/"&gt;&lt;tns:getResponse1&gt;&lt;item&gt;&lt;xsl:value-of select="200"/&gt;&lt;/item&gt;&lt;/tns:getResponse1&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                             </bpws:reply>
                         </bpws:flow>
                     </bpws:scope>
