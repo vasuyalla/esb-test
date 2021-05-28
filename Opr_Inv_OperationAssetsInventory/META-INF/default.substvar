@@ -83,7 +83,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>/HTTP/HostName</name>
-			<value>localhost</value>
+			<value>0.0.0.0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>

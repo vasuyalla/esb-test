@@ -123,7 +123,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///HTTP/HostName</name>
-			<value>localhost</value>
+			<value>0.0.0.0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
