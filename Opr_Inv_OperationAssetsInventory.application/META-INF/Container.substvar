@@ -346,6 +346,54 @@
 			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAUSER</name>
+			<value>#FAUSER#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAJOBN</name>
+			<value>#FAJOBN#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FAPID</name>
+			<value>#FAPID#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLPID</name>
+			<value>#FLPID#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLUSER</name>
+			<value>#FLUSER#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FLJOBN</name>
+			<value>#FLJOBN#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
 			<value>#APPIAN_AUTH_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>

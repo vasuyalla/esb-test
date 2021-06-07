@@ -19,6 +19,7 @@
     xmlns:ns18="http://www.tibco.com/xml/parser/example"
     xmlns:ns19="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input"
     xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/jdbc+468a2a05-6c09-4e13-a11f-a2930658dc91+input"
+    xmlns:ns20="http://tns.tibco.com/bw/palette/internal/accumulateoutput+5e8e4c84-20f1-47e8-968e-4fd550350de4"
     xmlns:ns3="http://www.tibco.com/namespaces/tnt/plugins/jdbc+468a2a05-6c09-4e13-a11f-a2930658dc91+output"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
     xmlns:ns5="http://www.tibco.com/namespaces/tnt/plugins/jdbc+e4b3a0df-b0c4-4844-8b80-f5174a68847e+input"
@@ -218,6 +219,8 @@
                     <sequence>
                         <element maxOccurs="1" minOccurs="1"
                             name="FLDSD" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLDSD1" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -238,7 +241,15 @@
                             <complexType>
                                 <sequence>
                                     <element maxOccurs="1" minOccurs="0"
+                                    name="FAUPMJ" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="FLUPMJ" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
                                     name="FLDSD" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="FAUPMT" nillable="false" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="FLUPMT" nillable="false" type="int"/>
                                 </sequence>
                             </complexType>
                         </element>
@@ -369,6 +380,16 @@
                             nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="FLDIR1" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLUPMJ" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLUPMT" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLJOBN" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLUSER" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FLPID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -740,6 +761,16 @@
                             name="FANUMB" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="FAEDSP" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FAUPMJ" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FAUPMT" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FAJOBN" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FAUSER" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FAPID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -748,6 +779,18 @@
                 </complexType>
             </element>
         </schema>
+        <xs:schema elementFormDefault="qualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/accumulateoutput+5e8e4c84-20f1-47e8-968e-4fd550350de4"
+            xmlns:Q1="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
+            xmlns:tns="http://tns.tibco.com/bw/palette/internal/accumulateoutput+5e8e4c84-20f1-47e8-968e-4fd550350de4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc"/>
+            <xs:element name="AccumulatedOutput" type="tns:AccumulatedOutputType"/>
+            <xs:complexType name="AccumulatedOutputType">
+                <xs:sequence maxOccurs="1" minOccurs="0">
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="Q1:jdbcUpdateActivityOutput"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20210427171810"
             xmlns:tns="http://xmlns.example.com/20210427171810"
@@ -822,8 +865,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="-38"
-                                    xsi:type="notation:Bounds" y="148"/>
+                                    <layoutConstraint x="-60"
+                                    xsi:type="notation:Bounds" y="142"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -862,7 +905,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint
-                                    height="99" x="1548"
+                                    height="99" x="1698"
                                     xsi:type="notation:Bounds" y="142"/>
                                     </children>
                                     <children type="4018">
@@ -947,8 +990,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="54"
-                                    xsi:type="notation:Bounds" y="305"/>
+                                    x="39"
+                                    xsi:type="notation:Bounds" y="353"/>
                                     </children>
 
                                     <children type="4002">
@@ -1009,8 +1052,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="230"
-                                    xsi:type="notation:Bounds" y="305"/>
+                                    x="231"
+                                    xsi:type="notation:Bounds" y="353"/>
                                     </children>
 
                                     <children type="4005">
@@ -1147,7 +1190,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="19"
+                                    x="6"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
 
@@ -1209,7 +1252,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="233"
+                                    x="243"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
 
@@ -1263,7 +1306,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
-                                    x="132"
+                                    x="121"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
 
@@ -1290,7 +1333,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="154"
+                                    height="170"
                                     width="422" xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -1312,7 +1355,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2"/>
 
                                     <layoutConstraint
-                                    height="154"
+                                    height="170"
                                     width="425"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
@@ -1386,7 +1429,14 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1397,8 +1447,6 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
 
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.1"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -1407,19 +1455,6 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.1"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2/@activity/@activities.1/@activity/@activity/@activities.1"/>
 
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
@@ -1460,7 +1495,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4/@activities.2"/>
 
                                     <layoutConstraint
-                                    height="198"
+                                    height="214"
                                     width="465"
                                     x="17"
                                     xsi:type="notation:Bounds" y="50"/>
@@ -1547,10 +1582,66 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.4"/>
 
                                     <layoutConstraint
-                                    height="266"
-                                    width="552"
+                                    height="311"
+                                    width="590"
                                     x="39"
                                     xsi:type="notation:Bounds" y="8"/>
+                                    </children>
+
+                                    <children type="4002 bw.generalactivities.log">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@activities.5"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="643"
+                                    xsi:type="notation:Bounds" y="174"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1568,8 +1659,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="417"
-                                    width="624" xsi:type="notation:Bounds"/>
+                                    height="472"
+                                    width="827" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1582,8 +1673,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="417"
-                                    width="557"
+                                    height="472"
+                                    width="830"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -1683,7 +1774,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="461" width="667"
+                                    height="516" width="870"
                                     x="92"
                                     xsi:type="notation:Bounds" y="11"/>
                                     </children>
@@ -1723,7 +1814,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="1383"
+                                    <layoutConstraint x="1538"
                                     xsi:type="notation:Bounds" y="7"/>
                                     </children>
                                     <children type="4018">
@@ -2141,8 +2232,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="436" width="451"
-                                    x="840"
-                                    xsi:type="notation:Bounds" y="5"/>
+                                    x="1024"
+                                    xsi:type="notation:Bounds" y="24"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -2176,7 +2267,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="1383"
+                                    <layoutConstraint x="1538"
                                     xsi:type="notation:Bounds" y="290"/>
                                     </children>
                                     <children type="4002">
@@ -2211,7 +2302,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="1383"
+                                    <layoutConstraint x="1538"
                                     xsi:type="notation:Bounds" y="154"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -2462,7 +2553,7 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.2"/>
             <bendpoints
-                points="[12, 0, -102, -153]$[36, 0, -78, -153]$[36, 153, -78, 0]$[90, 153, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[12, -6, -111, -132]$[42, -6, -81, -132]$[42, 135, -81, 9]$[99, 135, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2/@children.1/@children.0/@children.0/@children.1"
@@ -2487,17 +2578,6 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[156, 35, -112, -26]$[256, 58, -12, -3]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
@@ -2507,7 +2587,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints
-                points="[25, 0, -140, -147]$[165, 0, 0, -147]$[165, 111, 0, -36]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -135, -147]$[160, 0, 0, -147]$[160, 111, 0, -36]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0"
@@ -2711,6 +2791,28 @@
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
             <bendpoints points="[25, 0, -121, 0]$[122, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[262, 85, -54, -18]$[292, 95, -24, -8]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[25, -16, -45, 30]$[58, -38, -12, 8]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -2739,6 +2841,8 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input" prefix="tns9"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc" prefix="tns18"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
         location="../../Schemas/assetChangeRequestSchema.xsd" namespace="http://tns.tibco.com/bw/json/1619506729905"/>
@@ -2768,11 +2872,11 @@
             name="_error_GetJulianDate" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:jdbcUpdateActivityInput"
-            name="InsertToJDE-input" sca-bpel:internal="true"/>
+            name="InsertToTtable-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:jdbcUpdateActivityOutput"
-            name="InsertToJDE" sca-bpel:internal="true"/>
+            name="InsertToTtable" sca-bpel:internal="true"/>
         <bpws:variable element="ns7:ActivityErrorData"
-            name="_error_InsertToJDE" sca-bpel:internal="true"/>
+            name="_error_InsertToTtable" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:SleepInputSchema" name="Sleep-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
@@ -2839,6 +2943,28 @@
         <bpws:variable name="FLLT" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FLLT" type="xsd:string"/>
+        <bpws:variable element="ns20:AccumulatedOutput"
+            name="noOfInsert" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ActivityInput"
+            name="Log_NoofInsert-input" sca-bpel:internal="true"/>
+        <bpws:variable name="FAJOBN" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FAJOBN" type="xsd:string"/>
+        <bpws:variable name="FAUSER" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FAUSER" type="xsd:string"/>
+        <bpws:variable name="FAPID" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FAPID" type="xsd:string"/>
+        <bpws:variable name="FLJOBN" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FLJOBN" type="xsd:string"/>
+        <bpws:variable name="FLUSER" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FLUSER" type="xsd:string"/>
+        <bpws:variable name="FLPID" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FLPID" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3004,8 +3130,8 @@
                                 <bpws:link
                                     name="GroupStartToLocalTransaction" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="GroupStartToSleep" tibex:linkType="ERROR"/>
-                                <bpws:link
-                                    name="LocalTransactionToGroupEnd" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="LocalTransactionToLog" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="LogToGroupEnd" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="GroupStart"
                                 tibex:group="groupStart" tibex:xpdlId="7c70ee40-d5cb-427b-8cc8-28c70efb5148">
@@ -3026,7 +3152,7 @@
                                 tibex:group="groupEnd"
                                 tibex:xpdlId="789e4296-6fbd-416c-bf92-31c9974ab62f" validate="no">
                                 <bpws:targets>
-                                    <bpws:target linkName="LocalTransactionToGroupEnd"/>
+                                    <bpws:target linkName="LogToGroupEnd"/>
                                 </bpws:targets>
                                 <bpws:copy>
                                     <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[true()]]></bpws:from>
@@ -3082,7 +3208,7 @@
                                     <bpws:target linkName="GroupStartToLocalTransaction"/>
                                 </bpws:targets>
                                 <bpws:sources>
-                                    <bpws:source linkName="LocalTransactionToGroupEnd"/>
+                                    <bpws:source linkName="LocalTransactionToLog"/>
                                 </bpws:sources>
                                 <bpws:links>
                                     <bpws:link
@@ -3110,7 +3236,13 @@
                                     <bpws:source linkName="IterateToGroupEnd3"/>
                                     </bpws:sources>
                                     <bpws:sequence name="sequence" tibex:group="iterate">
-                                    <bpws:empty name="GroupInit" tibex:group="groupInit"/>
+                                    <bpws:assign name="GroupInit"
+                                    tibex:group="groupInit" validate="no">
+                                    <bpws:copy>
+                                    <bpws:from expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"><![CDATA[<?xml version="1.0" encoding="UTF-8"?> <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns="http://tns.tibco.com/bw/palette/internal/accumulateoutput+5e8e4c84-20f1-47e8-968e-4fd550350de4" version="2.0"> <xsl:template name="noOfInsert" match="/"> <tns:AccumulatedOutput/></xsl:template> </xsl:stylesheet>]]></bpws:from>
+                                    <bpws:to variable="noOfInsert"/>
+                                    </bpws:copy>
+                                    </bpws:assign>
                                     <bpws:forEach
                                     counterName="indexChangeIterate"
                                     name="iterate" parallel="no" tibex:group="iterate">
@@ -3149,13 +3281,40 @@
                                     <bpws:to variable="currentElement"/>
                                     </bpws:copy>
                                     </bpws:assign>
-                                    <bpws:empty
-                                    name="GroupEnd1"
-                                    tibex:group="groupEnd" tibex:xpdlId="945875db-c5b6-4813-b39a-3514bce58f41">
+                                    <bpws:extensionActivity>
+
+                                    <tibex:activityExtension
+                                    name="noOfInsert"
+                                    outputVariable="noOfInsert"
+                                    tibex:group="groupEnd"
+                                    tibex:xpdlId="5e8e4c84-20f1-47e8-968e-4fd550350de4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
+
                                     <bpws:target linkName="InsertToJDEToGroupEnd1"/>
                                     </bpws:targets>
-                                    </bpws:empty>
+                                    <tibex:config>
+
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.internal.accumulateend"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:internalactivities="http://ns.tibco.com/bw/core/internalactivity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+
+                                    <type href="http://ns.tibco.com/bw/core/internalactivity#//AccumulateEnd"/>
+
+                                    <value xsi:type="internalactivities:AccumulateEnd">
+                                    <activityNames>InsertToTtable</activityNames>
+                                    </value>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                    </tibex:activityExtension>
+                                    </bpws:extensionActivity>
                                     <bpws:extensionActivity>
 
                                     <tibex:activityExtension
@@ -3174,7 +3333,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+468a2a05-6c09-4e13-a11f-a2930658dc91+input&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;GetJulianDate-input&quot; match=&quot;/&quot;>&lt;tns3:jdbcQueryActivityInput>&lt;FLDSD>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:startDepreciationDate)&quot;/>&lt;/FLDSD>&lt;/tns3:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+468a2a05-6c09-4e13-a11f-a2930658dc91+input&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;GetJulianDate-input&quot; match=&quot;/&quot;>&lt;tns3:jdbcQueryActivityInput>&lt;FLDSD>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:startDepreciationDate)&quot;/>&lt;/FLDSD>&lt;FLDSD1>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:startDepreciationDate)&quot;/>&lt;/FLDSD1>&lt;/tns3:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3200,14 +3359,38 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT INTFACE.FNDATETOJULIAN(?) AS FLDSD" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    sqlStatement="SELECT INTFACE.FNDATETOJULIAN(GETDATE()) AS FAUPMJ,INTFACE.FNDATETOJULIAN(GETDATE()) AS FLUPMJ, Case When ISNULL(?,'')  = '' THEN 0 ELSE intface.fnDateToJulian(cast(? as datetime)) End AS FLDSD, datepart(hour,GETDATE())*10000+datepart(minute,GETDATE())*100+datepart(second,GETDATE()) AS FAUPMT, datepart(hour,GETDATE())*10000+datepart(minute,GETDATE())*100+datepart(second,GETDATE()) AS FLUPMT" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="FLDSD"/>
 
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLDSD1"/>
+
+                                    <columnMetadata
+                                    columnName="FAUPMJ"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="int"/>
+
+                                    <columnMetadata
+                                    columnName="FLUPMJ"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="int"/>
+
                                     <columnMetadata
                                     columnName="FLDSD"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="int"/>
+
+                                    <columnMetadata
+                                    columnName="FAUPMT"
+                                    dataType="4"
+                                    status="OptionalElement" typeName="int"/>
+
+                                    <columnMetadata
+                                    columnName="FLUPMT"
                                     dataType="4"
                                     status="OptionalElement" typeName="int"/>
                                     </value>
@@ -3220,9 +3403,9 @@
                                     <bpws:extensionActivity>
 
                                     <tibex:activityExtension
-                                    inputVariable="InsertToJDE-input"
-                                    name="InsertToJDE"
-                                    outputVariable="InsertToJDE"
+                                    inputVariable="InsertToTtable-input"
+                                    name="InsertToTtable"
+                                    outputVariable="InsertToTtable"
                                     tibex:xpdlId="e4b3a0df-b0c4-4844-8b80-f5174a68847e" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
 
@@ -3235,7 +3418,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e4b3a0df-b0c4-4844-8b80-f5174a68847e+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FLLT&quot;/>&lt;xsl:param name=&quot;FLDIR1&quot;/>&lt;xsl:template name=&quot;InsertToJDE-input&quot; match=&quot;/&quot;>&lt;tns4:jdbcUpdateActivityInput>&lt;FLURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FLURRF>&lt;FLEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FLEDBT>&lt;FLEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FLEDLN>&lt;FLADLM>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:lifeInMonths)&quot;/>&lt;/FLADLM>&lt;FLDSD>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLDSD)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLDSD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLDSD>&lt;FLLT>&lt;xsl:value-of select=&quot;$FLLT&quot;/>&lt;/FLLT>&lt;FLDIR1>&lt;xsl:value-of select=&quot;$FLDIR1&quot;/>&lt;/FLDIR1>&lt;/tns4:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e4b3a0df-b0c4-4844-8b80-f5174a68847e+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FLLT&quot;/>&lt;xsl:param name=&quot;FLDIR1&quot;/>&lt;xsl:param name=&quot;FLJOBN&quot;/>&lt;xsl:param name=&quot;FLUSER&quot;/>&lt;xsl:param name=&quot;FLPID&quot;/>&lt;xsl:template name=&quot;InsertToTtable-input&quot; match=&quot;/&quot;>&lt;tns4:jdbcUpdateActivityInput>&lt;FLURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FLURRF>&lt;FLEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FLEDBT>&lt;FLEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FLEDLN>&lt;FLADLM>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:lifeInMonths)&quot;/>&lt;/FLADLM>&lt;FLDSD>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLDSD)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLDSD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLDSD>&lt;FLLT>&lt;xsl:value-of select=&quot;$FLLT&quot;/>&lt;/FLLT>&lt;FLDIR1>&lt;xsl:value-of select=&quot;$FLDIR1&quot;/>&lt;/FLDIR1>&lt;FLUPMJ>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLUPMJ)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLUPMJ&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLUPMJ>&lt;FLUPMT>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FLUPMT)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FLUPMT&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FLUPMT>&lt;FLJOBN>&lt;xsl:value-of select=&quot;$FLJOBN&quot;/>&lt;/FLJOBN>&lt;FLUSER>&lt;xsl:value-of select=&quot;$FLUSER&quot;/>&lt;/FLUSER>&lt;FLPID>&lt;xsl:value-of select=&quot;$FLPID&quot;/>&lt;/FLPID>&lt;/tns4:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3257,7 +3440,7 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="INSERT INTO INTFACE.F551202T (FLURRF, FLEDBT, FLEDLN, FLADLM,&#xa;  FLDSD, FLLT, FLDIR1)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    sqlStatement="INSERT INTO INTFACE.F551202T (FLURRF, FLEDBT, FLEDLN, FLADLM,&#xa;  FLDSD, FLLT, FLDIR1, FLUPMJ, FLUPMT, FLJOBN, FLUSER, FLPID)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
@@ -3286,6 +3469,26 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="FLDIR1"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLUPMJ"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLUPMT"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLJOBN"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLUSER"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FLPID"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3311,7 +3514,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Change&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns9:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FAURRF>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Change&quot;/>&lt;/FATNAC>&lt;FANUMB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:assetNumber)&quot;/>&lt;/FANUMB>&lt;FAEDSP>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/FAEDSP>&lt;/tns9:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Change&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FAJOBN&quot;/>&lt;xsl:param name=&quot;FAUSER&quot;/>&lt;xsl:param name=&quot;FAPID&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns9:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FAURRF>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Change&quot;/>&lt;/FATNAC>&lt;FANUMB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:assetNumber)&quot;/>&lt;/FANUMB>&lt;FAEDSP>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/FAEDSP>&lt;FAUPMJ>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMJ)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMJ&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMJ>&lt;FAUPMT>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMT)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMT&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMT>&lt;FAJOBN>&lt;xsl:value-of select=&quot;$FAJOBN&quot;/>&lt;/FAJOBN>&lt;FAUSER>&lt;xsl:value-of select=&quot;$FAUSER&quot;/>&lt;/FAUSER>&lt;FAPID>&lt;xsl:value-of select=&quot;$FAPID&quot;/>&lt;/FAPID>&lt;/tns9:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3333,7 +3536,7 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xa;  FAURRF, FAEDDL, FATNAC, FANUMB, FAEDSP)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xa;  FAURRF, FAEDDL, FATNAC, FANUMB, FAEDSP, FAUPMJ, FAUPMT, FAJOBN,&#xa;  FAUSER, FAPID)&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
@@ -3370,6 +3573,26 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="FAEDSP"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAUPMJ"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAUPMT"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAJOBN"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAUSER"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FAPID"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
@@ -3383,6 +3606,40 @@
                                     </bpws:sequence>
                                 </bpws:scope>
                             </bpws:flow>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    inputVariable="Log_NoofInsert-input"
+                                    name="Log_NoofInsert"
+                                    tibex:xpdlId="ff6de3f0-c89f-4d06-9705-8605b20cbf53" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="LocalTransactionToLog"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="LogToGroupEnd"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns18=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;noOfInsert&quot;/>&lt;xsl:template name=&quot;Log_NoofInsert-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;No Of Inserted Record In JDE Table Is: &amp;quot;,xsd:string(count($noOfInsert/tns18:jdbcUpdateActivityOutput/noOfUpdates)), &amp;quot; On CST Timestamp: &amp;quot;,format-dateTime(tib:translate-timezone(current-dateTime(),&amp;quot;CST&amp;quot;),&amp;quot;[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01].[f01]&amp;quot;))&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.log"
+                                    version="6.0.0.001"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>
                     <bpws:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[boolean($repeatOnError_success_flag)]]></bpws:condition>
