@@ -780,7 +780,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/generalactivities#//Timer"/>
                                     <value
                                     endTime="2021-04-29T16:40:22.728+0530"
-                                    intervalUnit="Month" xsi:type="generalactivities:Timer"/>
+                                    intervalUnit="Minute" xsi:type="generalactivities:Timer"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>
