@@ -384,6 +384,11 @@
             </xs:complexType>
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
+        <wsdl:definitions
+            targetNamespace="http://xmlns.example.com/20210427171952"
+            xmlns:tns="http://xmlns.example.com/20210427171952"
+            xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="rohan_shinde"
         createdOn="Tue Apr 27 17:19:52 IST 2021" description=""
@@ -484,41 +489,6 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="160"
-                                    xsi:type="notation:Bounds" y="32"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint x="336"
                                     xsi:type="notation:Bounds" y="32"/>
                                     </children>
@@ -671,17 +641,6 @@
             <element href="//0/@process/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -709,8 +668,6 @@
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
             tibex:propertySource="/JMS/assetChangeQueueName" type="xsd:string"/>
-        <bpws:variable element="ns1:ActivityInput"
-            name="LogJMSRequest-input" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityInput"
@@ -766,8 +723,7 @@
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="ReceiveAppianReqToLog" tibex:linkType="SUCCESS"/>
-                <bpws:link name="LogJMSRequestToCallProcess" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ReceiveAppianReqToInvokeJDE" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -775,7 +731,7 @@
                     tibex:xpdlId="b7121d3e-23e2-4db6-966a-eeb2e081ee52"
                     variable="ReceiveAppianReq" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="ReceiveAppianReqToLog"/>
+                        <bpws:source linkName="ReceiveAppianReqToInvokeJDE"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <bwext:BWActivity
@@ -805,51 +761,18 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="LogJMSRequest-input"
-                    name="LogJMSRequest"
-                    tibex:xpdlId="e8023208-7c2b-499a-88db-d453803287f5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ReceiveAppianReqToLog"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="LogJMSRequestToCallProcess"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReceiveAppianReq&quot;/>&lt;xsl:template name=&quot;LogJMSRequest-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($ReceiveAppianReq, true())&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.log"
-                            version="6.0.0.001"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
                 <tibex:extActivity inputVariable="InvokeJDE-input"
                     name="InvokeJDE"
                     tibex:xpdlId="95a69ff0-b3ee-4dd3-a78a-30deca3fceaf"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="LogJMSRequestToCallProcess"/>
+                        <bpws:target linkName="ReceiveAppianReqToInvokeJDE"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
                             expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ReceiveAppianReq&quot;/>&#xa;    &lt;xsl:template name=&quot;InvokeJDE-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:assetChangeSchemaElement>&#xa;            &lt;xsl:if test=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:requestId&quot;>&#xa;                &lt;tns1:requestId>&#xa;                    &lt;xsl:copy-of select=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:requestId/@xsi:nil&quot;/>&#xa;                    &lt;xsl:value-of select=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:requestId&quot;/>&#xa;                &lt;/tns1:requestId>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:correlationid&quot;>&#xa;                &lt;tns1:correlationid>&#xa;                    &lt;xsl:copy-of select=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:correlationid/@xsi:nil&quot;/>&#xa;                    &lt;xsl:value-of select=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:correlationid&quot;/>&#xa;                &lt;/tns1:correlationid>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:for-each select=&quot;$ReceiveAppianReq/Body/tns1:assetChangeSchemaElement/tns1:addChanges&quot;>&#xa;                &lt;tns1:addChanges>&#xa;                    &lt;xsl:if test=&quot;tns1:changeAssetId&quot;>&#xa;                        &lt;tns1:changeAssetId>&#xa;                            &lt;xsl:copy-of select=&quot;tns1:changeAssetId/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;tns1:changeAssetId&quot;/>&#xa;                        &lt;/tns1:changeAssetId>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;tns1:assetNumber&quot;>&#xa;                        &lt;tns1:assetNumber>&#xa;                            &lt;xsl:copy-of select=&quot;tns1:assetNumber/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;tns1:assetNumber&quot;/>&#xa;                        &lt;/tns1:assetNumber>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;tns1:lifeInMonths&quot;>&#xa;                        &lt;tns1:lifeInMonths>&#xa;                            &lt;xsl:copy-of select=&quot;tns1:lifeInMonths/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;tns1:lifeInMonths&quot;/>&#xa;                        &lt;/tns1:lifeInMonths>&#xa;                    &lt;/xsl:if>&#xa;                    &lt;xsl:if test=&quot;tns1:startDepreciationDate&quot;>&#xa;                        &lt;tns1:startDepreciationDate>&#xa;                            &lt;xsl:copy-of select=&quot;tns1:startDepreciationDate/@xsi:nil&quot;/>&#xa;                            &lt;xsl:value-of select=&quot;tns1:startDepreciationDate&quot;/>&#xa;                        &lt;/tns1:startDepreciationDate>&#xa;                    &lt;/xsl:if>&#xa;                &lt;/tns1:addChanges>&#xa;            &lt;/xsl:for-each>&#xa;        &lt;/tns1:assetChangeSchemaElement>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
-                    <tibex:CallProcess
+                    <tibex:CallProcess spawn="true"
                         subProcessName="opr_inv_operationassetsinventory_assetchange_subprocesses.InvokeJDE_AssetChange" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
