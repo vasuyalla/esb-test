@@ -12,7 +12,7 @@
           	<element maxOccurs="1" minOccurs="0" name="additionAssetId" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="assetNumber" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="status" type="string" nillable="true"/>
-            <element maxOccurs="1" minOccurs="0" name="errorMessage" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="0" name="errorDescription" type="string" nillable="true"/>
           </sequence>
         </complexType>
       </element>

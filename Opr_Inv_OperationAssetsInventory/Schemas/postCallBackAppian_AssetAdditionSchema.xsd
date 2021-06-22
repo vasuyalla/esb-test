@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/postCallBackAppian_AssetAdditionSchema" xmlns:tns="http://www.example.org/postCallBackAppian_AssetAdditionSchema" elementFormDefault="qualified">
+ <complexType name="postCallBackAppian_AssetAdditionElementType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="list">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="requestId" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="0" name="correlationId" type="string" nillable="true"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="assetAddAnswerBack">
+              <complexType>
+                <sequence>		  
+          			 <element maxOccurs="1" minOccurs="0" name="additionAssetId" type="string" nillable="true"/>
+                 	 <element maxOccurs="1" minOccurs="0" name="assetNumber" type="string" nillable="true"/>
+                 	 <element maxOccurs="1" minOccurs="0" name="status" type="string" nillable="true"/>
+                 	 <element maxOccurs="1" minOccurs="0" name="errorNumber" type="string" nillable="true"/>
+                  	 <element maxOccurs="1" minOccurs="0" name="errorDescription" type="string" nillable="true"/>
+			 </sequence>
+              </complexType>
+            </element>		  
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="postCallBackAppian_AssetAdditionElement" type="tns:postCallBackAppian_AssetAdditionElementType"/>
+</schema>
