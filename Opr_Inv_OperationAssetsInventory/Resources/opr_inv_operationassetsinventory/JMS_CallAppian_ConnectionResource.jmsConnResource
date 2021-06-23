@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_eYup8ac6EeupFupa8gJVlg" name="opr_inv_operationassetsinventory.JMS_CallAppian_ConnectionResource" type="jms:JMSConnectionFactory">
-  <jndi:reference xmi:id="_1bivkM6dEeuGOpm-IiAbOQ" key="jndiConnectionJNDIName" type="jms:JNDIConnection" value="opr_inv_operationassetsinventory.JNDI_CallAppian_Configuration"/>
-  <jndi:configuration xsi:type="jms:JNDIConnectionFactory" xmi:id="_1W45EM6dEeuGOpm-IiAbOQ" factoryType="Queue/Topic">
-    <substitutionBindings xmi:id="_2GWAEM6dEeuGOpm-IiAbOQ" template="jndiName" propName="/JMS/QCF"/>
-    <substitutionBindings xmi:id="_28DgEM6dEeuGOpm-IiAbOQ" template="topicFactoryJNDIName" propName="/JMS/TCF"/>
-    <userCredentials xmi:id="_4S3iAM6dEeuGOpm-IiAbOQ">
-      <substitutionBindings xmi:id="_5ALT8M6dEeuGOpm-IiAbOQ" template="username" propName="/JMS/UserName"/>
-      <substitutionBindings xmi:id="_54pNAM6dEeuGOpm-IiAbOQ" template="password" propName="/JMS/Password"/>
+  <jndi:reference xmi:id="_xOo1wNQ5EeukqYtormRIOQ" key="jndiConnectionJNDIName" type="jms:JNDIConnection" value="opr_inv_operationassetsinventory.JNDI_CallAppian_Configuration"/>
+  <jndi:configuration xsi:type="jms:JNDIConnectionFactory" xmi:id="_xH2RQNQ5EeukqYtormRIOQ" factoryType="Queue/Topic">
+    <substitutionBindings xmi:id="_x0AMoNQ5EeukqYtormRIOQ" template="jndiName" propName="/JMS/QCF"/>
+    <substitutionBindings xmi:id="_yi1BgNQ5EeukqYtormRIOQ" template="topicFactoryJNDIName" propName="/JMS/TCF"/>
+    <userCredentials xmi:id="_z1kbwNQ5EeukqYtormRIOQ">
+      <substitutionBindings xmi:id="_0XjugNQ5EeukqYtormRIOQ" template="username" propName="/JMS/UserName"/>
+      <substitutionBindings xmi:id="_1KHM0NQ5EeukqYtormRIOQ" template="password" propName="/JMS/Password"/>
     </userCredentials>
   </jndi:configuration>
 </jndi:namedResource>

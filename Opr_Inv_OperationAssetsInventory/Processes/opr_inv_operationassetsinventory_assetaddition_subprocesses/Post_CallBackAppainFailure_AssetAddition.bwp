@@ -3197,7 +3197,7 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:scope name="RepeatOnHttpError"
-                tibex:group="repeatOnError" tibex:indexToGlobal="false" tibex:xpdlId="c96b3224-8c94-4dda-aabd-21326df09768">
+                tibex:group="repeatOnError" tibex:xpdlId="c96b3224-8c94-4dda-aabd-21326df09768">
                 <bpws:targets>
                     <bpws:target linkName="RenderDBOutputToRepeatOnHttpError"/>
                 </bpws:targets>
@@ -3964,7 +3964,7 @@
                     inputVariable="ErrorRecordGrouping-input"
                     name="ErrorRecordGrouping"
                     outputVariable="ErrorRecordGrouping"
-                    tibex:xpdlId="3a9bd08c-0750-48cb-8d30-c34bb12de017" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="9582a4a1-e599-4879-aed1-234b15fee27a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RepeatOnDBErrorToMapper"/>
                     </bpws:targets>
@@ -3973,7 +3973,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns16=&quot;http://www.example.org/postCallBackAppian_AssetAdditionSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetStatusFromJDE&quot;/>&lt;xsl:template name=&quot;ErrorRecordGrouping-input&quot; match=&quot;/&quot;>&lt;tns16:postCallBackAppian_AssetAdditionElement>&lt;xsl:for-each-group select=&quot;$GetStatusFromJDE/Record&quot; group-by=&quot;FAURRF&quot;>&lt;xsl:variable name=&quot;position&quot; select=&quot;position()&quot;/>&lt;xsl:variable name=&quot;item&quot; select=&quot;$GetStatusFromJDE/Record[$position]&quot;/>&lt;tns16:list>&lt;tns16:requestId>&lt;xsl:value-of select=&quot;current-group()[1]/FAEDBT&quot;/>&lt;/tns16:requestId>&lt;tns16:correlationId>&lt;xsl:value-of select=&quot;current-group()[1]/FAURRF&quot;/>&lt;/tns16:correlationId>&lt;tns16:assetAddAnswerBack>&lt;tns16:additionAssetId>&lt;xsl:value-of select=&quot;xsd:string((FAEDLN) div 1000)&quot;/>&lt;/tns16:additionAssetId>&lt;tns16:assetNumber>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns16:assetNumber>&lt;tns16:status>&lt;xsl:value-of select=&quot;&amp;quot;Fail&amp;quot;&quot;/>&lt;/tns16:status>&lt;tns16:errorNumber>&lt;xsl:value-of select=&quot;&amp;quot;500&amp;quot;&quot;/>&lt;/tns16:errorNumber>&lt;xsl:if test=&quot;FAILUREREASON&quot;>&lt;tns16:errorDescription>&lt;xsl:value-of select=&quot;FAILUREREASON&quot;/>&lt;/tns16:errorDescription>&lt;/xsl:if>&lt;/tns16:assetAddAnswerBack>&lt;/tns16:list>&lt;/xsl:for-each-group>&lt;/tns16:postCallBackAppian_AssetAdditionElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns16=&quot;http://www.example.org/postCallBackAppian_AssetAdditionSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetStatusFromJDE&quot;/>&lt;xsl:template name=&quot;ErrorRecordGrouping-input&quot; match=&quot;/&quot;>&lt;tns16:postCallBackAppian_AssetAdditionElement>&lt;xsl:for-each-group select=&quot;$GetStatusFromJDE/Record&quot; group-by=&quot;FAURRF&quot;>&lt;xsl:variable name=&quot;position&quot; select=&quot;position()&quot;/>&lt;xsl:variable name=&quot;item&quot; select=&quot;$GetStatusFromJDE/Record[$position]&quot;/>&lt;tns16:list>&lt;tns16:requestId>&lt;xsl:value-of select=&quot;current-group()[1]/FAEDBT&quot;/>&lt;/tns16:requestId>&lt;tns16:correlationId>&lt;xsl:value-of select=&quot;current-group()[1]/FAURRF&quot;/>&lt;/tns16:correlationId>&lt;tns16:assetAddAnswerBack>&lt;tns16:additionAssetId>&lt;xsl:value-of select=&quot;xsd:string((FAEDLN) div 1000)&quot;/>&lt;/tns16:additionAssetId>&lt;tns16:assetNumber>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns16:assetNumber>&lt;tns16:status>&lt;xsl:value-of select=&quot;&amp;quot;Failed&amp;quot;&quot;/>&lt;/tns16:status>&lt;tns16:errorNumber>&lt;xsl:value-of select=&quot;&amp;quot;500&amp;quot;&quot;/>&lt;/tns16:errorNumber>&lt;xsl:if test=&quot;FAILUREREASON&quot;>&lt;tns16:errorDescription>&lt;xsl:value-of select=&quot;FAILUREREASON&quot;/>&lt;/tns16:errorDescription>&lt;/xsl:if>&lt;/tns16:assetAddAnswerBack>&lt;/tns16:list>&lt;/xsl:for-each-group>&lt;/tns16:postCallBackAppian_AssetAdditionElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

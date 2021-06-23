@@ -394,6 +394,14 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FATYTN</name>
+			<value>JDEFA</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
 			<value>Tibco</value>
 			<deploymentSettable>false</deploymentSettable>

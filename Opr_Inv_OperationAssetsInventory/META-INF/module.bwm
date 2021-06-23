@@ -131,6 +131,7 @@
   <sca:property xmi:id="_c_jOEMeHEeuATJNbDDTKyg" name="/JDBC/JDE/FLJOBN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_dEIMEMeHEeuATJNbDDTKyg" name="/JDBC/JDE/FLUSER" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_dHzLIMeHEeuATJNbDDTKyg" name="/JDBC/JDE/FLPID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ugTHkNQ2EeukqYtormRIOQ" name="/JDBC/JDE/FATYTN" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_XRDc0KdfEeuLLswsXqfqtA" name="/Appian/appianHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Y7Gj0KdfEeuLLswsXqfqtA" name="/Appian/appianPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Y9B2cKdfEeuLLswsXqfqtA" name="/Appian/appianEndpoint" type="XMLSchema:string" publicAccess="true" scalable="true"/>

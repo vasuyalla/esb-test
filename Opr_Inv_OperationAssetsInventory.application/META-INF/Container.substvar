@@ -394,6 +394,14 @@
 			<isOverride>true</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/FATYTN</name>
+			<value>#FATYTN#</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>true</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
 			<value>#APPIAN_AUTH_USERNAME#</value>
 			<deploymentSettable>false</deploymentSettable>
