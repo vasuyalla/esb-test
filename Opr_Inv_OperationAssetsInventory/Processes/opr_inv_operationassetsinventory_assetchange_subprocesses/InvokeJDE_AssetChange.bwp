@@ -773,6 +773,8 @@
                             name="FAPID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="FATYTN" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="FADRIN" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -2970,6 +2972,9 @@
         <bpws:variable name="FATYTN" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FATYTN" type="xsd:string"/>
+        <bpws:variable name="Property" sca-bpel:hotUpdate="false"
+            sca-bpel:privateProperty="true" sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/FADRIN" type="xsd:int"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3519,7 +3524,7 @@
                                     <tibex:inputBindings>
 
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Change&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FAJOBN&quot;/>&lt;xsl:param name=&quot;FAUSER&quot;/>&lt;xsl:param name=&quot;FAPID&quot;/>&lt;xsl:param name=&quot;FATYTN&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns9:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FAURRF>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Change&quot;/>&lt;/FATNAC>&lt;FANUMB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:assetNumber)&quot;/>&lt;/FANUMB>&lt;FAEDSP>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/FAEDSP>&lt;FAUPMJ>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMJ)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMJ&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMJ>&lt;FAUPMT>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMT)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMT&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMT>&lt;FAJOBN>&lt;xsl:value-of select=&quot;$FAJOBN&quot;/>&lt;/FAJOBN>&lt;FAUSER>&lt;xsl:value-of select=&quot;$FAUSER&quot;/>&lt;/FAUSER>&lt;FAPID>&lt;xsl:value-of select=&quot;$FAPID&quot;/>&lt;/FAPID>&lt;FATYTN>&lt;xsl:value-of select=&quot;$FATYTN&quot;/>&lt;/FATYTN>&lt;/tns9:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+b6461f24-51c0-4c1a-9efb-fed2ed312ec6+input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1619506729905&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FAEDUS&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;FAEDTN&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;FAEDDL&quot;/>&lt;xsl:param name=&quot;FATNAC_Change&quot;/>&lt;xsl:param name=&quot;GetJulianDate&quot;/>&lt;xsl:param name=&quot;FAJOBN&quot;/>&lt;xsl:param name=&quot;FAUSER&quot;/>&lt;xsl:param name=&quot;FAPID&quot;/>&lt;xsl:param name=&quot;FATYTN&quot;/>&lt;xsl:param name=&quot;FADRIN&quot;/>&lt;xsl:template name=&quot;InsertToZtable-input&quot; match=&quot;/&quot;>&lt;tns9:jdbcUpdateActivityInput>&lt;FAEDUS>&lt;xsl:value-of select=&quot;$FAEDUS&quot;/>&lt;/FAEDUS>&lt;FAEDBT>&lt;xsl:value-of select=&quot;concat(&amp;quot;FAD-&amp;quot;, tib:trim($Start/tns7:requestId))&quot;/>&lt;/FAEDBT>&lt;FAEDTN>&lt;xsl:value-of select=&quot;$FAEDTN&quot;/>&lt;/FAEDTN>&lt;FAEDLN>&lt;xsl:value-of select=&quot;xsd:string(xsd:int($currentElement/tns7:changeAssetId) * 1000)&quot;/>&lt;/FAEDLN>&lt;FAURRF>&lt;xsl:value-of select=&quot;substring(tib:trim($Start/tns7:correlationid), 1, 15)&quot;/>&lt;/FAURRF>&lt;FAEDDL>&lt;xsl:value-of select=&quot;$FAEDDL&quot;/>&lt;/FAEDDL>&lt;FATNAC>&lt;xsl:value-of select=&quot;$FATNAC_Change&quot;/>&lt;/FATNAC>&lt;FANUMB>&lt;xsl:value-of select=&quot;tib:trim($currentElement/tns7:assetNumber)&quot;/>&lt;/FANUMB>&lt;FAEDSP>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/FAEDSP>&lt;FAUPMJ>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMJ)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMJ&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMJ>&lt;FAUPMT>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($GetJulianDate/Record[1]/FAUPMT)&quot;>&lt;xsl:value-of select=&quot;$GetJulianDate/Record[1]/FAUPMT&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/FAUPMT>&lt;FAJOBN>&lt;xsl:value-of select=&quot;$FAJOBN&quot;/>&lt;/FAJOBN>&lt;FAUSER>&lt;xsl:value-of select=&quot;$FAUSER&quot;/>&lt;/FAUSER>&lt;FAPID>&lt;xsl:value-of select=&quot;$FAPID&quot;/>&lt;/FAPID>&lt;FATYTN>&lt;xsl:value-of select=&quot;$FATYTN&quot;/>&lt;/FATYTN>&lt;FADRIN>&lt;xsl:value-of select=&quot;$FADRIN&quot;/>&lt;/FADRIN>&lt;/tns9:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
 
@@ -3541,7 +3546,7 @@
 
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xd;&#xa;  FAURRF, FAEDDL, FATNAC, FANUMB, FAEDSP, FAUPMJ, FAUPMT, FAJOBN,&#xd;&#xa;  FAUSER, FAPID, FATYTN)&#xd;&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    sqlStatement="INSERT INTO INTFACE.F551201Z (FAEDUS, FAEDBT, FAEDTN, FAEDLN,&#xd;&#xa;  FAURRF, FAEDDL, FATNAC, FANUMB, FAEDSP, FAUPMJ, FAUPMT, FAJOBN,&#xd;&#xa;  FAUSER, FAPID, FATYTN, FADRIN)&#xd;&#xa;  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
@@ -3602,6 +3607,10 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="FATYTN"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="FADRIN"/>
                                     </value>
                                     </properties>
                                     </activityConfig>
