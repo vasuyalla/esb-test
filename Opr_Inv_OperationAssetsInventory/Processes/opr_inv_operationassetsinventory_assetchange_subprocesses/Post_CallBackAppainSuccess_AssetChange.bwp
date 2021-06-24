@@ -2413,17 +2413,6 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
@@ -2431,7 +2420,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.1"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2453,7 +2442,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.2"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[12, 12, -76, -75]$[63, 63, -25, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2464,7 +2453,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[25, 22, -75, -66]$[88, 77, -12, -11]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2689,6 +2678,17 @@
             <element href="//0/@process/@activity/@activity/@activities.5/@activity/@activity/@activity/@links/@children.6"/>
             <bendpoints
                 points="[25, 0, -245, -157]$[201, 0, -69, -157]$[201, 157, -69, 0]$[258, 157, -12, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[0, -24, 0, 151]$[0, -150, 0, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -2926,7 +2926,7 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:scope name="RepeatOnDBError"
-                tibex:group="repeatOnError" tibex:xpdlId="8513a0aa-cad3-498b-b837-701a7de9311a">
+                tibex:group="repeatOnError" tibex:indexToGlobal="false" tibex:xpdlId="8513a0aa-cad3-498b-b837-701a7de9311a">
                 <bpws:targets>
                     <bpws:target linkName="StartToRepeatOnError"/>
                 </bpws:targets>
@@ -2989,12 +2989,12 @@
                         <bpws:flow name="flow2">
                             <bpws:links>
                                 <bpws:link
-                                    name="GetSuccessRecordFromJDEToSleep" tibex:linkType="SUCCESS"/>
-                                <bpws:link
                                     name="GroupStartToGetSuccessRecordFromJDE" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link name="GroupStartToSleep" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link
                                     name="GetSuccessRecordFromJDEToGroupEnd" tibex:linkType="SUCCESS"/>
+                                <bpws:link
+                                    name="SleepToGetSuccessRecordFromJDE" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="GroupStart"
                                 tibex:group="groupStart" tibex:xpdlId="4d43afb9-d38b-4a4f-88d0-286265385002">
@@ -3034,9 +3034,9 @@
                                     tibex:xpdlId="37bf2d3a-9060-4ccc-8dc2-b20c101845db" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartToGetSuccessRecordFromJDE"/>
+                                    <bpws:target linkName="SleepToGetSuccessRecordFromJDE"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="GetSuccessRecordFromJDEToSleep"/>
                                     <bpws:source linkName="GetSuccessRecordFromJDEToGroupEnd"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
@@ -3089,9 +3089,11 @@
                                     name="Sleep"
                                     tibex:xpdlId="90361b0b-bef6-4fb2-a491-18e275d40bce" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="GetSuccessRecordFromJDEToSleep"/>
                                     <bpws:target linkName="GroupStartToSleep"/>
                                     </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="SleepToGetSuccessRecordFromJDE"/>
+                                    </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/activity/sleep/xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;retryInterval&quot;/>&lt;xsl:template name=&quot;Sleep-input&quot; match=&quot;/&quot;>&lt;tns2:SleepInputSchema>&lt;IntervalInMillisec>&lt;xsl:value-of select=&quot;$retryInterval&quot;/>&lt;/IntervalInMillisec>&lt;/tns2:SleepInputSchema>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
@@ -3132,7 +3134,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns8=&quot;http://www.example.org/postCallBackAppain_AssetChangeSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetSuccessRecordFromJDE&quot;/>&lt;xsl:template name=&quot;RecordGrouping-input&quot; match=&quot;/&quot;>&lt;tns8:postCallBackAppain_AssetChangeElement>&lt;xsl:for-each-group select=&quot;$GetSuccessRecordFromJDE/Record&quot; group-by=&quot;FAURRF&quot;>&lt;xsl:variable name=&quot;position&quot; select=&quot;position()&quot;/>&lt;xsl:variable name=&quot;item&quot; select=&quot;$GetSuccessRecordFromJDE/Record[$position]&quot;/>&lt;tns8:list>&lt;tns8:requestId>&lt;xsl:value-of select=&quot;current-group()[1]/FAEDBT&quot;/>&lt;/tns8:requestId>&lt;tns8:correlationId>&lt;xsl:value-of select=&quot;current-group()[1]/FAURRF&quot;/>&lt;/tns8:correlationId>&lt;tns8:assetChangeAnswerBack>&lt;tns8:changeAssetId>&lt;xsl:value-of select=&quot;xsd:string((FAEDLN) div 1000)&quot;/>&lt;/tns8:changeAssetId>&lt;tns8:assetNumber>&lt;xsl:value-of select=&quot;xsd:string(FANUMB)&quot;/>&lt;/tns8:assetNumber>&lt;tns8:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns8:status>&lt;/tns8:assetChangeAnswerBack>&lt;/tns8:list>&lt;/xsl:for-each-group>&lt;/tns8:postCallBackAppain_AssetChangeElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns8=&quot;http://www.example.org/postCallBackAppain_AssetChangeSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetSuccessRecordFromJDE&quot;/>&lt;xsl:template name=&quot;RecordGrouping-input&quot; match=&quot;/&quot;>&lt;tns8:postCallBackAppain_AssetChangeElement>&lt;xsl:for-each-group select=&quot;$GetSuccessRecordFromJDE/Record&quot; group-by=&quot;FAURRF&quot;>&lt;xsl:variable name=&quot;position&quot; select=&quot;position()&quot;/>&lt;xsl:variable name=&quot;item&quot; select=&quot;$GetSuccessRecordFromJDE/Record[$position]&quot;/>&lt;tns8:list>&lt;tns8:requestId>&lt;xsl:value-of select=&quot;current-group()[1]/FAEDBT&quot;/>&lt;/tns8:requestId>&lt;tns8:correlationId>&lt;xsl:value-of select=&quot;current-group()[1]/FAURRF&quot;/>&lt;/tns8:correlationId>&lt;xsl:for-each select=&quot;current-group()&quot;>&lt;tns8:assetChangeAnswerBack>&lt;tns8:changeAssetId>&lt;xsl:value-of select=&quot;xsd:string((FAEDLN) div 1000)&quot;/>&lt;/tns8:changeAssetId>&lt;tns8:assetNumber>&lt;xsl:value-of select=&quot;xsd:string(FANUMB)&quot;/>&lt;/tns8:assetNumber>&lt;tns8:status>&lt;xsl:value-of select=&quot;&amp;quot;Success&amp;quot;&quot;/>&lt;/tns8:status>&lt;/tns8:assetChangeAnswerBack>&lt;/xsl:for-each>&lt;/tns8:list>&lt;/xsl:for-each-group>&lt;/tns8:postCallBackAppain_AssetChangeElement>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -3189,7 +3191,7 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:scope name="RepeatOnHttpError"
-                tibex:group="repeatOnError" tibex:indexToGlobal="false" tibex:xpdlId="0a3145c5-1565-4529-bdc8-58749fb13421">
+                tibex:group="repeatOnError" tibex:xpdlId="0a3145c5-1565-4529-bdc8-58749fb13421">
                 <bpws:targets>
                     <bpws:target linkName="RenderDBOutputToRepeatOnHttpError"/>
                 </bpws:targets>
