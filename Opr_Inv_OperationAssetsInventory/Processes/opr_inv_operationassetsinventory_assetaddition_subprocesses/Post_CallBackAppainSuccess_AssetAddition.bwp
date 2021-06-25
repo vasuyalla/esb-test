@@ -3324,7 +3324,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT FAEDBT,CAST (FAEDLN AS DECIMAL (7)) AS FAEDLN ,FAURRF, FANUMB FROM INTFACE.F551201Z WITH (NOLOCK) WHERE FAURRF in (SELECT f.FAURRF FROM INTFACE.F551201Z f WITH (NOLOCK) WHERE f.FAEDSP = '1') AND FAEDSP in ('1','4')" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    sqlStatement="SELECT FAEDBT,CAST (FAEDLN AS DECIMAL (7)) AS FAEDLN ,FAURRF, FANUMB FROM INTFACE.F551201Z WITH (NOLOCK) WHERE FAURRF in (SELECT f.FAURRF FROM INTFACE.F551201Z f WITH (NOLOCK) WHERE f.FAEDSP = '1') AND FAEDSP in ('1','4') And FATNAC='A'" xsi:type="jdbcPalette:JDBCQueryActivity">
                                     <columnMetadata
                                     columnName="FAEDBT"
                                     dataType="-15" typeName="nchar"/>
