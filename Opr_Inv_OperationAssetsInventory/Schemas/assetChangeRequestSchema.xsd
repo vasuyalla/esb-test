@@ -2,13 +2,13 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/json/1619506729905" elementFormDefault="qualified" targetNamespace="http://tns.tibco.com/bw/json/1619506729905">
   <complexType name="assetChangeSchemaElementType">
     <sequence>
-      <element maxOccurs="1" minOccurs="0" name="requestId" type="string" nillable="true"/>
+      <element maxOccurs="1" minOccurs="1" name="requestId" type="string" nillable="true"/>
       <element maxOccurs="1" minOccurs="0" name="correlationid" type="string" nillable="true"/>
       <element maxOccurs="1" minOccurs="0" name="lineitemcount" type="string" nillable="true"/>
       <element maxOccurs="unbounded" minOccurs="0" name="addChanges">
         <complexType>
           <sequence>
-            <element maxOccurs="1" minOccurs="0" name="changeAssetId" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="1" name="changeAssetId" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="assetNumber" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="lifeInMonths" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="startDepreciationDate" type="string" nillable="true"/>

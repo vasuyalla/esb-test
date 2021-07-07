@@ -2,17 +2,17 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/json/1619506670629" elementFormDefault="qualified" targetNamespace="http://tns.tibco.com/bw/json/1619506670629">
   <complexType name="assetAdditionSchemaElementType">
     <sequence>
-      <element maxOccurs="1" minOccurs="0" name="requestId" type="string" nillable="true"/>
+      <element maxOccurs="1" minOccurs="1" name="requestId" type="string" nillable="true"/>
       <element maxOccurs="1" minOccurs="0" name="correlationid" type="string" nillable="true"/>
       <element maxOccurs="1" minOccurs="0" name="lineitemcount" type="string" nillable="true"/>
       <element maxOccurs="unbounded" minOccurs="0" name="addAssets">
         <complexType>
           <sequence>
-            <element maxOccurs="1" minOccurs="0" name="additionAssetId" type="string" nillable="true"/>
-            <element maxOccurs="1" minOccurs="0" name="companyId" type="string" nillable="true"/>
-            <element maxOccurs="1" minOccurs="0" name="businessUnit" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="1" name="additionAssetId" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="1" name="companyId" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="1" name="businessUnit" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="assetDesc" type="string" nillable="true"/>
-            <element maxOccurs="1" minOccurs="0" name="objectAccount" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="1" name="objectAccount" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="subsidiary" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="assetType" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="suite" type="string" nillable="true"/>
