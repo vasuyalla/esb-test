@@ -2003,7 +2003,7 @@
 
                                     <layoutConstraint
                                     x="19"
-                                    xsi:type="notation:Bounds" y="302"/>
+                                    xsi:type="notation:Bounds" y="383"/>
                                     </children>
 
                                     <children type="4002">
@@ -2057,7 +2057,7 @@
 
                                     <layoutConstraint
                                     x="209"
-                                    xsi:type="notation:Bounds" y="302"/>
+                                    xsi:type="notation:Bounds" y="383"/>
                                     </children>
 
                                     <children type="4002">
@@ -2113,6 +2113,60 @@
                                     x="209"
                                     xsi:type="notation:Bounds" y="170"/>
                                     </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@activities.7"/>
+
+                                    <layoutConstraint
+                                    x="19"
+                                    xsi:type="notation:Bounds" y="278"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2128,10 +2182,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="108"
-                                    width="400"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    height="468"
+                                    width="408" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -2143,7 +2195,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
-                                    height="392"
+                                    height="468"
                                     width="411"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
@@ -2235,7 +2287,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
-                                    height="436" width="451"
+                                    height="512" width="451"
                                     x="1024"
                                     xsi:type="notation:Bounds" y="24"/>
                                     </children>
@@ -2605,17 +2657,6 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint x="12" xsi:type="notation:Location" y="-10"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
@@ -2623,7 +2664,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2634,7 +2675,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.2"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2656,9 +2697,9 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.4"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.3"/>
             <bendpoints
-                points="[25, 0, -301, -136]$[222, 0, -104, -136]$[222, 133, -104, -3]$[314, 133, -12, -3]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -301, -174]$[231, 0, -95, -174]$[231, 172, -95, -2]$[314, 172, -12, -2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.4"
@@ -2668,7 +2709,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.5"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[0, 25, 0, -107]$[0, 108, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -2679,8 +2720,9 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[7, -12, -81, 124]$[72, -111, -16, 25]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.5"/>
+            <bendpoints
+                points="[12, 0, -76, 174]$[30, 0, -58, 174]$[30, -161, -58, 13]$[64, -161, -24, 13]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -2724,9 +2766,9 @@
             </children>
             <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.7"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[25, 18, -165, -121]$[166, 121, -24, -18]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 11, -165, -128]$[95, 11, -95, -128]$[95, 139, -95, 0]$[166, 139, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0"
@@ -2816,6 +2858,28 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[25, -16, -45, 30]$[58, -38, -12, 8]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4/@children.0/@children.1/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activity/@activity/@links/@children.8"/>
+            <bendpoints points="[-14, 25, 67, -120]$[-67, 121, 14, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -2972,9 +3036,12 @@
         <bpws:variable name="FATYTN" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="/JDBC/JDE/FATYTN" type="xsd:string"/>
-        <bpws:variable name="Property" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            tibex:propertySource="/JDBC/JDE/FADRIN" type="xsd:int"/>
+        <bpws:variable name="SPTimeoutInterval"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="/JDBC/JDE/SPTimeoutInterval" type="xsd:int"/>
+        <bpws:variable element="ns1:ActivityInput"
+            name="LogSPError-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -3685,7 +3752,7 @@
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:scope name="RepeatOnSPError"
-                tibex:group="repeatOnError" tibex:xpdlId="f18ba489-9267-439b-9117-e9525b84617a">
+                tibex:group="repeatOnError" tibex:indexToGlobal="false" tibex:xpdlId="f18ba489-9267-439b-9117-e9525b84617a">
                 <bpws:targets>
                     <bpws:target linkName="RepeatOnErrorToRepeatOnError1"/>
                 </bpws:targets>
@@ -3754,9 +3821,6 @@
                             <bpws:links>
                                 <bpws:link
                                     name="Pre_Validate_StoreProcToEmpty" tibex:linkType="ERROR"/>
-                                <bpws:link
-                                    name="TimedOutException_TimedOutException"
-                                    tibex:label="TimedOutException" tibex:linkType="SUCCESSWITHCONDITION"/>
                                 <bpws:link name="EmptyToAssign" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                 <bpws:link name="Sleep1ToThrow1" tibex:linkType="SUCCESS"/>
                                 <bpws:link
@@ -3766,6 +3830,8 @@
                                     name="GroupStart2ToPre_Validate_StoreProc" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="Pre_Validate_Otherwise"
                                     tibex:label="Otherwise" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                <bpws:link name="EmptyToLog" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                <bpws:link name="LogSPErrorToSleep1" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="GroupStart2"
                                 tibex:group="groupStart" tibex:xpdlId="69ab7722-92f3-462b-beb4-2f8d0bad2daa">
@@ -3872,19 +3938,19 @@
                                     <bpws:target linkName="Pre_Validate_StoreProcToEmpty"/>
                                 </bpws:targets>
                                 <bpws:sources>
-                                    <bpws:source linkName="TimedOutException_TimedOutException">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="exists($_error_Pre_Validate_StoreProc/tns2:JDBCConnectionNotFoundException or $_error_Pre_Validate_StoreProc/tns2:LoginTimedOutException or $_error_Pre_Validate_StoreProc/tns:ActivityTimedOutException or $_error_Pre_Validate_StoreProc/tns2:InvalidTimeZoneException)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[exists($_error_Pre_Validate_StoreProc/tns2:JDBCConnectionNotFoundException or $_error_Pre_Validate_StoreProc/tns2:LoginTimedOutException or $_error_Pre_Validate_StoreProc/tns:ActivityTimedOutException or $_error_Pre_Validate_StoreProc/tns2:InvalidTimeZoneException)]]></bpws:transitionCondition>
-                                    </bpws:source>
                                     <bpws:source linkName="EmptyToAssign">
                                     <tibex:DesignExpression>
                                     <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
                                     <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    <bpws:source linkName="EmptyToLog">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="exists($_error_Pre_Validate_StoreProc/tns2:JDBCConnectionNotFoundException or $_error_Pre_Validate_StoreProc/tns2:LoginTimedOutException or $_error_Pre_Validate_StoreProc/tns:ActivityTimedOutException or $_error_Pre_Validate_StoreProc/tns2:InvalidTimeZoneException)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[exists($_error_Pre_Validate_StoreProc/tns2:JDBCConnectionNotFoundException or $_error_Pre_Validate_StoreProc/tns2:LoginTimedOutException or $_error_Pre_Validate_StoreProc/tns:ActivityTimedOutException or $_error_Pre_Validate_StoreProc/tns2:InvalidTimeZoneException)]]></bpws:transitionCondition>
                                     </bpws:source>
                                 </bpws:sources>
                             </bpws:empty>
@@ -3894,14 +3960,14 @@
                                     name="Sleep1"
                                     tibex:xpdlId="ce00677c-ed13-413a-982d-acf56248b1f2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="TimedOutException_TimedOutException"/>
+                                    <bpws:target linkName="LogSPErrorToSleep1"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="Sleep1ToThrow1"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/activity/sleep/xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;retryInterval&quot;/>&lt;xsl:template name=&quot;Sleep1-input&quot; match=&quot;/&quot;>&lt;tns1:SleepInputSchema>&lt;IntervalInMillisec>&lt;xsl:value-of select=&quot;$retryInterval&quot;/>&lt;/IntervalInMillisec>&lt;/tns1:SleepInputSchema>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/activity/sleep/xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SPTimeoutInterval&quot;/>&lt;xsl:template name=&quot;Sleep1-input&quot; match=&quot;/&quot;>&lt;tns1:SleepInputSchema>&lt;IntervalInMillisec>&lt;xsl:value-of select=&quot;$SPTimeoutInterval&quot;/>&lt;/IntervalInMillisec>&lt;/tns1:SleepInputSchema>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -3961,6 +4027,40 @@
                                     <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
                                     <value
                                     processVariable="ExitLoop" xsi:type="generalactivities:BWAssign"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    inputVariable="LogSPError-input"
+                                    name="LogSPError"
+                                    tibex:xpdlId="9a233bd5-301e-405a-bdd0-844c77d897c4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="EmptyToLog"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="LogSPErrorToSleep1"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error_Pre_Validate_StoreProc&quot;/>&lt;xsl:template name=&quot;LogSPError-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($_error_Pre_Validate_StoreProc,true())&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.log"
+                                    version="6.0.0.001"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>

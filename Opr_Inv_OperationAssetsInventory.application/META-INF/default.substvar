@@ -402,6 +402,14 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/SPTimeoutInterval</name>
+			<value>60000</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///Appian/username</name>
 			<value>Tibco</value>
 			<deploymentSettable>false</deploymentSettable>

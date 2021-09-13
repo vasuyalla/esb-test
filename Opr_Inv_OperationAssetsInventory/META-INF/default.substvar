@@ -402,6 +402,14 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>/JDBC/JDE/SPTimeoutInterval</name>
+			<value>60000</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>/Appian/appianHost</name>
 			<value>howardhughesdev.appiancloud.com</value>
 			<deploymentSettable>false</deploymentSettable>
