@@ -18,6 +18,7 @@
             <element maxOccurs="1" minOccurs="0" name="suite" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="lifeInMonths" type="string" nillable="true"/>
             <element maxOccurs="1" minOccurs="0" name="startDepreciationDate" type="string" nillable="true"/>
+            <element maxOccurs="1" minOccurs="0" name="serviceDate" type="string" nillable="true"/>            
           </sequence>
         </complexType>
       </element>

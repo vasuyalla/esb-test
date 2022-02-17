@@ -267,7 +267,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//Opr_Inv_OperationAssetsInventory///JDBC/JDE/DatabaseURL</name>
-			<value>jdbc:sqlserver://10.32.106.193:1433;DatabaseName=JDE_CRP;</value>
+			<value>jdbc:sqlserver://10.32.106.193:1433;DatabaseName=JDE_TR;</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
