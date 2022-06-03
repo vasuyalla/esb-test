@@ -1,0 +1,66 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: esb-operationassetsinventory
+  namespace: tibco-test
+spec:
+  selector:
+    matchLabels:
+      app: esb-operationassetsinventory
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: esb-operationassetsinventory
+        esb: tibco
+    spec:
+      containers:
+      - name: esb-operationassetsinventory
+        image: 998808488458.dkr.ecr.us-east-2.amazonaws.com/v01/esb_operationassetsinventory:dev 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /healthcheck/readiness
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /healthcheck/liveliness
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 60
+        envFrom:
+        - configMapRef:
+            name: test-configmap-esb-operationassetsinventory 
+        - secretRef:
+            name: test-secret-esb-operationassetsinventory
+        env:
+        - name: HOST_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.podIP
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: tcp_self_url
+          value: $(HOST_NAME):2551
+        - name: ami_agent_url
+          value: $(HOST_IP):2571
+        volumeMounts:
+          - name: efs-pvc
+            mountPath: "/efs-mount"
+          - name: jde92-fs
+            mountPath: "/pjdeshr01"
+      volumes:
+        - name: efs-pvc
+          persistentVolumeClaim:
+            claimName: efs
+        - name: jde92-fs
+          hostPath:
+            path: /mnt/pjdeshr01

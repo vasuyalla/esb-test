@@ -1,0 +1,65 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: prod-configmap-esb-operationassetsinventory
+  namespace: tibco-prod
+data:
+  # Configuration values can be set as key-value properties
+  NJAMS_HHC_EMS_URL: tcp://10.39.5.224:7222
+  NJAMS_HHC_DOMAIN: HHC-Prod
+  JMS_URL: tcp://10.39.5.224:7222
+  BW_PROFILE: Container
+  HTTP_HOST: 0.0.0.0
+  HTTP_PORT: "8080"
+  HTTP_ACCEPTORTHREAD: "1"
+  HTTP_ACCEPTQUEUESIZE: "0"
+  HTTP_MAXQTP: "75"
+  HTTP_MINQTP: "10"
+  RETRY_COUNT: "3"
+  RETRY_INTERVAL: "3000"
+  AUTH_XML_PATH: /efs-mount/auth/Prod_XmlUsers.xml
+  AUDITPROCESSINGVERSION: "HHC0001"
+  PROCESSINGVERSION: "HHC0002"
+  JDE_MAXROWS: "0"
+  JDE_TIMEOUT: "300"
+  JDE_LOGIN_TIMEOUT: "65"
+  JDE_DATABASEURL: jdbc:sqlserver://10.32.106.13:1433;DatabaseName=JDE_PRODUCTION;
+  JDE_MAXCONNECTION: "10"
+  JDE_SCHEMA: INTFACE
+  FAEDUS: FIXEDASSET
+  FAEDTN: "0"
+  FAEDDL: "0"
+  FADRIN: "1"
+  FATNAC_Change: C
+  FATNAC_Addition: A
+  FLDIR1: R
+  FLLT: AA
+  JMS_TCF: bu_tcf
+  JMS_QCF: bu_qcf
+  JMS_MAX_SESSIONS: "1"
+  JMS_REDELIVERY_INTERVAL: "900000"
+  JMS_ASSETCHANGE_QUEUE: opr.inv.operationassetsinventory.assetchange.appian.v1.0.queue
+  JMS_ASSETCHANGE_TOPIC: opr.inv.operationassetsinventory.assetchange.appian.v1.0.topic
+  JMS_ASSETADD_TOPIC: opr.inv.operationassetsinventory.assetadd.appian.v1.0.topic
+  JMS_ASSETADD_QUEUE: opr.inv.operationassetsinventory.assetadd.appian.v1.0.queue
+  APPIAN_HOST: howardhughes.appiancloud.com
+  APPIAN_PORT: "443"
+  APPIAN_ENDPOINT: /suite/webapi/fadesbcallback
+  APPIAN_METHOD: POST
+  APPIAN_IDLE_CONN_TIMEOUT: "3000"
+  APPIAN_CONN_PER_HOST: "20"
+  APPIAN_SOCKET_TIMEOUT: "0"
+  APPIAN_CONN_TIMEOUT: "0"
+  APPIAN_MAX_TOTAL_CONN: "200"  
+  ASSETADD_TIMER_START: 2022-01-01T02:07:00-05:00
+  ASSETADD_TIMER_TIMEINTERVAL: "10"
+  ASSETCHANGE_TIMER_START: 2022-01-01T02:07:00-05:00
+  ASSETCHANGE_TIMER_TIMEINTERVAL: "10"
+  FAJOBN: TIBCO_INT
+  FAUSER: SVC_TIBCO
+  FAPID: TIBCO
+  FLJOBN: TIBCO_INT
+  FLUSER: SVC_TIBCO
+  FLPID: TIBCO
+  FATYTN: JDEFA
+  SP_TIMEOUT: "60000"
