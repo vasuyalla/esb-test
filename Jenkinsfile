@@ -9,7 +9,7 @@ pipeline {
         CMDLINE = "clean initialize package"
         AWS_SECRET_ACCESS_KEY = "$AWS_SECRET_ACCESS_KEY_DEV"
         AWS_ACCESS_KEY_ID = "$AWS_ACCESS_KEY_ID_DEV"
-        ECR_URL = "548018587351.dkr.ecr.us-east-1.amazonaws.com/testing"
+        ECR_URL = "548018587351.dkr.ecr.us-east-2.amazonaws.com/testing"
         ECR_ENV_DEV = "dev"
         POD_PATTERN = "esb-operationassetsinventory-"
         K8S_NAMESPACE = "tibco-dev"
@@ -36,7 +36,7 @@ pipeline {
           echo "Deploying..."
           sh '''
             export THISTAG=`date "+%y%m%d%H%M"`
-            aws ecr get-login-password --region us-east-1 | docker login -u AWS --password-stdin $ECR_URL
+            aws ecr get-login-password --region us-east-2 | docker login -u AWS --password-stdin $ECR_URL
 
             docker tag $DOCKER_IMAGE:latest $ECR_URL:$THISTAG
             docker push $ECR_URL:$THISTAG
