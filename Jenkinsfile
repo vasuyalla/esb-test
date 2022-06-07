@@ -36,10 +36,11 @@ pipeline {
           echo "Deploying..."
           sh '''
             export THISTAG=`date "+%y%m%d%H%M"`
-            aws ecr get-login-password --region us-east-2 | docker login -u AWS --password-stdin $ECR_URL
+            aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 548018587351.dkr.ecr.us-east-2.amazonaws.com
 
-            docker tag $DOCKER_IMAGE:latest $ECR_URL:$THISTAG
-            docker push $ECR_URL:$THISTAG
+            docker build -t testing .
+            docker tag testing:latest 548018587351.dkr.ecr.us-east-2.amazonaws.com/testing:latest
+            docker push 548018587351.dkr.ecr.us-east-2.amazonaws.com/testing:latest
 
             docker tag $DOCKER_IMAGE:latest $ECR_URL:$ECR_ENV_DEV
             docker push $ECR_URL:$ECR_ENV_DEV
