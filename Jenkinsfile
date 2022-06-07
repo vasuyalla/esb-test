@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
       // Configure in global tool setting of jenkins slave or master
-        SLACK_UPLOAD_FILE_TOKEN = "dev-slack-app-token"
+        //SLACK_UPLOAD_FILE_TOKEN = "dev-slack-app-token"
         CMDLINE = "clean initialize package"
         AWS_SECRET_ACCESS_KEY = "$AWS_SECRET_ACCESS_KEY_DEV"
         AWS_ACCESS_KEY_ID = "$AWS_ACCESS_KEY_ID_DEV"
