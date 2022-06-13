@@ -3,7 +3,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: esb-operationassetsinventory
-  namespace: tibco-prod
+  namespace: tibco-dev
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: esb-operationassetsinventory
-        image: 998808488458.dkr.ecr.us-east-2.amazonaws.com/v01/esb_operationassetsinventory:2109130902
+        image: 548018587351.dkr.ecr.us-east-2.amazonaws.com/testing:2206131426
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -35,9 +35,9 @@ spec:
           periodSeconds: 60
         envFrom:
         - configMapRef:
-            name: prod-configmap-esb-operationassetsinventory
+            name: dev-configmap-esb-operationassetsinventory
         - secretRef:
-            name: prod-secret-esb-operationassetsinventory
+            name: dev-secret-esb-operationassetsinventory
         env:
         - name: HOST_NAME
           valueFrom:
@@ -53,14 +53,10 @@ spec:
         - name: ami_agent_url
           value: $(HOST_IP):2571
         volumeMounts:
-          - name: efs-pvc
-            mountPath: "/efs-mount"
-          - name: jde92-fs
-            mountPath: "/pjdeshr01"
+          - name: pv-volume
+            mountPath: "/mnt/data"
       volumes:
-        - name: efs-pvc
+        - name: pv-volume
           persistentVolumeClaim:
-            claimName: efs
-        - name: jde92-fs
-          hostPath:
-            path: /mnt/pjdeshr01
+            claimName: pv-claim
+         
