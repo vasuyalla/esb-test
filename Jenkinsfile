@@ -12,7 +12,7 @@ pipeline {
         ECR_URL = "548018587351.dkr.ecr.us-east-2.amazonaws.com/testing"
         ECR_ENV_DEV = "dev"
         POD_PATTERN = "esb-operationassetsinventory-"
-        K8S_NAMESPACE = "tibco-dev"
+        K8S_NAMESPACE = "default"
         DOCKER_IMAGE = "esb_operationassetsinventory"
     }
     stages {
